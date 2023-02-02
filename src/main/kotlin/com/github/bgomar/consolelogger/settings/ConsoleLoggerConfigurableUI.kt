@@ -20,7 +20,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
         .resizableColumn()
 
       button("Default", actionListener = {
-        patternField.component.text = DEFAULT_LOGIT_PATTERN
+        patternField.component.text = DEFAULT_CONSOLELOGGER_PATTERN
       }).apply {
         component.toolTipText = "Reset to default pattern"
       }

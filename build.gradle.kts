@@ -82,7 +82,7 @@ tasks {
         gradleVersion = properties("gradleVersion")
     }
 
-    patchPluginXml {
+/*    patchPluginXml {
         version.set(properties("pluginVersion"))
         sinceBuild.set(properties("pluginSinceBuild"))
         untilBuild.set(properties("pluginUntilBuild"))
@@ -110,7 +110,7 @@ tasks {
                 )
             }
         })
-    }
+    }*/
     buildSearchableOptions {
         enabled = false
     }

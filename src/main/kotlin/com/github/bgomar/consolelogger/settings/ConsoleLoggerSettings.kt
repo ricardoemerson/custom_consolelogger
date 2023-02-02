@@ -7,12 +7,12 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
-internal const val DEFAULT_LOGIT_PATTERN = """console.log("=>({FN}:{LN}) $$", $$);"""
+internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("=>({FN}:{LN}) $$", $$);"""
 
 @State(name = "ConsoleLoggerSettings", storages = [(Storage("log_it.xml"))])
 class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
 
-  var pattern: String = DEFAULT_LOGIT_PATTERN
+  var pattern: String = DEFAULT_CONSOLELOGGER_PATTERN
   var version = "Unknown"
 
   companion object {

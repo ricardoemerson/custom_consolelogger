@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.changelog.Changelog
-import org.jetbrains.changelog.markdownToHTML
+/*import org.jetbrains.changelog.Changelog
+import org.jetbrains.changelog.markdownToHTML*/
 
 fun properties(key: String) = project.findProperty(key).toString()
 
@@ -42,7 +42,7 @@ intellij {
     pluginName.set(properties("pluginName"))
     version.set(properties("platformVersion"))
     type.set(properties("platformType"))
-    downloadSources.set(!System.getenv().containsKey("CI"))
+    downloadSources.set(!System.getenv().containsKey("UI"))
     updateSinceUntilBuild.set(true)
     plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
 
@@ -112,7 +112,7 @@ tasks {
         })
     }*/
     buildSearchableOptions {
-        enabled = false
+        enabled = true
     }
     compileKotlin {
         kotlinOptions.jvmTarget = "11"
@@ -130,7 +130,7 @@ tasks {
         systemProperty("jb.consents.confirmation.enabled", "false")
     }
 
-    signPlugin {
+/*    signPlugin {
         certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
         privateKey.set(System.getenv("PRIVATE_KEY"))
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
@@ -143,7 +143,7 @@ tasks {
         // Specify pre-release label to publish the plugin in a custom Release Channel automatically. Read more:
         // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
         channels.set(listOf(properties("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first()))
-    }
+    }*/
 }
 
 kotlin {

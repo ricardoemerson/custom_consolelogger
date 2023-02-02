@@ -4,8 +4,9 @@
     <vendor email="oscars.webspam@gmail.com" url="https://github.com/bg-omar/consolelogger">bgOmar</vendor>
 
 
-    <idea-version since-build="213"/>
+    <idea-version since-build="222"/>
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
     <depends>JavaScript</depends>
 
     <extensions defaultExtensionNs="com.intellij">

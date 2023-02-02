@@ -104,9 +104,10 @@ class ConsoleLoggerAddTest : BasePlatformTestCase() {
     }
 
     private fun doTest(name: String) {
-        val file = "./testdata/$name"
+
+        val file = "/testdata/$name"
         val jsonRef = javaClass.getResource(file)?.file
-        myFixture.testDataPath = "/workspace/projects/ConsoleLogger/src/test/resources/testdata"
+        myFixture.testDataPath = ""
 
         if (jsonRef != null) {
             myFixture.configureByFile(jsonRef)

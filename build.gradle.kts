@@ -31,6 +31,11 @@ repositories {
     mavenCentral()
 }
 
+
+dependencies {
+    implementation("org.jetbrains:marketplace-zip-signer:0.1.8")
+}
+
 val service = project.extensions.getByType<JavaToolchainService>()
 val customLauncher = service.launcherFor {
         languageVersion.set(JavaLanguageVersion.of(11))
@@ -62,6 +67,17 @@ qodana {
     showReport.set(System.getenv("QODANA_SHOW_REPORT")?.toBoolean() ?: false)
 }
 
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
 // Configure Gradle Kover Plugin - read more: https://github.com/Kotlin/kotlinx-kover#configuration
 kover.xmlReport {
     onCheck.set(true)
@@ -130,13 +146,13 @@ tasks {
         systemProperty("jb.consents.confirmation.enabled", "false")
     }
 
-/*    signPlugin {
+    signPlugin {
         certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
         privateKey.set(System.getenv("PRIVATE_KEY"))
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 
-    publishPlugin {
+/*    publishPlugin {
         dependsOn("patchChangelog")
         token.set(System.getenv("PUBLISH_TOKEN"))
         // The pluginVersion is based on the SemVer (https://semver.org) and supports pre-release labels, like 2.1.7-alpha.3
@@ -144,16 +160,4 @@ tasks {
         // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
         channels.set(listOf(properties("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first()))
     }*/
-}
-
-kotlin {
-    jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
-    }
-}
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
-    }
 }

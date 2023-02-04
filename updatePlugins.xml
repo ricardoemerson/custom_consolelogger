@@ -22,7 +22,7 @@ available at this repository.
         The <idea-version> element (required) must match the same element
         in the plugin.xml file.
         -->
-        <idea-version since-build="221" until-build="223.*"/>
+        <idea-version since-build="222" until-build="223.*"/>
     </plugin>
 
     <!-- And so on for other plugins... -->

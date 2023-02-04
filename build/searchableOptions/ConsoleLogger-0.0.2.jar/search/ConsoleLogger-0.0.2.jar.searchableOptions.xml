@@ -1,0 +1,33 @@
+<options>
+  <configurable id="preferences.keymap" configurable_name="Keymap">
+    <option name="a" path="ActionManager" hit="Generate a console.log() for that variable" />
+    <option name="console" path="ActionManager" hit="Generate a console.log() for that variable" />
+    <option name="for" path="ActionManager" hit="Generate a console.log() for that variable" />
+    <option name="generate" path="ActionManager" hit="Generate a console.log() for that variable" />
+    <option name="log" path="ActionManager" hit="Generate a console.log() for that variable" />
+    <option name="that" path="ActionManager" hit="Generate a console.log() for that variable" />
+    <option name="variable" path="ActionManager" hit="Generate a console.log() for that variable" />
+    <option name="generate" path="ActionManager" hit="Generate javascript logs" />
+    <option name="javascript" path="ActionManager" hit="Generate javascript logs" />
+    <option name="logs" path="ActionManager" hit="Generate javascript logs" />
+    <option name="insertlog" path="ActionManager" hit="INSERTLOG" />
+    <option name="it" path="ActionManager" hit="Log It" />
+    <option name="log" path="ActionManager" hit="Log It" />
+    <option name="consolelogger" path="ActionManager" hit="Remove ConsoleLogger's Logs" />
+    <option name="logs" path="ActionManager" hit="Remove ConsoleLogger's Logs" />
+    <option name="remove" path="ActionManager" hit="Remove ConsoleLogger's Logs" />
+    <option name="s" path="ActionManager" hit="Remove ConsoleLogger's Logs" />
+    <option name="by" path="ActionManager" hit="Remove console.log() generate by ConsoleLogger plugin" />
+    <option name="console" path="ActionManager" hit="Remove console.log() generate by ConsoleLogger plugin" />
+    <option name="consolelogger" path="ActionManager" hit="Remove console.log() generate by ConsoleLogger plugin" />
+    <option name="generate" path="ActionManager" hit="Remove console.log() generate by ConsoleLogger plugin" />
+    <option name="log" path="ActionManager" hit="Remove console.log() generate by ConsoleLogger plugin" />
+    <option name="plugin" path="ActionManager" hit="Remove console.log() generate by ConsoleLogger plugin" />
+    <option name="remove" path="ActionManager" hit="Remove console.log() generate by ConsoleLogger plugin" />
+  </configurable>
+  <configurable id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable" configurable_name="ConsoleLogger">
+    <option name="consolelogger" hit="ConsoleLogger" />
+    <option name="default" hit="Default" />
+    <option name="pattern" hit="Pattern:" />
+  </configurable>
+</options>

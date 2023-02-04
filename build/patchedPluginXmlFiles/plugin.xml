@@ -1,0 +1,40 @@
+<idea-plugin>
+  <version>0.0.2</version>
+  <change-notes>&lt;h2&gt;[0.0.2]&#xD;&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;BREAKING CHANGE: API class names are CamelCase. This replaces the  &amp;quot;lower  case version&amp;quot; naming.&#xD;
+&#xD;
+[0.0.2]: &lt;a href="https://github.com/bg-omar/consolelogger/commits/v0.0.2"&gt;https://github.com/bg-omar/consolelogger/commits/v0.0.2&lt;/a&gt;&#xD;&lt;/li&gt;&lt;/ul&gt;</change-notes>
+  <description>&lt;p&gt;ConsoleLogger&lt;br /&gt;
+A Intellij plugin to quickly insert Javascript console.log&lt;br /&gt;
+Features:&lt;br /&gt;
+        Insert log  - smart Javascript console.log() insertion&lt;br /&gt;
+        shortcut for insertion (⌥ + L) on Mac and (ALT + L) on others&lt;br /&gt;
+        shortcut for deletion (⌥ + ⇧ + L) on Mac and (ALT + ⇧ + L) on others&lt;/p&gt;</description>
+  <id>com.github.bgomar.consolelogger</id>
+  <name>ConsoleLogger</name>
+  <vendor email="oscars.webspam@gmail.com" url="https://github.com/bg-omar/consolelogger">bgOmar</vendor>
+  <idea-version since-build="223" until-build="223.*" />
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <depends>JavaScript</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable parentId="tools" instance="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable" id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable" displayName="ConsoleLogger" />
+    <applicationService serviceImplementation="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings" />
+    <postStartupActivity implementation="com.github.bgomar.consolelogger.UpdateNotify" />
+    <notificationGroup id="com.github.bgomar.consolelogger" displayType="STICKY_BALLOON" />
+    <applicationService serviceImplementation="com.github.bgomar.consolelogger.ApplicationServicePlaceholder" id="com.github.bgomar.consolelogger" />
+  </extensions>
+  <actions>
+    <group id="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup" class="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup" text="Log It" description="Generate javascript logs" popup="true">
+      <add-to-group group-id="CodeMenu" anchor="last" />
+      <action id="com.github.bgomar.consolelogger.addLog" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd" text="Insert ConsoleLogger's Console.Log" description="Generate a console.log() for that variable">
+        <keyboard-shortcut keymap="$default" first-keystroke="alt L" />
+        <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta L" />
+      </action>
+      <action id="com.github.bgomar.consolelogger.removeLogs" class="com.github.bgomar.consolelogger.ConsoleLoggerRemove" text="Remove ConsoleLogger's Console.Log" description="Remove console.log() generate by ConsoleLogger plugin">
+        <keyboard-shortcut keymap="$default" first-keystroke="alt shift L" />
+        <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta shift L" />
+      </action>
+    </group>
+  </actions>
+</idea-plugin>

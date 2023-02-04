@@ -1,0 +1,32 @@
+<options>
+  <configurable id="preferences.keymap" configurable_name="Keymap">
+    <option name="" path="ActionManager" hit="" />
+    <option name="apply" path="ActionManager" hit="Apply Prettier Code Style Rules" />
+    <option name="code" path="ActionManager" hit="Apply Prettier Code Style Rules" />
+    <option name="prettier" path="ActionManager" hit="Apply Prettier Code Style Rules" />
+    <option name="rules" path="ActionManager" hit="Apply Prettier Code Style Rules" />
+    <option name="style" path="ActionManager" hit="Apply Prettier Code Style Rules" />
+    <option name="prettier" path="ActionManager" hit="Reformat with Prettier" />
+    <option name="reformat" path="ActionManager" hit="Reformat with Prettier" />
+    <option name="with" path="ActionManager" hit="Reformat with Prettier" />
+  </configurable>
+  <configurable id="settings.javascript.prettier" configurable_name="Prettier">
+    <option name="actions" hit="All actions on save " />
+    <option name="all" hit="All actions on save " />
+    <option name="on" hit="All actions on save " />
+    <option name="save" hit="All actions on save " />
+    <option name="action" hit="On 'Reformat Code' action" />
+    <option name="code" hit="On 'Reformat Code' action" />
+    <option name="on" hit="On 'Reformat Code' action" />
+    <option name="reformat" hit="On 'Reformat Code' action" />
+    <option name="on" hit="On save" />
+    <option name="save" hit="On save" />
+    <option name="prettier" hit="Prettier" />
+    <option name="" hit="Prettier package:" />
+    <option name="package" hit="Prettier package:" />
+    <option name="prettier" hit="Prettier package:" />
+    <option name="files" hit="Run for files:" />
+    <option name="for" hit="Run for files:" />
+    <option name="run" hit="Run for files:" />
+  </configurable>
+</options>

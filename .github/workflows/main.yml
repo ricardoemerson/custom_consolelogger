@@ -55,10 +55,7 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "pluginVerifierHomeDir=~/.pluginVerifier" >> $GITHUB_OUTPUT
-      
-          echo "EOF" >> $GITHUB_OUTPUT
-
-         
+    
       # Prepare plugin archive content for creating artifact
       - name: Prepare Plugin Artifact
         id: artifact

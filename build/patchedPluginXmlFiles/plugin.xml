@@ -1,9 +1,9 @@
 <idea-plugin>
   <version>0.0.2</version>
   <change-notes>&lt;h2&gt;[0.0.2]&#xD;&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;BREAKING CHANGE: API class names are CamelCase. This replaces the  &amp;quot;lower  case version&amp;quot; naming.&#xD;
+&lt;ul&gt;&lt;li&gt;SOMETHING NEW&#xD;
 &#xD;
-[0.0.2]: &lt;a href="https://github.com/bg-omar/consolelogger/commits/v0.0.2"&gt;https://github.com/bg-omar/consolelogger/commits/v0.0.2&lt;/a&gt;&#xD;&lt;/li&gt;&lt;/ul&gt;</change-notes>
+[0.0.2]: &lt;a href="https://github.com/bg-omar/consolelogger/compare/v0.0.1...v0.0.2"&gt;https://github.com/bg-omar/consolelogger/compare/v0.0.1...v0.0.2&lt;/a&gt;&#xD;&lt;/li&gt;&lt;/ul&gt;</change-notes>
   <description>&lt;p&gt;ConsoleLogger&lt;br /&gt;
 A Intellij plugin to quickly insert Javascript console.log&lt;br /&gt;
 Features:&lt;br /&gt;
@@ -13,7 +13,7 @@ Features:&lt;br /&gt;
   <id>com.github.bgomar.consolelogger</id>
   <name>ConsoleLogger</name>
   <vendor email="oscars.webspam@gmail.com" url="https://github.com/bg-omar/consolelogger">bgOmar</vendor>
-  <idea-version since-build="223" until-build="223.*" />
+  <idea-version since-build="221" until-build="223.*" />
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.lang</depends>
   <depends>JavaScript</depends>

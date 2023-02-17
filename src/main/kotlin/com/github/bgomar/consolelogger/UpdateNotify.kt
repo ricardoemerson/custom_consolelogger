@@ -26,7 +26,7 @@ class UpdateNotify : StartupActivity {
     <br/>
     In this version you'll find the ability<br><br>
     👉 to insert the <b>filename</b> and <b>line number</b> into the log<br>
-    See <a href='jetbrains://WebStorm/settings?name=Tools--ConsoleLogger'>ConsoleLogger Settings</a><br><br>
+    See ConsoleLogger Settings<br><br>
     👉 to remove ConsoleLogger's logs from the <b>current file</b> or the <b>project</b><br>
     See ConsoleLogger Remove command in <b>Code | Log It</b>
     """

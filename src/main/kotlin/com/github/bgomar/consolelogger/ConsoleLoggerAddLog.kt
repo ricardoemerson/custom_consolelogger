@@ -14,7 +14,7 @@ import com.intellij.psi.PsiFileFactory
 import com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings
 
 
-class ConsoleLoggerAdd : AnAction("INSERT_LOG") {
+class ConsoleLoggerAddLog : AnAction("INSERT_LOG") {
   override fun actionPerformed(e: AnActionEvent) {
     // Editor is known to exist from update, so it's not null
     val editor = e.getRequiredData(CommonDataKeys.EDITOR)
@@ -26,7 +26,7 @@ class ConsoleLoggerAdd : AnAction("INSERT_LOG") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.instance.pattern.run {
+    val pattern = ConsoleLoggerSettings.instance.defaultPattern.run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
         .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }

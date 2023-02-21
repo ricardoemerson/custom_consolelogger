@@ -7,12 +7,24 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
-internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("=>({FN}:{LN}) $$", $$);"""
+internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("%c ==>({FN}:{LN}) $$", $$, "color: green; font-size: 14px");"""
+internal const val INFO_CONSOLELOGGER_PATTERN = """console.info("=>({FN}:{LN}) $$", $$);"""
+internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug("=>({FN}:{LN}) $$", $$);"""
+internal const val WARN_CONSOLELOGGER_PATTERN = """console.warn("=>({FN}:{LN}) $$", $$);"""
+internal const val ERROR_CONSOLELOGGER_PATTERN = """console.error("=>({FN}:{LN}) $$", $$);"""
+internal const val TABLE_CONSOLELOGGER_PATTERN = """console.table("=>({FN}:{LN}) $$", $$);"""
 
-@State(name = "ConsoleLoggerSettings", storages = [(Storage("log_it.xml"))])
+
+@State(name = "ConsoleLoggerSettings", storages = [(Storage("consolelogger.xml"))])
 class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
 
-  var pattern: String = DEFAULT_CONSOLELOGGER_PATTERN
+  var defaultPattern: String = DEFAULT_CONSOLELOGGER_PATTERN
+  var infoPattern: String = INFO_CONSOLELOGGER_PATTERN
+  var debugPattern: String = DEBUG_CONSOLELOGGER_PATTERN
+  var warnPattern: String = WARN_CONSOLELOGGER_PATTERN
+  var errorPattern: String = ERROR_CONSOLELOGGER_PATTERN
+  var tablePattern: String = TABLE_CONSOLELOGGER_PATTERN
+
   var version = "Unknown"
 
   companion object {

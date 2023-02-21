@@ -3,7 +3,7 @@ package consolelogger
 
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 import org.junit.Test
-import com.github.bgomar.consolelogger.ConsoleLoggerAdd
+import com.github.bgomar.consolelogger.ConsoleLoggerAddLog
 
 class ConsoleLoggerAddTest : BasePlatformTestCase() {
 
@@ -114,7 +114,7 @@ class ConsoleLoggerAddTest : BasePlatformTestCase() {
             myFixture.configureByFile(jsonRef)
         }
 
-        myFixture.testAction(ConsoleLoggerAdd())
+        myFixture.testAction(ConsoleLoggerAddLog())
 
         myFixture.checkResultByFile("$jsonRef.result", true)
     }

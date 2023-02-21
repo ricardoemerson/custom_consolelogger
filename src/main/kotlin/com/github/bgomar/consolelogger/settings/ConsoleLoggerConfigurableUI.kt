@@ -14,7 +14,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
     row("Pattern:") {
       patternField = textField()
         .comment("Use \$\$ for the insertion point<br> {FP} for file path<br> {FN} for filename<br> {LN} for line number")
-        .bindText(setting::pattern)
+        .bindText(setting::defaultPattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn()

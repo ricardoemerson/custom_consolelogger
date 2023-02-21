@@ -313,6 +313,10 @@
     <option name="source" path="ActionManager" hit="Duplicate data source" />
     <option name="data" path="ActionManager" hit="Edit Data" />
     <option name="edit" path="ActionManager" hit="Edit Data" />
+    <option name="edit" path="ActionManager" hit="Edit External Objects File" />
+    <option name="external" path="ActionManager" hit="Edit External Objects File" />
+    <option name="file" path="ActionManager" hit="Edit External Objects File" />
+    <option name="objects" path="ActionManager" hit="Edit External Objects File" />
     <option name="criteria" path="ActionManager" hit="Edit Filter Criteria" />
     <option name="edit" path="ActionManager" hit="Edit Filter Criteria" />
     <option name="filter" path="ActionManager" hit="Edit Filter Criteria" />
@@ -332,6 +336,12 @@
     <option name="edit" path="ActionManager" hit="Edit selected parameter" />
     <option name="parameter" path="ActionManager" hit="Edit selected parameter" />
     <option name="selected" path="ActionManager" hit="Edit selected parameter" />
+    <option name="containing" path="ActionManager" hit="Edit the file containing external objects" />
+    <option name="edit" path="ActionManager" hit="Edit the file containing external objects" />
+    <option name="external" path="ActionManager" hit="Edit the file containing external objects" />
+    <option name="file" path="ActionManager" hit="Edit the file containing external objects" />
+    <option name="objects" path="ActionManager" hit="Edit the file containing external objects" />
+    <option name="the" path="ActionManager" hit="Edit the file containing external objects" />
     <option name="dbmsoutput" path="ActionManager" hit="Enable DBMSOUTPUT" />
     <option name="enable" path="ActionManager" hit="Enable DBMSOUTPUT" />
     <option name="capturing" path="ActionManager" hit="Enable capturing from DBMS_OUTPUT" />
@@ -493,9 +503,6 @@
     <option name="ui" path="ActionManager" hit="Indexes per Column (Old UI)" />
     <option name="introspection" path="ActionManager" hit="Introspection Level" />
     <option name="level" path="ActionManager" hit="Introspection Level" />
-    <option name="jdbc" path="ActionManager" hit="JDBC Log Setting" />
-    <option name="log" path="ActionManager" hit="JDBC Log Setting" />
-    <option name="setting" path="ActionManager" hit="JDBC Log Setting" />
     <option name="console" path="ActionManager" hit="Jump to Query Console…" />
     <option name="jump" path="ActionManager" hit="Jump to Query Console…" />
     <option name="query" path="ActionManager" hit="Jump to Query Console…" />
@@ -722,6 +729,10 @@
     <option name="geo" path="ActionManager" hit="Show Geo Viewer" />
     <option name="show" path="ActionManager" hit="Show Geo Viewer" />
     <option name="viewer" path="ActionManager" hit="Show Geo Viewer" />
+    <option name="jdbc" path="ActionManager" hit="Show JDBC Log Settings…" />
+    <option name="log" path="ActionManager" hit="Show JDBC Log Settings…" />
+    <option name="settings" path="ActionManager" hit="Show JDBC Log Settings…" />
+    <option name="show" path="ActionManager" hit="Show JDBC Log Settings…" />
     <option name="js" path="ActionManager" hit="Show JS Script" />
     <option name="script" path="ActionManager" hit="Show JS Script" />
     <option name="show" path="ActionManager" hit="Show JS Script" />

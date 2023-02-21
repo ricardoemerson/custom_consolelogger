@@ -5,10 +5,34 @@
     <option name="filter" hit="Filter Annotated Class" />
     <option name="class" hit="Filter Class" />
     <option name="filter" hit="Filter Class" />
+    <option name="annotation" hit="Jpa JoinColumn Annotation" />
+    <option name="joincolumn" hit="Jpa JoinColumn Annotation" />
+    <option name="jpa" hit="Jpa JoinColumn Annotation" />
     <option name="file" hit="Jsp File" />
     <option name="jsp" hit="Jsp File" />
     <option name="file" hit="Jspx File" />
     <option name="jspx" hit="Jspx File" />
+    <option name="entity" hit="Kotlin Entity" />
+    <option name="kotlin" hit="Kotlin Entity" />
+    <option name="equals" hit="Kotlin Equals Method" />
+    <option name="kotlin" hit="Kotlin Equals Method" />
+    <option name="method" hit="Kotlin Equals Method" />
+    <option name="hashcode" hit="Kotlin HashCode Method" />
+    <option name="kotlin" hit="Kotlin HashCode Method" />
+    <option name="method" hit="Kotlin HashCode Method" />
+    <option name="kotlin" hit="Kotlin Property" />
+    <option name="property" hit="Kotlin Property" />
+    <option name="dependent" hit="Kotlin Relation Dependent Property" />
+    <option name="kotlin" hit="Kotlin Relation Dependent Property" />
+    <option name="property" hit="Kotlin Relation Dependent Property" />
+    <option name="relation" hit="Kotlin Relation Dependent Property" />
+    <option name="kotlin" hit="Kotlin Relation Owner Property" />
+    <option name="owner" hit="Kotlin Relation Owner Property" />
+    <option name="property" hit="Kotlin Relation Owner Property" />
+    <option name="relation" hit="Kotlin Relation Owner Property" />
+    <option name="kotlin" hit="Kotlin ToString Method" />
+    <option name="method" hit="Kotlin ToString Method" />
+    <option name="tostring" hit="Kotlin ToString Method" />
     <option name="annotated" hit="Listener Annotated Class" />
     <option name="class" hit="Listener Annotated Class" />
     <option name="listener" hit="Listener Annotated Class" />

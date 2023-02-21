@@ -1200,8 +1200,8 @@
     <option name="line" hit="Additional command line parameters:" />
     <option name="parameters" hit="Additional command line parameters:" />
     <option name="always" hit="Always" />
-    <option name="bundled" hit="Bundled (1.7.20-release-201)" />
-    <option name="release" hit="Bundled (1.7.20-release-201)" />
+    <option name="bundled" hit="Bundled (1.8.0-release-345)" />
+    <option name="release" hit="Bundled (1.8.0-release-345)" />
     <option name="commonjs" hit="CommonJS" />
     <option name="copy" hit="Copy library runtime files" />
     <option name="files" hit="Copy library runtime files" />

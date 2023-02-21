@@ -14,6 +14,8 @@
     <option name="generate" path="ActionManager" hit="Generate Persistence Mapping" />
     <option name="mapping" path="ActionManager" hit="Generate Persistence Mapping" />
     <option name="persistence" path="ActionManager" hit="Generate Persistence Mapping" />
+    <option name="jpa" path="ActionManager" hit="JPA Scripts" />
+    <option name="scripts" path="ActionManager" hit="JPA Scripts" />
     <option name="group" path="ActionManager" hit="New Group Persistence" />
     <option name="new" path="ActionManager" hit="New Group Persistence" />
     <option name="persistence" path="ActionManager" hit="New Group Persistence" />

@@ -719,10 +719,11 @@
     <option name="arc" path="ActionManager" hit="Arc" />
     <option name="arrangement" path="ActionManager" hit="Arrangement Rules" />
     <option name="rules" path="ActionManager" hit="Arrangement Rules" />
-    <option name="ask" path="ActionManager" hit="Ask Before Deleting Lists" />
-    <option name="before" path="ActionManager" hit="Ask Before Deleting Lists" />
-    <option name="deleting" path="ActionManager" hit="Ask Before Deleting Lists" />
-    <option name="lists" path="ActionManager" hit="Ask Before Deleting Lists" />
+    <option name="ask" path="ActionManager" hit="Ask Before Deleting Multiple Bookmarks" />
+    <option name="before" path="ActionManager" hit="Ask Before Deleting Multiple Bookmarks" />
+    <option name="bookmarks" path="ActionManager" hit="Ask Before Deleting Multiple Bookmarks" />
+    <option name="deleting" path="ActionManager" hit="Ask Before Deleting Multiple Bookmarks" />
+    <option name="multiple" path="ActionManager" hit="Ask Before Deleting Multiple Bookmarks" />
     <option name="ask" path="ActionManager" hit="Ask Before Rewriting Mnemonic" />
     <option name="before" path="ActionManager" hit="Ask Before Rewriting Mnemonic" />
     <option name="mnemonic" path="ActionManager" hit="Ask Before Rewriting Mnemonic" />
@@ -5484,6 +5485,10 @@
     <option name="edit" path="ActionManager" hit="Open 'Edit Run/Debug configurations' dialog" />
     <option name="open" path="ActionManager" hit="Open 'Edit Run/Debug configurations' dialog" />
     <option name="run" path="ActionManager" hit="Open 'Edit Run/Debug configurations' dialog" />
+    <option name="all" path="ActionManager" hit="Open All Bookmarked Files" />
+    <option name="bookmarked" path="ActionManager" hit="Open All Bookmarked Files" />
+    <option name="files" path="ActionManager" hit="Open All Bookmarked Files" />
+    <option name="open" path="ActionManager" hit="Open All Bookmarked Files" />
     <option name="blank" path="ActionManager" hit="Open Blank Diff Window" />
     <option name="diff" path="ActionManager" hit="Open Blank Diff Window" />
     <option name="open" path="ActionManager" hit="Open Blank Diff Window" />
@@ -10513,10 +10518,10 @@
     <option name="for" hit="Check for plugin updates" />
     <option name="plugin" hit="Check for plugin updates" />
     <option name="updates" hit="Check for plugin updates" />
-    <option name="current" hit="Current version: IntelliJ IDEA 2022.3" />
-    <option name="idea" hit="Current version: IntelliJ IDEA 2022.3" />
-    <option name="intellij" hit="Current version: IntelliJ IDEA 2022.3" />
-    <option name="version" hit="Current version: IntelliJ IDEA 2022.3" />
+    <option name="current" hit="Current version: IntelliJ IDEA 2022.3.2" />
+    <option name="idea" hit="Current version: IntelliJ IDEA 2022.3.2" />
+    <option name="intellij" hit="Current version: IntelliJ IDEA 2022.3.2" />
+    <option name="version" hit="Current version: IntelliJ IDEA 2022.3.2" />
     <option name="access" hit="Early Access Program" />
     <option name="early" hit="Early Access Program" />
     <option name="program" hit="Early Access Program" />
@@ -10688,6 +10693,10 @@
     <option name="docker" hit="Connect to Docker automatically at restart" />
     <option name="restart" hit="Connect to Docker automatically at restart" />
     <option name="to" hit="Connect to Docker automatically at restart" />
+    <option name="contributors" hit="Contributors waiting timeout (ms):" />
+    <option name="ms" hit="Contributors waiting timeout (ms):" />
+    <option name="timeout" hit="Contributors waiting timeout (ms):" />
+    <option name="waiting" hit="Contributors waiting timeout (ms):" />
     <option name="an" hit="Custom path to an OpenSSH tool:" />
     <option name="custom" hit="Custom path to an OpenSSH tool:" />
     <option name="openssh" hit="Custom path to an OpenSSH tool:" />
@@ -10750,6 +10759,13 @@
     <option name="enable" hit="Enable Commit tool window" />
     <option name="tool" hit="Enable Commit tool window" />
     <option name="window" hit="Enable Commit tool window" />
+    <option name="clustering" hit="Enable similar usages clustering in Find Usages view" />
+    <option name="enable" hit="Enable similar usages clustering in Find Usages view" />
+    <option name="find" hit="Enable similar usages clustering in Find Usages view" />
+    <option name="in" hit="Enable similar usages clustering in Find Usages view" />
+    <option name="similar" hit="Enable similar usages clustering in Find Usages view" />
+    <option name="usages" hit="Enable similar usages clustering in Find Usages view" />
+    <option name="view" hit="Enable similar usages clustering in Find Usages view" />
     <option name="equalize" hit="Equalize proportions in nested splits" />
     <option name="in" hit="Equalize proportions in nested splits" />
     <option name="nested" hit="Equalize proportions in nested splits" />
@@ -11110,6 +11126,15 @@
     <option name="control" hit="Version Control. Git" />
     <option name="git" hit="Version Control. Git" />
     <option name="version" hit="Version Control. Git" />
+    <option name="all" hit="Wait for all contributors to finish before showing results" />
+    <option name="before" hit="Wait for all contributors to finish before showing results" />
+    <option name="contributors" hit="Wait for all contributors to finish before showing results" />
+    <option name="finish" hit="Wait for all contributors to finish before showing results" />
+    <option name="for" hit="Wait for all contributors to finish before showing results" />
+    <option name="results" hit="Wait for all contributors to finish before showing results" />
+    <option name="showing" hit="Wait for all contributors to finish before showing results" />
+    <option name="to" hit="Wait for all contributors to finish before showing results" />
+    <option name="wait" hit="Wait for all contributors to finish before showing results" />
     <option name="a" hit="When collapsing a node, also collapse all expanded nodes under it" />
     <option name="all" hit="When collapsing a node, also collapse all expanded nodes under it" />
     <option name="also" hit="When collapsing a node, also collapse all expanded nodes under it" />
@@ -12547,6 +12572,11 @@
     <option name="hints" hit="Popups and Hints//Tooltip" />
     <option name="popups" hit="Popups and Hints//Tooltip" />
     <option name="tooltip" hit="Popups and Hints//Tooltip" />
+    <option name="and" hit="Popups and Hints//Warning hint" />
+    <option name="hint" hit="Popups and Hints//Warning hint" />
+    <option name="hints" hit="Popups and Hints//Warning hint" />
+    <option name="popups" hit="Popups and Hints//Warning hint" />
+    <option name="warning" hit="Popups and Hints//Warning hint" />
     <option name="background" hit="Preview//Background" />
     <option name="preview" hit="Preview//Background" />
     <option name="border" hit="Preview//Border" />
@@ -13616,331 +13646,7 @@
     <option name="xml" hit="XML Catalog" />
   </configurable>
   <configurable id="preferences.pluginManager" configurable_name="Plugins">
-    <option name="aop" hit="AOP Pointcut Language" />
-    <option name="language" hit="AOP Pointcut Language" />
-    <option name="pointcut" hit="AOP Pointcut Language" />
-    <option name="android" hit="Android" />
-    <option name="android" hit="Android Design Tools" />
-    <option name="design" hit="Android Design Tools" />
-    <option name="tools" hit="Android Design Tools" />
-    <option name="and" hit="Angular and AngularJS" />
-    <option name="angular" hit="Angular and AngularJS" />
-    <option name="angularjs" hit="Angular and AngularJS" />
-    <option name="ant" hit="Ant" />
-    <option name="build" hit="Build Tools" />
-    <option name="tools" hit="Build Tools" />
-    <option name="bytecode" hit="Bytecode Viewer" />
-    <option name="viewer" hit="Bytecode Viewer" />
-    <option name="css" hit="CSS" />
-    <option name="code" hit="Code Coverage" />
-    <option name="coverage" hit="Code Coverage" />
-    <option name="code" hit="Code Coverage for Java" />
-    <option name="coverage" hit="Code Coverage for Java" />
-    <option name="for" hit="Code Coverage for Java" />
-    <option name="java" hit="Code Coverage for Java" />
-    <option name="code" hit="Code With Me" />
-    <option name="me" hit="Code With Me" />
-    <option name="with" hit="Code With Me" />
-    <option name="consolelogger" hit="ConsoleLogger" />
-    <option name="copyright" hit="Copyright" />
-    <option name="cucumber" hit="Cucumber for Groovy" />
-    <option name="for" hit="Cucumber for Groovy" />
-    <option name="groovy" hit="Cucumber for Groovy" />
-    <option name="cucumber" hit="Cucumber for Java" />
-    <option name="for" hit="Cucumber for Java" />
-    <option name="java" hit="Cucumber for Java" />
-    <option name="database" hit="Database" />
-    <option name="and" hit="Database Tools and SQL" />
-    <option name="database" hit="Database Tools and SQL" />
-    <option name="sql" hit="Database Tools and SQL" />
-    <option name="tools" hit="Database Tools and SQL" />
-    <option name="dependency" hit="Dependency Structure Matrix" />
-    <option name="matrix" hit="Dependency Structure Matrix" />
-    <option name="structure" hit="Dependency Structure Matrix" />
-    <option name="deployment" hit="Deployment" />
-    <option name="diagrams" hit="Diagrams" />
-    <option name="all" hit="Disable all" />
-    <option name="disable" hit="Disable all" />
-    <option name="docker" hit="Docker" />
-    <option name="downloaded" hit="Downloaded (1 of 1 enabled)" />
-    <option name="enabled" hit="Downloaded (1 of 1 enabled)" />
-    <option name="of" hit="Downloaded (1 of 1 enabled)" />
-    <option name="eclipse" hit="Eclipse Interoperability" />
-    <option name="interoperability" hit="Eclipse Interoperability" />
-    <option name="eclipse" hit="Eclipse Keymap" />
-    <option name="keymap" hit="Eclipse Keymap" />
-    <option name="editorconfig" hit="EditorConfig" />
-    <option name="endpoints" hit="Endpoints" />
-    <option name="connectivity" hit="FTP/SFTP/WebDAV Connectivity" />
-    <option name="ftp" hit="FTP/SFTP/WebDAV Connectivity" />
-    <option name="sftp" hit="FTP/SFTP/WebDAV Connectivity" />
-    <option name="webdav" hit="FTP/SFTP/WebDAV Connectivity" />
-    <option name="freemarker" hit="FreeMarker" />
-    <option name="gherkin" hit="Gherkin" />
-    <option name="git" hit="Git" />
-    <option name="github" hit="GitHub" />
-    <option name="glassfish" hit="GlassFish" />
-    <option name="gradle" hit="Gradle" />
-    <option name="extension" hit="Gradle Extension" />
-    <option name="gradle" hit="Gradle Extension" />
-    <option name="grazie" hit="Grazie" />
-    <option name="groovy" hit="Groovy" />
-    <option name="html" hit="HTML Tools" />
-    <option name="tools" hit="HTML Tools" />
-    <option name="and" hit="HTML and XML" />
-    <option name="html" hit="HTML and XML" />
-    <option name="xml" hit="HTML and XML" />
-    <option name="client" hit="HTTP Client" />
-    <option name="http" hit="HTTP Client" />
-    <option name="hibernate" hit="Hibernate" />
-    <option name="features" hit="IDE Features Trainer" />
-    <option name="ide" hit="IDE Features Trainer" />
-    <option name="trainer" hit="IDE Features Trainer" />
-    <option name="ide" hit="IDE Settings" />
-    <option name="settings" hit="IDE Settings" />
-    <option name="intellilang" hit="IntelliLang" />
-    <option name="junit" hit="JUnit" />
-    <option name="frameworks" hit="JVM Frameworks" />
-    <option name="jvm" hit="JVM Frameworks" />
-    <option name="frameworks" hit="JVM Microservices Frameworks" />
-    <option name="jvm" hit="JVM Microservices Frameworks" />
-    <option name="microservices" hit="JVM Microservices Frameworks" />
-    <option name="ee" hit="Jakarta EE Platform" />
-    <option name="jakarta" hit="Jakarta EE Platform" />
-    <option name="platform" hit="Jakarta EE Platform" />
-    <option name="application" hit="Jakarta EE: Application Servers" />
-    <option name="ee" hit="Jakarta EE: Application Servers" />
-    <option name="jakarta" hit="Jakarta EE: Application Servers" />
-    <option name="servers" hit="Jakarta EE: Application Servers" />
-    <option name="bean" hit="Jakarta EE: Bean Validation" />
-    <option name="ee" hit="Jakarta EE: Bean Validation" />
-    <option name="jakarta" hit="Jakarta EE: Bean Validation" />
-    <option name="validation" hit="Jakarta EE: Bean Validation" />
-    <option name="and" hit="Jakarta EE: Contexts and Dependency Injection (CDI)" />
-    <option name="cdi" hit="Jakarta EE: Contexts and Dependency Injection (CDI)" />
-    <option name="contexts" hit="Jakarta EE: Contexts and Dependency Injection (CDI)" />
-    <option name="dependency" hit="Jakarta EE: Contexts and Dependency Injection (CDI)" />
-    <option name="ee" hit="Jakarta EE: Contexts and Dependency Injection (CDI)" />
-    <option name="injection" hit="Jakarta EE: Contexts and Dependency Injection (CDI)" />
-    <option name="jakarta" hit="Jakarta EE: Contexts and Dependency Injection (CDI)" />
-    <option name="ee" hit="Jakarta EE: Expression Language (EL)" />
-    <option name="el" hit="Jakarta EE: Expression Language (EL)" />
-    <option name="expression" hit="Jakarta EE: Expression Language (EL)" />
-    <option name="jakarta" hit="Jakarta EE: Expression Language (EL)" />
-    <option name="language" hit="Jakarta EE: Expression Language (EL)" />
-    <option name="ee" hit="Jakarta EE: Messaging (JMS)" />
-    <option name="jakarta" hit="Jakarta EE: Messaging (JMS)" />
-    <option name="jms" hit="Jakarta EE: Messaging (JMS)" />
-    <option name="messaging" hit="Jakarta EE: Messaging (JMS)" />
-    <option name="ee" hit="Jakarta EE: Persistence (JPA)" />
-    <option name="jakarta" hit="Jakarta EE: Persistence (JPA)" />
-    <option name="jpa" hit="Jakarta EE: Persistence (JPA)" />
-    <option name="persistence" hit="Jakarta EE: Persistence (JPA)" />
-    <option name="ee" hit="Jakarta EE: RESTful Web Services (JAX-RS)" />
-    <option name="jakarta" hit="Jakarta EE: RESTful Web Services (JAX-RS)" />
-    <option name="jax" hit="Jakarta EE: RESTful Web Services (JAX-RS)" />
-    <option name="restful" hit="Jakarta EE: RESTful Web Services (JAX-RS)" />
-    <option name="rs" hit="Jakarta EE: RESTful Web Services (JAX-RS)" />
-    <option name="services" hit="Jakarta EE: RESTful Web Services (JAX-RS)" />
-    <option name="web" hit="Jakarta EE: RESTful Web Services (JAX-RS)" />
-    <option name="ee" hit="Jakarta EE: Server Pages (JSP)" />
-    <option name="jakarta" hit="Jakarta EE: Server Pages (JSP)" />
-    <option name="jsp" hit="Jakarta EE: Server Pages (JSP)" />
-    <option name="pages" hit="Jakarta EE: Server Pages (JSP)" />
-    <option name="server" hit="Jakarta EE: Server Pages (JSP)" />
-    <option name="ee" hit="Jakarta EE: Web/Servlets" />
-    <option name="jakarta" hit="Jakarta EE: Web/Servlets" />
-    <option name="servlets" hit="Jakarta EE: Web/Servlets" />
-    <option name="web" hit="Jakarta EE: Web/Servlets" />
-    <option name="bytecode" hit="Java Bytecode Decompiler" />
-    <option name="decompiler" hit="Java Bytecode Decompiler" />
-    <option name="java" hit="Java Bytecode Decompiler" />
-    <option name="internationalization" hit="Java Internationalization" />
-    <option name="java" hit="Java Internationalization" />
-    <option name="debugger" hit="Java Stream Debugger" />
-    <option name="java" hit="Java Stream Debugger" />
-    <option name="stream" hit="Java Stream Debugger" />
-    <option name="javafx" hit="JavaFX" />
-    <option name="debugger" hit="JavaScript Debugger" />
-    <option name="javascript" hit="JavaScript Debugger" />
-    <option name="and" hit="JavaScript Frameworks and Tools" />
-    <option name="frameworks" hit="JavaScript Frameworks and Tools" />
-    <option name="javascript" hit="JavaScript Frameworks and Tools" />
-    <option name="tools" hit="JavaScript Frameworks and Tools" />
-    <option name="intention" hit="JavaScript Intention Power Pack" />
-    <option name="javascript" hit="JavaScript Intention Power Pack" />
-    <option name="pack" hit="JavaScript Intention Power Pack" />
-    <option name="power" hit="JavaScript Intention Power Pack" />
-    <option name="and" hit="JavaScript and TypeScript" />
-    <option name="javascript" hit="JavaScript and TypeScript" />
-    <option name="typescript" hit="JavaScript and TypeScript" />
-    <option name="karma" hit="Karma" />
-    <option name="keymap" hit="Keymap" />
-    <option name="kotlin" hit="Kotlin" />
-    <option name="frameworks" hit="Kotlin Frameworks" />
-    <option name="kotlin" hit="Kotlin Frameworks" />
-    <option name="ktor" hit="Ktor" />
-    <option name="languages" hit="Languages" />
-    <option name="less" hit="Less" />
-    <option name="lombok" hit="Lombok" />
-    <option name="code" hit="Machine Learning Code Completion" />
-    <option name="completion" hit="Machine Learning Code Completion" />
-    <option name="learning" hit="Machine Learning Code Completion" />
-    <option name="machine" hit="Machine Learning Code Completion" />
-    <option name="everywhere" hit="Machine Learning in Search Everywhere" />
-    <option name="in" hit="Machine Learning in Search Everywhere" />
-    <option name="learning" hit="Machine Learning in Search Everywhere" />
-    <option name="machine" hit="Machine Learning in Search Everywhere" />
-    <option name="search" hit="Machine Learning in Search Everywhere" />
-    <option name="markdown" hit="Markdown" />
-    <option name="maven" hit="Maven" />
-    <option name="extension" hit="Maven Extension" />
-    <option name="maven" hit="Maven Extension" />
-    <option name="mercurial" hit="Mercurial" />
-    <option name="micronaut" hit="Micronaut" />
-    <option name="microservices" hit="Microservices" />
-    <option name="keymap" hit="NetBeans Keymap" />
-    <option name="netbeans" hit="NetBeans Keymap" />
-    <option name="js" hit="Next.js Support" />
-    <option name="next" hit="Next.js Support" />
-    <option name="support" hit="Next.js Support" />
-    <option name="js" hit="Node.js" />
-    <option name="node" hit="Node.js" />
-    <option name="interpreter" hit="Node.js Remote Interpreter" />
-    <option name="js" hit="Node.js Remote Interpreter" />
-    <option name="node" hit="Node.js Remote Interpreter" />
-    <option name="remote" hit="Node.js Remote Interpreter" />
-    <option name="openapi" hit="OpenAPI Specifications" />
-    <option name="specifications" hit="OpenAPI Specifications" />
-    <option name="other" hit="Other Tools" />
-    <option name="tools" hit="Other Tools" />
-    <option name="checker" hit="Package Checker" />
-    <option name="package" hit="Package Checker" />
-    <option name="package" hit="Package Search" />
-    <option name="search" hit="Package Search" />
-    <option name="core" hit="Perforce Helix Core" />
-    <option name="helix" hit="Perforce Helix Core" />
-    <option name="perforce" hit="Perforce Helix Core" />
-    <option name="performance" hit="Performance Testing" />
-    <option name="testing" hit="Performance Testing" />
-    <option name="frameworks" hit="Persistence Frameworks" />
-    <option name="persistence" hit="Persistence Frameworks" />
-    <option name="devkit" hit="Plugin DevKit" />
-    <option name="plugin" hit="Plugin DevKit" />
-    <option name="development" hit="Plugin Development" />
-    <option name="plugin" hit="Plugin Development" />
     <option name="plugins" hit="Plugins" />
-    <option name="components" hit="Polymer &amp; Web Components" />
-    <option name="polymer" hit="Polymer &amp; Web Components" />
-    <option name="web" hit="Polymer &amp; Web Components" />
-    <option name="prettier" hit="Prettier" />
-    <option name="properties" hit="Properties" />
-    <option name="buffers" hit="Protocol Buffers" />
-    <option name="protocol" hit="Protocol Buffers" />
-    <option name="qodana" hit="Qodana" />
-    <option name="quarkus" hit="Quarkus" />
-    <option name="reactive" hit="Reactive Streams" />
-    <option name="streams" hit="Reactive Streams" />
-    <option name="and" hit="Recommenders for Java and Python" />
-    <option name="for" hit="Recommenders for Java and Python" />
-    <option name="java" hit="Recommenders for Java and Python" />
-    <option name="python" hit="Recommenders for Java and Python" />
-    <option name="recommenders" hit="Recommenders for Java and Python" />
-    <option name="refactor" hit="Refactor-X" />
-    <option name="x" hit="Refactor-X" />
-    <option name="development" hit="Remote Development" />
-    <option name="remote" hit="Remote Development" />
-    <option name="development" hit="Remote Development Gateway" />
-    <option name="gateway" hit="Remote Development Gateway" />
-    <option name="remote" hit="Remote Development Gateway" />
-    <option name="sass" hit="Sass" />
-    <option name="settings" hit="Settings Sync" />
-    <option name="sync" hit="Settings Sync" />
-    <option name="indexes" hit="Shared Project Indexes" />
-    <option name="project" hit="Shared Project Indexes" />
-    <option name="shared" hit="Shared Project Indexes" />
-    <option name="script" hit="Shell Script" />
-    <option name="shell" hit="Shell Script" />
-    <option name="smali" hit="Smali Support" />
-    <option name="support" hit="Smali Support" />
-    <option name="space" hit="Space" />
-    <option name="spring" hit="Spring" />
-    <option name="boot" hit="Spring Boot" />
-    <option name="spring" hit="Spring Boot" />
-    <option name="cloud" hit="Spring Cloud" />
-    <option name="spring" hit="Spring Cloud" />
-    <option name="data" hit="Spring Data" />
-    <option name="spring" hit="Spring Data" />
-    <option name="initializr" hit="Spring Initializr" />
-    <option name="spring" hit="Spring Initializr" />
-    <option name="integration" hit="Spring Integration Patterns" />
-    <option name="patterns" hit="Spring Integration Patterns" />
-    <option name="spring" hit="Spring Integration Patterns" />
-    <option name="messaging" hit="Spring Messaging" />
-    <option name="spring" hit="Spring Messaging" />
-    <option name="security" hit="Spring Security" />
-    <option name="spring" hit="Spring Security" />
-    <option name="spring" hit="Spring Web" />
-    <option name="web" hit="Spring Web" />
-    <option name="sheets" hit="Style Sheets" />
-    <option name="style" hit="Style Sheets" />
-    <option name="components" hit="Styled Components &amp; Styled JSX" />
-    <option name="jsx" hit="Styled Components &amp; Styled JSX" />
-    <option name="styled" hit="Styled Components &amp; Styled JSX" />
-    <option name="subversion" hit="Subversion" />
-    <option name="swing" hit="Swing" />
-    <option name="tslint" hit="TSLint" />
-    <option name="css" hit="Tailwind CSS" />
-    <option name="tailwind" hit="Tailwind CSS" />
-    <option name="management" hit="Task Management" />
-    <option name="task" hit="Task Management" />
-    <option name="languages" hit="Template Languages" />
-    <option name="template" hit="Template Languages" />
-    <option name="terminal" hit="Terminal" />
-    <option name="test" hit="Test Tools" />
-    <option name="tools" hit="Test Tools" />
-    <option name="testng" hit="TestNG" />
-    <option name="bundles" hit="TextMate Bundles" />
-    <option name="textmate" hit="TextMate Bundles" />
-    <option name="themes" hit="Themes" />
-    <option name="thymeleaf" hit="Thymeleaf" />
-    <option name="time" hit="Time Tracking" />
-    <option name="tracking" hit="Time Tracking" />
-    <option name="and" hit="Tomcat and TomEE" />
-    <option name="tomcat" hit="Tomcat and TomEE" />
-    <option name="tomee" hit="Tomcat and TomEE" />
-    <option name="toml" hit="Toml" />
-    <option name="designer" hit="UI Designer" />
-    <option name="ui" hit="UI Designer" />
-    <option name="all" hit="Update all" />
-    <option name="update" hit="Update all" />
-    <option name="velocity" hit="Velocity" />
-    <option name="controls" hit="Version Controls" />
-    <option name="version" hit="Version Controls" />
-    <option name="keymap" hit="Visual Studio Keymap" />
-    <option name="studio" hit="Visual Studio Keymap" />
-    <option name="visual" hit="Visual Studio Keymap" />
-    <option name="vite" hit="Vite" />
-    <option name="js" hit="Vue.js" />
-    <option name="vue" hit="Vue.js" />
-    <option name="support" hit="WebP Support" />
-    <option name="webp" hit="WebP Support" />
-    <option name="webpack" hit="Webpack" />
-    <option name="wildfly" hit="WildFly" />
-    <option name="light" hit="Windows 10 Light Theme" />
-    <option name="theme" hit="Windows 10 Light Theme" />
-    <option name="windows" hit="Windows 10 Light Theme" />
-    <option name="xpathview" hit="XPathView + XSLT" />
-    <option name="xslt" hit="XPathView + XSLT" />
-    <option name="debugger" hit="XSLT Debugger" />
-    <option name="xslt" hit="XSLT Debugger" />
-    <option name="yaml" hit="YAML" />
-    <option name="bgomar" hit="bgOmar" />
-    <option name="bundled" hit="bundled" />
-    <option name="grpc" hit="gRPC" />
-    <option name="light" hit="macOS Light Theme" />
-    <option name="macos" hit="macOS Light Theme" />
-    <option name="theme" hit="macOS Light Theme" />
     <option name="manage" hit="Manage Plugin Repositories…" />
     <option name="plugin" hit="Manage Plugin Repositories…" />
     <option name="repositories" hit="Manage Plugin Repositories…" />
@@ -14964,6 +14670,8 @@
     <option name="xml" hit="XML" />
   </configurable>
   <configurable id="editor.reader.mode" configurable_name="Reader Mode">
+    <option name="choose" hit="Choose scheme:" />
+    <option name="scheme" hit="Choose scheme:" />
     <option name="and" hit="Code vision hints for usages, inheritors, and related problems" />
     <option name="code" hit="Code vision hints for usages, inheritors, and related problems" />
     <option name="for" hit="Code vision hints for usages, inheritors, and related problems" />
@@ -14984,8 +14692,12 @@
     <option name="widget" hit="Error and warning highlighting, inspection widget" />
     <option name="font" hit="Font ligatures" />
     <option name="ligatures" hit="Font ligatures" />
-    <option name="formatting" hit="Formatting scheme:" />
-    <option name="scheme" hit="Formatting scheme:" />
+    <option name="according" hit="Format code according to preferred style" />
+    <option name="code" hit="Format code according to preferred style" />
+    <option name="format" hit="Format code according to preferred style" />
+    <option name="preferred" hit="Format code according to preferred style" />
+    <option name="style" hit="Format code according to preferred style" />
+    <option name="to" hit="Format code according to preferred style" />
     <option name="height" hit="Increased line height" />
     <option name="increased" hit="Increased line height" />
     <option name="line" hit="Increased line height" />
@@ -14998,10 +14710,6 @@
     <option name="mode" hit="Show in Reader mode:" />
     <option name="reader" hit="Show in Reader mode:" />
     <option name="show" hit="Show in Reader mode:" />
-    <option name="formatting" hit="Show visual formatting layer" />
-    <option name="layer" hit="Show visual formatting layer" />
-    <option name="show" hit="Show visual formatting layer" />
-    <option name="visual" hit="Show visual formatting layer" />
   </configurable>
   <configurable id="File.Encoding" configurable_name="File Encodings">
     <option name="" hit=" To change encoding IntelliJ IDEA uses for a file, a directory, or the entire project, add its path if necessary and then select encoding from the encoding list. Built-in file encoding (e.g. JSP, HTML or XML) overrides encoding you specify here. If not specified, files and directories inherit encoding settings from the parent directory or from the Project Encoding." />

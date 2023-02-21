@@ -7,7 +7,7 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
-internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("%c ({FN}:{LN}) %c $$: ", "color: #dfb56c; font-size: 10px", "color: #09A59A; font-size: 12px", $$);"""
+internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("%c ({FN}:{LN}) %c $$: ", "color: #dfb56c; font-size: 11px", "color: #09A59A; font-size: 13px", $$);"""
 internal const val INFO_CONSOLELOGGER_PATTERN = """console.info("=>({FN}:{LN}) $$", $$);"""
 internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug("=>({FN}:{LN}) $$", $$);"""
 internal const val WARN_CONSOLELOGGER_PATTERN = """console.warn("=>({FN}:{LN}) $$", $$);"""

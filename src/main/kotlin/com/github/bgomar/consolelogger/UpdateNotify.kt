@@ -25,9 +25,10 @@ class UpdateNotify : StartupActivity {
     """
     <br/>
     In this version you'll find the ability<br><br>
-    👉 to use  <b>console.</b> with  <b>log, debug, warn, error, info, table</b> press CTRL + ALT + (1 to 6)  <br>
-    See ConsoleLogger Settings<br><br>
-    👉 to remove ConsoleLogger's logs from the <b>current file</b> or the <b>project</b>  press CTRL + ALT + 0<br>
+    👉 to use  <b>console.</b> with  <b>log, debug, warn, error, info, table</b> <br> 
+    Select variable & press CTRL + ALT + (1 to 6)  <br><br>
+    👉 to remove ConsoleLogger's logs from the <b>current file</b> or the <b>project</b><br>
+    press CTRL + ALT + 0<br>
     See ConsoleLogger in <b>Code | ConsoleLogger</b>
     """
   }

@@ -1,6 +1,4 @@
-# console
-
-![Build](https://github.com/bg-omar/console/workflows/Build/badge.svg)
+# ![Build](./src/main/resources/META-INF/pluginIcon.svg) Console Logger IntelliJ Plugin
 
 <!-- Plugin description -->
 

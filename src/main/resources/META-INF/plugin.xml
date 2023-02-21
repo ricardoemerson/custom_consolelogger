@@ -25,23 +25,24 @@
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 1"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 1"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addInfo" class="com.github.bgomar.consolelogger.ConsoleLoggerAddInfo" text="Insert ConsoleLogger's Console.Info"
-                    description="Generate a console.info() for that variable">
+
+            <action id="com.github.bgomar.consolelogger.addDebug" class="com.github.bgomar.consolelogger.ConsoleLoggerAddDebug" text="Insert ConsoleLogger's Console.Debug"
+                    description="Generate a console.debug() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 2"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 2"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addDebug" class="com.github.bgomar.consolelogger.ConsoleLoggerAddDebug" text="Insert ConsoleLogger's Console.Debug"
-                    description="Generate a console.debug() for that variable">
+            <action id="com.github.bgomar.consolelogger.addWarn" class="com.github.bgomar.consolelogger.ConsoleLoggerAddWarn" text="Insert ConsoleLogger's Console.Warn"
+                    description="Generate a console.warn() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 3"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 3"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addWarn" class="com.github.bgomar.consolelogger.ConsoleLoggerAddWarn" text="Insert ConsoleLogger's Console.Warn"
-                    description="Generate a console.warn() for that variable">
+            <action id="com.github.bgomar.consolelogger.addError" class="com.github.bgomar.consolelogger.ConsoleLoggerAddError" text="Insert ConsoleLogger's Console.Error"
+                    description="Generate a console.error() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 4"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 4"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addError" class="com.github.bgomar.consolelogger.ConsoleLoggerAddError" text="Insert ConsoleLogger's Console.Error"
-                    description="Generate a console.error() for that variable">
+            <action id="com.github.bgomar.consolelogger.addInfo" class="com.github.bgomar.consolelogger.ConsoleLoggerAddInfo" text="Insert ConsoleLogger's Console.Info"
+                    description="Generate a console.info() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 5"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 5"/>
             </action>

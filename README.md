@@ -19,12 +19,12 @@ Features:
 
   (CTRL + ALT + 0) removes all unedited console loggers from file or project
 
-#### [<img src=".github/pics/preview2.png" width="50%"/>]()
-#### [<img src=".github/pics/preview3.png" width="50%"/>]()  
-#### [<img src=".github/pics/preview4.png" width="50%"/>]()  
-#### [<img src=".github/pics/preview5.png" width="50%"/>]()  
-#### [<img src=".github/pics/preview6.png" width="25%"/>]()  
-#### [<img src=".github/pics/preview7.png" width="50%"/>]()  
+#### [<img src=".github/pics/preview2.png" width="90%"/>]()
+#### [<img src=".github/pics/preview3.png" width="90%"/>]()  
+#### [<img src=".github/pics/preview4.png" width="90%"/>]()  
+#### [<img src=".github/pics/preview5.png" width="90%"/>]()  
+#### [<img src=".github/pics/preview6.png" width="45%"/>]()  
+#### [<img src=".github/pics/preview7.png" width="90%"/>]()  
 
 
 <!-- Plugin description end -->

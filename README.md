@@ -5,7 +5,7 @@
 
 ConsoleLogger  
 An Intellij plugin to quickly insert 
-console.log() .debug() .warn() .error() .table() 
+console.log() .debug() .warn() .error() .group() .table() 
 based on what is selected
 
 Features:    
@@ -14,10 +14,18 @@ Features:
 * shortcut for DEBUG insertion (CTRL + ALT + 2)
 * shortcut for WARN insertion  (CTRL + ALT + 3)
 * shortcut for ERROR insertion (CTRL + ALT + 4)
-* shortcut for INFO insertion  (CTRL + ALT + 5)
+* shortcut for GROUP insertion (CTRL + ALT + 5)
 * shortcut for TABLE insertion (CTRL + ALT + 6)
 
   (CTRL + ALT + 0) removes all unedited console loggers from file or project
+
+#### [<img src=".github/pics/preview2.png" width="50%"/>]()
+#### [<img src=".github/pics/preview3.png" width="50%"/>]()  
+#### [<img src=".github/pics/preview4.png" width="50%"/>]()  
+#### [<img src=".github/pics/preview5.png" width="50%"/>]()  
+#### [<img src=".github/pics/preview6.png" width="25%"/>]()  
+#### [<img src=".github/pics/preview7.png" width="50%"/>]()  
+
 
 <!-- Plugin description end -->
 

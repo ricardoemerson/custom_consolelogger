@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.0.6]
+- Table bug fixed
+- Replaced console.Info() for groupCollapsed()
+- Added console.groupCollapsed()   (CTRL + ALT + 5)
+- Shorten some logs
+
 ## [0.0.5]
 - Fixed coloring & font size for LOG (CTRL + ALT + 1)
 - Changed order logger, INFO now (CTRL + ALT + 5)
@@ -25,19 +31,9 @@
 ## [0.0.1]
 - BREAKING CHANGE: API class names are CamelCase. This replaces the  "lower  case version" naming.
 
-[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.5...HEAD
+[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.6...HEAD
 
-[0.0.5]: https://github.com/bg-omar/consolelogger/compare/v0.0.4...v0.0.5
-
-[0.0.4]: https://github.com/bg-omar/consolelogger/compare/v0.0.3...v0.0.4
-
-[0.0.3]: https://github.com/bg-omar/consolelogger/compare/v0.0.2...v0.0.3
-
-[0.0.2]: https://github.com/bg-omar/consolelogger/compare/v0.0.1...v0.0.2
-
-[0.0.1]: https://github.com/bg-omar/consolelogger/commits/v0.0.1
-
-[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.5...HEAD
+[0.0.6]: https://github.com/bg-omar/consolelogger/compare/v0.0.5...v0.0.6
 
 [0.0.5]: https://github.com/bg-omar/consolelogger/compare/v0.0.4...v0.0.5
 

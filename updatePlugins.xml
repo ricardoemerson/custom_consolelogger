@@ -2,8 +2,8 @@
 <plugins>
     <plugin
             id="com.github.bgomar.consolelogger"
-            url="https://github.com/bg-omar/consolelogger/releases/download/0.0.4/consolelogger-0.0.4.zip"
-            version="0.0.4">
+            url="https://github.com/bg-omar/consolelogger/releases/download/0.0.5/consolelogger-0.0.5.zip"
+            version="0.0.5">
 
         <idea-version since-build="222" until-build="223.*"/>
     </plugin>

@@ -48,36 +48,6 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
       isPromptOnReplace = false
     }
 
-    val removeInfo: String = ".*" + ConsoleLoggerSettings.instance.infoPattern.run {
-      replace("\\", "\\\\")
-        .replace("(", "\\(")
-        .replace(")", "\\)")
-        .replace("[", "\\[")
-        .replace("]", "\\]")
-        .replace("^", "\\^")
-        .replace("+", "\\+")
-        .replace("?", "\\?")
-        .replace("|", "\\|")
-        .replace(".", "\\.")
-        .replace("*", "\\*")
-        .replace("$$", ".*")
-        .replace("{FN}", ".*")
-        .replace("{FP}", ".*")
-        .replace("{LN}", "\\d*")
-        .replace("{", "\\{")
-        .replace("}", "\\}")
-        .replace("$", "\\$")
-    } + "\n"
-
-    val findInfo = FindModel().apply {
-      stringToFind = removeInfo
-      stringToReplace = ""
-      isPromptOnReplace = false
-      isRegularExpressions = true
-      isGlobal = true
-      isPromptOnReplace = false
-    }
-
     val removeDebug: String = ".*" + ConsoleLoggerSettings.instance.debugPattern.run {
       replace("\\", "\\\\")
         .replace("(", "\\(")
@@ -195,23 +165,51 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
       isPromptOnReplace = false
     }
 
+    val removeInfo: String = ".*" + ConsoleLoggerSettings.instance.groupPattern.run {
+      replace("\\", "\\\\")
+        .replace("(", "\\(")
+        .replace(")", "\\)")
+        .replace("[", "\\[")
+        .replace("]", "\\]")
+        .replace("^", "\\^")
+        .replace("+", "\\+")
+        .replace("?", "\\?")
+        .replace("|", "\\|")
+        .replace(".", "\\.")
+        .replace("*", "\\*")
+        .replace("$$", ".*")
+        .replace("{FN}", ".*")
+        .replace("{FP}", ".*")
+        .replace("{LN}", "\\d*")
+        .replace("{", "\\{")
+        .replace("}", "\\}")
+        .replace("$", "\\$")
+    } + "\n"
 
+    val findGroup = FindModel().apply {
+      stringToFind = removeInfo
+      stringToReplace = ""
+      isPromptOnReplace = false
+      isRegularExpressions = true
+      isGlobal = true
+      isPromptOnReplace = false
+    }
 
     when (dlg.scope) {
       Scope.CURRENT_FILE ->
                 FindUtil.replace(project, editor, 0, findLog) &&
-                FindUtil.replace(project, editor, 0, findInfo) &&
                 FindUtil.replace(project, editor, 0, findDebug) &&
                 FindUtil.replace(project, editor, 0, findWarn) &&
                 FindUtil.replace(project, editor, 0, findError) &&
-                FindUtil.replace(project, editor, 0, findTable)
+                FindUtil.replace(project, editor, 0, findTable) &&
+                FindUtil.replace(project, editor, 0, findGroup)
       Scope.PROJECT -> {
                 ReplaceInProjectManager(project).replaceInPath(findLog);
-                ReplaceInProjectManager(project).replaceInPath(findInfo);
                 ReplaceInProjectManager(project).replaceInPath(findDebug);
                 ReplaceInProjectManager(project).replaceInPath(findWarn);
                 ReplaceInProjectManager(project).replaceInPath(findError);
                 ReplaceInProjectManager(project).replaceInPath(findTable);
+                ReplaceInProjectManager(project).replaceInPath(findGroup);
       }
     }
   }

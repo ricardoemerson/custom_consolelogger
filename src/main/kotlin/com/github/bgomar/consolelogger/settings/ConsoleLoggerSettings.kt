@@ -7,19 +7,19 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
-internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("%c ({FN}:{LN}) %c $$: ", "color: #dfb56c; font-size: 11px", "color: #09A59A; font-size: 13px", $$);"""
-internal const val INFO_CONSOLELOGGER_PATTERN = """console.info("=>({FN}:{LN}) $$", $$);"""
-internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug("=>({FN}:{LN}) $$", $$);"""
-internal const val WARN_CONSOLELOGGER_PATTERN = """console.warn("=>({FN}:{LN}) $$", $$);"""
-internal const val ERROR_CONSOLELOGGER_PATTERN = """console.error("=>({FN}:{LN}) $$", $$);"""
-internal const val TABLE_CONSOLELOGGER_PATTERN = """console.table("=>({FN}:{LN}) $$", $$);"""
+internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
+internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
+internal const val WARN_CONSOLELOGGER_PATTERN = """console.warn("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
+internal const val ERROR_CONSOLELOGGER_PATTERN = """console.error("%c ({FP}:{LN}) $$: ", "color:#09A59A;", $$);"""
+internal const val GROUP_CONSOLELOGGER_PATTERN = """${'\n'}console.groupCollapsed("%c (ln{LN}) group $$", "color:#09A59A;");${'\n'}console.groupEnd("end of group $$");"""
+internal const val TABLE_CONSOLELOGGER_PATTERN = """console.table($$);"""
 
 
 @State(name = "ConsoleLoggerSettings", storages = [(Storage("consolelogger.xml"))])
 class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
 
   var defaultPattern: String = DEFAULT_CONSOLELOGGER_PATTERN
-  var infoPattern: String = INFO_CONSOLELOGGER_PATTERN
+  var groupPattern: String = GROUP_CONSOLELOGGER_PATTERN
   var debugPattern: String = DEBUG_CONSOLELOGGER_PATTERN
   var warnPattern: String = WARN_CONSOLELOGGER_PATTERN
   var errorPattern: String = ERROR_CONSOLELOGGER_PATTERN

@@ -41,8 +41,8 @@
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 4"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 4"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addInfo" class="com.github.bgomar.consolelogger.ConsoleLoggerAddInfo" text="Insert ConsoleLogger's Console.Info"
-                    description="Generate a console.info() for that variable">
+            <action id="com.github.bgomar.consolelogger.addGroup" class="com.github.bgomar.consolelogger.ConsoleLoggerAddGroup" text="Insert ConsoleLogger's Console.Group"
+                    description="Generate a console.group() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 5"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 5"/>
             </action>

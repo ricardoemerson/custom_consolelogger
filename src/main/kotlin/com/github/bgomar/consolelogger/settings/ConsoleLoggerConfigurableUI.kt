@@ -10,17 +10,103 @@ import javax.swing.JComponent
 
 class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : ConfigurableUi<ConsoleLoggerSettings> {
   private val ui: DialogPanel = panel {
-    var patternField: Cell<JBTextField>
-    row("Pattern:") {
-      patternField = textField()
-        .comment("Use \$\$ for the insertion point<br> {FP} for file path<br> {FN} for filename<br> {LN} for line number")
-        .bindText(setting::defaultPattern)
+    var logField: Cell<JBTextField>
+    row("(CTRL + ALT + 1) log: ") {
+      logField = textField()
+        .bindText(setting::logPattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
-        .resizableColumn()
+        .resizableColumn().apply {
+          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+        }
 
       button("Default", actionListener = {
-        patternField.component.text = DEFAULT_CONSOLELOGGER_PATTERN
+        logField.component.text = LOG_CONSOLELOGGER_PATTERN
+      }).apply {
+        component.toolTipText = "Reset to default pattern"
+      }
+    }.layout(RowLayout.PARENT_GRID)
+
+    var debugField: Cell<JBTextField>
+    row("(CTRL + ALT + 2) debug: ") {
+      debugField = textField()
+        .bindText(setting::debugPattern)
+        .horizontalAlign(HorizontalAlign.FILL)
+        .gap(RightGap.SMALL)
+        .resizableColumn().apply {
+          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+        }
+
+      button("Default", actionListener = {
+        debugField.component.text = DEBUG_CONSOLELOGGER_PATTERN
+      }).apply {
+        component.toolTipText = "Reset to default pattern"
+      }
+    }.layout(RowLayout.PARENT_GRID)
+
+    var warnField: Cell<JBTextField>
+    row("(CTRL + ALT + 3) warn: ") {
+      warnField = textField()
+        .bindText(setting::warnPattern)
+        .horizontalAlign(HorizontalAlign.FILL)
+        .gap(RightGap.SMALL)
+        .resizableColumn().apply {
+          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+        }
+
+      button("Default", actionListener = {
+        warnField.component.text = WARN_CONSOLELOGGER_PATTERN
+      }).apply {
+        component.toolTipText = "Reset to default pattern"
+      }
+    }.layout(RowLayout.PARENT_GRID)
+
+    var errorField: Cell<JBTextField>
+    row("(CTRL + ALT + 4) error: ") {
+      errorField = textField()
+        .bindText(setting::errorPattern)
+        .horizontalAlign(HorizontalAlign.FILL)
+        .gap(RightGap.SMALL)
+        .resizableColumn().apply {
+          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+        }
+
+      button("Default", actionListener = {
+        errorField.component.text = ERROR_CONSOLELOGGER_PATTERN
+      }).apply {
+        component.toolTipText = "Reset to default pattern"
+      }
+    }.layout(RowLayout.PARENT_GRID)
+
+    var groupField: Cell<JBTextField>
+    row("(CTRL + ALT + 5) group: ") {
+      groupField = textField()
+        .bindText(setting::groupPattern)
+        .horizontalAlign(HorizontalAlign.FILL)
+        .gap(RightGap.SMALL)
+        .resizableColumn().apply {
+          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+        }
+
+      button("Default", actionListener = {
+        groupField.component.text = GROUP_CONSOLELOGGER_PATTERN
+      }).apply {
+        component.toolTipText = "Reset to default pattern"
+      }
+    }.layout(RowLayout.PARENT_GRID)
+
+    var tableField: Cell<JBTextField>
+    row("(CTRL + ALT + 6) table: ") {
+      tableField = textField()
+        .bindText(setting::tablePattern)
+        .horizontalAlign(HorizontalAlign.FILL)
+        .gap(RightGap.SMALL)
+        .resizableColumn().apply {
+          component.toolTipText = "Only \$\$ for selected table works."
+        }
+
+      button("Default", actionListener = {
+        tableField.component.text = TABLE_CONSOLELOGGER_PATTERN
       }).apply {
         component.toolTipText = "Reset to default pattern"
       }

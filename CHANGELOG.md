@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.0.7]
+- All 6 ConsoleLoggers in Settings | Code | ConsoleLogger.
+
 ## [0.0.6]
 - Table bug fixed
 - Replaced console.Info() for groupCollapsed()
@@ -31,7 +34,9 @@
 ## [0.0.1]
 - BREAKING CHANGE: API class names are CamelCase. This replaces the  "lower  case version" naming.
 
-[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.6...HEAD
+[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.7...HEAD
+
+[0.0.7]: https://github.com/bg-omar/consolelogger/compare/v0.0.6...v0.0.7
 
 [0.0.6]: https://github.com/bg-omar/consolelogger/compare/v0.0.5...v0.0.6
 

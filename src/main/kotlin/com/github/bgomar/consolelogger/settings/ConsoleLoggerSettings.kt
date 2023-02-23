@@ -7,7 +7,7 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
-internal const val DEFAULT_CONSOLELOGGER_PATTERN = """console.log("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
+internal const val LOG_CONSOLELOGGER_PATTERN = """console.log("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
 internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
 internal const val WARN_CONSOLELOGGER_PATTERN = """console.warn("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
 internal const val ERROR_CONSOLELOGGER_PATTERN = """console.error("%c ({FP}:{LN}) $$: ", "color:#09A59A;", $$);"""
@@ -18,7 +18,7 @@ internal const val TABLE_CONSOLELOGGER_PATTERN = """console.table($$);"""
 @State(name = "ConsoleLoggerSettings", storages = [(Storage("consolelogger.xml"))])
 class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
 
-  var defaultPattern: String = DEFAULT_CONSOLELOGGER_PATTERN
+  var logPattern: String = LOG_CONSOLELOGGER_PATTERN
   var groupPattern: String = GROUP_CONSOLELOGGER_PATTERN
   var debugPattern: String = DEBUG_CONSOLELOGGER_PATTERN
   var warnPattern: String = WARN_CONSOLELOGGER_PATTERN

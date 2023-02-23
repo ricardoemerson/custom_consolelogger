@@ -18,7 +18,7 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
     val project = e.getData(CommonDataKeys.PROJECT)!!
     val editor = e.getRequiredData(CommonDataKeys.EDITOR)
 
-    val removeLog: String = ".*" + ConsoleLoggerSettings.instance.defaultPattern.run {
+    val removeLog: String = ".*" + ConsoleLoggerSettings.instance.logPattern.run {
       replace("\\", "\\\\")
         .replace("(", "\\(")
         .replace(")", "\\)")

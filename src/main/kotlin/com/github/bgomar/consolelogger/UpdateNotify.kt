@@ -29,7 +29,7 @@ class UpdateNotify : StartupActivity {
     Select variable & press CTRL + ALT + (1 to 6)  <br><br>
     👉 to remove ConsoleLogger's logs from the <b>current file</b> or the <b>project</b><br>
     press CTRL + ALT + 0<br>
-    See ConsoleLogger in <b>Code | ConsoleLogger</b>
+    See ConsoleLogger in <b>Code | ConsoleLogger</b> to change the loggers.
     """
   }
 

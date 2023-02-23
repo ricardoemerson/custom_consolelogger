@@ -19,12 +19,12 @@ Features:
 
   (CTRL + ALT + 0) removes all unedited console loggers from file or project
 
-#### [<img src=".github/pics/preview2.png" width="90%"/>]()
-#### [<img src=".github/pics/preview3.png" width="90%"/>]()  
-#### [<img src=".github/pics/preview4.png" width="90%"/>]()  
-#### [<img src=".github/pics/preview5.png" width="90%"/>]()  
-#### [<img src=".github/pics/preview6.png" width="45%"/>]()  
-#### [<img src=".github/pics/preview7.png" width="90%"/>]()  
+#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview2.png?raw=true" width="90%"/>]()
+#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview3.png?raw=true" width="90%"/>]()  
+#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview4.png?raw=true" width="90%"/>]()  
+#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview5.png?raw=true" width="90%"/>]()  
+#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview6.png?raw=true" width="45%"/>]()  
+#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview8.png?raw=true" width="90%"/>]()  
 
 
 <!-- Plugin description end -->

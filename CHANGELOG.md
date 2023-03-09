@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.0.8]
+- Jonas's IntelliJ is now included too
+
 ## [0.0.7]
 - All 6 ConsoleLoggers in Settings | Code | ConsoleLogger.
 
@@ -34,7 +37,9 @@
 ## [0.0.1]
 - BREAKING CHANGE: API class names are CamelCase. This replaces the  "lower  case version" naming.
 
-[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.7...HEAD
+[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.8...HEAD
+
+[0.0.8]: https://github.com/bg-omar/consolelogger/compare/v0.0.7...v0.0.8
 
 [0.0.7]: https://github.com/bg-omar/consolelogger/compare/v0.0.6...v0.0.7
 

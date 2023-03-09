@@ -19,6 +19,8 @@ Features:
 
   (CTRL + ALT + 0) removes all unedited console loggers from file or project
 
+<!-- Plugin description end -->
+
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview2.png?raw=true" width="90%"/>]()
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview3.png?raw=true" width="90%"/>]()  
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview4.png?raw=true" width="90%"/>]()  
@@ -27,7 +29,7 @@ Features:
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview8.png?raw=true" width="90%"/>]()  
 
 
-<!-- Plugin description end -->
+
 
 ## Installation
 

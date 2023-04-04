@@ -7,11 +7,11 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
-internal const val LOG_CONSOLELOGGER_PATTERN = """console.log("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
-internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
+internal const val LOG_CONSOLELOGGER_PATTERN = """console.log(" ---> $$: ", $$);"""
+internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug(" ---> $$: ", $$);"""
 internal const val WARN_CONSOLELOGGER_PATTERN = """console.warn("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
 internal const val ERROR_CONSOLELOGGER_PATTERN = """console.error("%c ({FP}:{LN}) $$: ", "color:#09A59A;", $$);"""
-internal const val GROUP_CONSOLELOGGER_PATTERN = """${'\n'}console.groupCollapsed("%c (ln{LN}) group $$", "color:#09A59A;");${'\n'}console.groupEnd("end of group $$");"""
+internal const val GROUP_CONSOLELOGGER_PATTERN = """${'\n'}console.groupCollapsed("group $$");${'\n'}console.groupEnd("end of group $$");"""
 internal const val TABLE_CONSOLELOGGER_PATTERN = """console.table($$);"""
 
 

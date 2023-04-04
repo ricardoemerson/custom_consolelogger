@@ -1,6 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## [0.0.10]
+- Make ConsoleLogger work with IDEA IntelliJ 2023
+
+## [0.0.9]
+- Removing Color from default loggers  (CTRL + ALT + 1,2 & 3)
+- Plugin works only on IntelliJ 213.5744.223 or newer versions 223.*
 
 ## [0.0.8]
 - Jonas's IntelliJ is now included too
@@ -36,21 +41,3 @@
 
 ## [0.0.1]
 - BREAKING CHANGE: API class names are CamelCase. This replaces the  "lower  case version" naming.
-
-[Unreleased]: https://github.com/bg-omar/consolelogger/compare/v0.0.8...HEAD
-
-[0.0.8]: https://github.com/bg-omar/consolelogger/compare/v0.0.7...v0.0.8
-
-[0.0.7]: https://github.com/bg-omar/consolelogger/compare/v0.0.6...v0.0.7
-
-[0.0.6]: https://github.com/bg-omar/consolelogger/compare/v0.0.5...v0.0.6
-
-[0.0.5]: https://github.com/bg-omar/consolelogger/compare/v0.0.4...v0.0.5
-
-[0.0.4]: https://github.com/bg-omar/consolelogger/compare/v0.0.3...v0.0.4
-
-[0.0.3]: https://github.com/bg-omar/consolelogger/compare/v0.0.2...v0.0.3
-
-[0.0.2]: https://github.com/bg-omar/consolelogger/compare/v0.0.1...v0.0.2
-
-[0.0.1]: https://github.com/bg-omar/consolelogger/commits/v0.0.1

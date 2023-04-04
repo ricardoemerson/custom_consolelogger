@@ -17,7 +17,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number, %c for ,color=#fff"
         }
 
       button("Default", actionListener = {

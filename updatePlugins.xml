@@ -2,10 +2,10 @@
 <plugins>
     <plugin
             id="com.github.bgomar.consolelogger"
-            url="https://github.com/bg-omar/consolelogger/releases/download/0.0.7/consolelogger-0.0.7.zip"
-            version="0.0.7">
+            url="https://github.com/bg-omar/consolelogger/releases/download/0.0.9/consolelogger-0.0.9.zip"
+            version="0.0.9">
 
-        <idea-version since-build="212.*" until-build="223.*"/>
+        <idea-version since-build="213.5744.223" until-build="231.*"/>
     </plugin>
 
 </plugins>

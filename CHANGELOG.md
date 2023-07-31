@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.11]
+- Make ConsoleLogger work with IDEA IntelliJ 232.*
+
 ## [0.0.10]
 - Make ConsoleLogger work with IDEA IntelliJ 2023
 

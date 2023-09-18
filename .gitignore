@@ -43,3 +43,4 @@ bin/
 /.sandbox/
 /build/
 /.idea/
+/secrets/

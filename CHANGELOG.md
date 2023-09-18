@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.13]
+- Make ConsoleLogger work with IDEA IntelliJ 233.*
+
+## [0.0.12]
+- Make ConsoleLogger work with IDEA IntelliJ 233.*
+
 ## [0.0.11]
 - Make ConsoleLogger work with IDEA IntelliJ 232.*
 

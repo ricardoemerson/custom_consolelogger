@@ -24,7 +24,7 @@ class UpdateNotify : StartupActivity {
     //language=HTML
     """
     <br/>
-    Nothing new just apgraded to work with 232.*<br><br>
+    Nothing new just apgraded to work with 233.*<br><br>
 😁👌
     Use ConsoleLogger settings (ctrl + alt + S) <b>Code | ConsoleLogger</b> to change the loggers.
     """

@@ -10,7 +10,7 @@ plugins {
     // Kotlin support
     id("org.jetbrains.kotlin.jvm") version "1.8.0"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.13.0"
+    id("org.jetbrains.intellij") version "1.15.0"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "2.0.0"
     // Gradle Qodana Plugin
@@ -31,6 +31,10 @@ repositories {
 val service = project.extensions.getByType<JavaToolchainService>()
 val customLauncher = service.launcherFor {
         languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+dependencies {
+    implementation("org.jetbrains:marketplace-zip-signer:0.1.8")
 }
 
 // Configure Gradle IntelliJ Plugin
@@ -138,8 +142,8 @@ tasks {
     }
 
     signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
+        certificateChainFile.set(file("./secrets/chain.crt"))
+        privateKeyFile.set(file("./secrets/private_encrypted.pem"))
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 

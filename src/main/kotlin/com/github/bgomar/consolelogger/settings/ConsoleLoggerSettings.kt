@@ -9,8 +9,8 @@ import org.jetbrains.annotations.Nullable
 
 internal const val LOG_CONSOLELOGGER_PATTERN = """console.log(" ---> $$: ", $$);"""
 internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug(" ---> $$: ", $$);"""
-internal const val WARN_CONSOLELOGGER_PATTERN = """console.warn("%c (ln{LN}) $$: ", "color:#09A59A;", $$);"""
-internal const val ERROR_CONSOLELOGGER_PATTERN = """console.error("%c ({FP}:{LN}) $$: ", "color:#09A59A;", $$);"""
+internal const val WARN_CONSOLELOGGER_PATTERN = """console.log("%c ---> $$: ", "color:#09A59A;", $$);"""
+internal const val ERROR_CONSOLELOGGER_PATTERN = """console.warn("%c $$: ", "color:#09A59A;", $$);"""
 internal const val GROUP_CONSOLELOGGER_PATTERN = """${'\n'}console.groupCollapsed("group $$");${'\n'}console.groupEnd("end of group $$");"""
 internal const val TABLE_CONSOLELOGGER_PATTERN = """console.table($$);"""
 

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugins>
-    <plugin
-            id="com.github.bgomar.consolelogger"
-            url="https://github.com/bg-omar/consolelogger/releases/download/0.0.10/consolelogger-0.0.10.zip"
-            version="0.0.10">
-
-        <idea-version since-build="213.5744.223" until-build="231.*"/>
+    <plugin id="com.github.bgomar.consolelogger"
+            url="https://github.com/bg-omar/consolelogger/releases/download/0.0.12/consolelogger-0.0.12.zip"
+            version="0.0.12">
+        <idea-version since-build="213.5744.223" until-build="232.*"/>
     </plugin>
-
 </plugins>

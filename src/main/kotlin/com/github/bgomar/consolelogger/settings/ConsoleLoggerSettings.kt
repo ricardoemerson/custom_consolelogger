@@ -7,20 +7,20 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
-internal const val LOG_CONSOLELOGGER_PATTERN = """console.log(" ---> $$: ", $$);"""
-internal const val DEBUG_CONSOLELOGGER_PATTERN = """console.debug(" ---> $$: ", $$);"""
-internal const val WARN_CONSOLELOGGER_PATTERN = """console.log("%c ---> $$: ", "color:#09A59A;", $$);"""
-internal const val ERROR_CONSOLELOGGER_PATTERN = """console.warn("%c $$: ", "color:#09A59A;", $$);"""
-internal const val GROUP_CONSOLELOGGER_PATTERN = """${'\n'}console.groupCollapsed("group $$");${'\n'}console.groupEnd("end of group $$");"""
-internal const val TABLE_CONSOLELOGGER_PATTERN = """console.table($$);"""
+internal const val LOGG_CONSOLELOGGER_PATTERN  =   """console.log( -----> $$: ", $$);"""
+internal const val DBUG_CONSOLELOGGER_PATTERN  = """console.debug( -----> $$: ", $$);"""
+internal const val WARN_CONSOLELOGGER_PATTERN  =   """console.log("%c ---> $$: ","color:#F0F;", $$);"""
+internal const val ERROR_CONSOLELOGGER_PATTERN =   """console.log("%c ---> $$: ","color:#0F0;", $$);"""
+internal const val GROUP_CONSOLELOGGER_PATTERN =  """console.warn("%c ---> $$: ","color:#F00;", $$);"""
+internal const val TABLE_CONSOLELOGGER_PATTERN =  """console.warn("%c ---> $$: ","color:#00F;", $$);"""
 
 
 @State(name = "ConsoleLoggerSettings", storages = [(Storage("consolelogger.xml"))])
 class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
 
-  var logPattern: String = LOG_CONSOLELOGGER_PATTERN
+  var logPattern: String = LOGG_CONSOLELOGGER_PATTERN
   var groupPattern: String = GROUP_CONSOLELOGGER_PATTERN
-  var debugPattern: String = DEBUG_CONSOLELOGGER_PATTERN
+  var debugPattern: String = DBUG_CONSOLELOGGER_PATTERN
   var warnPattern: String = WARN_CONSOLELOGGER_PATTERN
   var errorPattern: String = ERROR_CONSOLELOGGER_PATTERN
   var tablePattern: String = TABLE_CONSOLELOGGER_PATTERN

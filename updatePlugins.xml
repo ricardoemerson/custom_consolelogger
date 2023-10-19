@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugins>
     <plugin id="com.github.bgomar.consolelogger"
-            url="https://github.com/bg-omar/consolelogger/releases/download/0.0.14/consolelogger-0.0.14.zip"
-            version="0.0.14">
+            url="https://plugins.jetbrains.com/plugin/download?rel=true&updateId=420930"
+            version="0.0.15">
         <idea-version since-build="213.5744.223" until-build="232.*"/>
     </plugin>
 </plugins>

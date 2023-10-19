@@ -24,7 +24,7 @@ class UpdateNotify : StartupActivity {
     //language=HTML
     """
     <br/>
-        Now (ctrl + alt + 4) is for create void method from selected.😁👌<br><br>
+        Console Logger (ctrl + alt + 1-6)😁👌<br><br>
 
     Use ConsoleLogger settings (ctrl + alt + S) <b>Code | ConsoleLogger</b> to change the loggers.
     """

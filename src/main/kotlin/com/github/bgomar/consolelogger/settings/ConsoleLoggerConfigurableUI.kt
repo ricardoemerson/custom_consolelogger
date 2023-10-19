@@ -11,47 +11,47 @@ import javax.swing.JComponent
 class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : ConfigurableUi<ConsoleLoggerSettings> {
   private val ui: DialogPanel = panel {
     var logField: Cell<JBTextField>
-    row("(CTRL + ALT + 1) log: ") {
+    row("(CTRL + ALT + 1) ") {
       logField = textField()
         .bindText(setting::logPattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number, %c for ,color=#fff"
+          component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
         }
 
       button("Default", actionListener = {
-        logField.component.text = LOG_CONSOLELOGGER_PATTERN
+        logField.component.text = LOGG_CONSOLELOGGER_PATTERN
       }).apply {
         component.toolTipText = "Reset to default pattern"
       }
     }.layout(RowLayout.PARENT_GRID)
 
     var debugField: Cell<JBTextField>
-    row("(CTRL + ALT + 2) debug: ") {
+    row("(CTRL + ALT + 2) ") {
       debugField = textField()
         .bindText(setting::debugPattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
         }
 
       button("Default", actionListener = {
-        debugField.component.text = DEBUG_CONSOLELOGGER_PATTERN
+        debugField.component.text = DBUG_CONSOLELOGGER_PATTERN
       }).apply {
         component.toolTipText = "Reset to default pattern"
       }
     }.layout(RowLayout.PARENT_GRID)
 
     var warnField: Cell<JBTextField>
-    row("(CTRL + ALT + 3) warn: ") {
+    row("(CTRL + ALT + 3) ") {
       warnField = textField()
         .bindText(setting::warnPattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
         }
 
       button("Default", actionListener = {
@@ -62,13 +62,13 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
     }.layout(RowLayout.PARENT_GRID)
 
     var errorField: Cell<JBTextField>
-    row("(CTRL + ALT + 4) error: ") {
+    row("(CTRL + ALT + 4) ") {
       errorField = textField()
         .bindText(setting::errorPattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
         }
 
       button("Default", actionListener = {
@@ -79,13 +79,13 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
     }.layout(RowLayout.PARENT_GRID)
 
     var groupField: Cell<JBTextField>
-    row("(CTRL + ALT + 5) group: ") {
+    row("(CTRL + ALT + 5) ") {
       groupField = textField()
         .bindText(setting::groupPattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "Use \$\$ for selected variable, {FP} filepath, {FN} filename, {LN} line number"
+         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
         }
 
       button("Default", actionListener = {
@@ -96,19 +96,19 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
     }.layout(RowLayout.PARENT_GRID)
 
     var tableField: Cell<JBTextField>
-    row("(CTRL + ALT + 6) table: ") {
+    row("(CTRL + ALT + 6) ") {
       tableField = textField()
         .bindText(setting::tablePattern)
         .horizontalAlign(HorizontalAlign.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "Only \$\$ for selected table works."
+          component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number "
         }
 
       button("Default", actionListener = {
         tableField.component.text = TABLE_CONSOLELOGGER_PATTERN
       }).apply {
-        component.toolTipText = "Reset to default pattern"
+        component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number "
       }
     }.layout(RowLayout.PARENT_GRID)
   }

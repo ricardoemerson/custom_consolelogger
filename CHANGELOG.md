@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased]
+
+## [0.0.15]
+- Pink Logo Signed Version Published
+
+## [0.0.14]
+- Now (ctrl + alt + 4) is for create void method from selected for Clion
+
 ## [0.0.13]
 - Make ConsoleLogger work with IDEA IntelliJ 233.*
 

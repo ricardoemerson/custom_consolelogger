@@ -3,19 +3,25 @@
 <!-- Plugin description -->
 
 
-ConsoleLogger  
-An Intellij plugin to quickly insert 
-console.log() .debug() .warn() .error() .group() .table() 
-based on what is selected
+ConsoleLogger  `console.log()` `.debug()` `.warn()`  added with color.`  
 
-Features:    
-* Insert logs
-* shortcut for LOG insertion   (CTRL + ALT + 1)
-* shortcut for DEBUG insertion (CTRL + ALT + 2)
-* shortcut for WARN insertion  (CTRL + ALT + 3)
-* shortcut for ERROR insertion (CTRL + ALT + 4)
-* shortcut for GROUP insertion (CTRL + ALT + 5)
-* shortcut for TABLE insertion (CTRL + ALT + 6)
+An Intellij plugin to quickly insert different styles of console logs
+If you want to console.log  `this.variable`  from below, 
+
+```ts
+  this.variable = someThing + otherThing
+
+```
+With `this.variable` selected, when you press (ctrl + alt + 1), you get this result:
+
+```ts
+  this.variable = someThing + otherThing
+  console.log(" ---> this.variable: ", this.variable);
+
+```
+When you are finished, use (ctrl + alt + 0),to clean up.
+
+In the Settings -> Tools -> ConsoleLogger you can modify what ctrl+alt+(1-6)
 
   (CTRL + ALT + 0) removes all unedited console loggers from file or project
 
@@ -23,8 +29,8 @@ Features:
 
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview2.png?raw=true" width="90%"/>]()
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview3.png?raw=true" width="90%"/>]()  
-#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview4.png?raw=true" width="90%"/>]()  
-#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview5.png?raw=true" width="90%"/>]()  
+ 
+
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview6.png?raw=true" width="45%"/>]()  
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview8.png?raw=true" width="90%"/>]()  
 

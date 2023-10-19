@@ -25,7 +25,7 @@ class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
   var errorPattern: String = ERROR_CONSOLELOGGER_PATTERN
   var tablePattern: String = TABLE_CONSOLELOGGER_PATTERN
 
-  var version = "Unknown"
+  var version = "0.0.17"
 
   companion object {
     val instance: ConsoleLoggerSettings

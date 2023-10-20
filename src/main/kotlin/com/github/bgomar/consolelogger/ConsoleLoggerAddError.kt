@@ -26,7 +26,7 @@ class ConsoleLoggerAddError : AnAction("INSERT_ERROR") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.instance.errorPattern.run {
+    val pattern = ConsoleLoggerSettings.instance.pattern7.run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
         .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }

@@ -17,39 +17,62 @@
     </extensions>
 
     <actions>
-        <group id="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup" class="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup" text="Log It"
+        <group id="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup" class="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup"
+               text="Console Log"
                description="Generate javascript logs" popup="true">
             <add-to-group group-id="CodeMenu" anchor="last"/>
-            <action id="com.github.bgomar.consolelogger.addLog" class="com.github.bgomar.consolelogger.ConsoleLoggerAddLog" text="Insert ConsoleLogger's Console.Log"
+            <action id="com.github.bgomar.consolelogger.add1" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd1"
+                    text="Insert ConsoleLogger 1"
                     description="Generate a console.log() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 1"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 1"/>
             </action>
 
-            <action id="com.github.bgomar.consolelogger.addDebug" class="com.github.bgomar.consolelogger.ConsoleLoggerAddDebug" text="Insert ConsoleLogger's Console.Debug"
-                    description="Generate a console.debug() for that variable">
+            <action id="com.github.bgomar.consolelogger.add2" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd2"
+                    text="Insert ConsoleLogger 2"
+                    description="Generate a console.log() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 2"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 2"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addWarn" class="com.github.bgomar.consolelogger.ConsoleLoggerAddWarn" text="Insert ConsoleLogger's Console.Warn"
-                    description="Generate a console.warn() for that variable">
+            <action id="com.github.bgomar.consolelogger.add3" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd3"
+                    text="Insert ConsoleLogger 3"
+                    description="Generate a console.log() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 3"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 3"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addError" class="com.github.bgomar.consolelogger.ConsoleLoggerAddError" text="Insert ConsoleLogger's Console.Error"
-                    description="Generate a console.error() for that variable">
+            <action id="com.github.bgomar.consolelogger.add4" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd4"
+                    text="Insert ConsoleLogger 4"
+                    description="Generate a console.log() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 4"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 4"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addGroup" class="com.github.bgomar.consolelogger.ConsoleLoggerAddGroup" text="Insert ConsoleLogger's Console.Group"
-                    description="Generate a console.group() for that variable">
+            <action id="com.github.bgomar.consolelogger.add5" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd5"
+                    text="Insert ConsoleLogger 5"
+                    description="Generate a console.log() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 5"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 5"/>
             </action>
-            <action id="com.github.bgomar.consolelogger.addTable" class="com.github.bgomar.consolelogger.ConsoleLoggerAddTable" text="Insert ConsoleLogger's Console.Table"
-                    description="Generate a console.table() for that variable">
+            <action id="com.github.bgomar.consolelogger.add6" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd6"
+                    text="Insert ConsoleLogger 6"
+                    description="Generate a console.log() for that variable">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 6"/>
                 <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 6"/>
+            </action>
+
+            <action id="com.github.bgomar.consolelogger.addError" class="com.github.bgomar.consolelogger.ConsoleLoggerAddError" text="Insert ConsoleLogger's Console.Error"
+                    description="Generate a console.error() for that variable">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 7"/>
+                <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 7"/>
+            </action>
+            <action id="com.github.bgomar.consolelogger.addGroup" class="com.github.bgomar.consolelogger.ConsoleLoggerAddGroup" text="Insert ConsoleLogger's Console.Group"
+                    description="Generate a console.group() for that variable">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 8"/>
+                <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 8"/>
+            </action>
+            <action id="com.github.bgomar.consolelogger.addTable" class="com.github.bgomar.consolelogger.ConsoleLoggerAddTable" text="Insert ConsoleLogger's Console.Table"
+                    description="Generate a console.table() for that variable">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 9"/>
+                <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 9"/>
             </action>
             <action id="com.github.bgomar.consolelogger.removeLogs" class="com.github.bgomar.consolelogger.ConsoleLoggerRemove" text="Remove ConsoleLogger's Console.Log"
                     description="Remove console.log() generate by ConsoleLogger plugin">

@@ -26,7 +26,7 @@ class ConsoleLoggerAddTable : AnAction("INSERT_TABLE") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.instance.tablePattern.run {
+    val pattern = ConsoleLoggerSettings.instance.pattern9.run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
         .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }

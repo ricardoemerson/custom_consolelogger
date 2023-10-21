@@ -1,7 +1,7 @@
 # ![Build](./src/main/resources/META-INF/pluginIcon.svg) Console Logger IntelliJ Plugin
 
 <!-- Plugin description -->
-`CTRL + ALT + (1-6)` to create console.logs from selection.  
+`CTRL + ALT + (1-9)` to create console.logs from selection.  
 (1) = `console.log( -----> $$: ", $$);`  
 (2) = `console.debug( -----> $$: ", $$);`  
 (3) = `console.log("%c ---> $$: ","color:#F0F;", $$);`  

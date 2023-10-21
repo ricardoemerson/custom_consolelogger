@@ -5,32 +5,29 @@ import org.jetbrains.changelog.markdownToHTML
 fun properties(key: String) = project.findProperty(key).toString()
 
 plugins {
-    // Java support
-    id("java")
-    // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.8.0"
-    // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.15.0"
-    // Gradle Changelog Plugin
-    id("org.jetbrains.changelog") version "2.0.0"
-    // Gradle Qodana Plugin
-    id("org.jetbrains.qodana") version "0.1.13"
-    // Gradle Kover Plugin
-    id("org.jetbrains.kotlinx.kover") version "0.6.1"
+    id("java") // Java support
+    id("org.jetbrains.kotlin.jvm") version "1.9.10"     // Kotlin support
+    id("org.jetbrains.intellij") version "1.16.0"    // Gradle IntelliJ Plugin
+    id("org.jetbrains.changelog") version "2.2.0"    // Gradle Changelog Plugin
+    id("org.jetbrains.qodana") version "0.1.13"    // Gradle Qodana Plugin
+    id("org.jetbrains.kotlinx.kover") version "0.6.1"    // Gradle Kover Plugin
 }
 
 group = properties("pluginGroup")
 version = properties("pluginVersion")
 
-repositories {
-    maven("https://oss.sonatype.org/content/repositories/snapshots/")
-    gradlePluginPortal()
-    mavenCentral()
-}
-
 val service = project.extensions.getByType<JavaToolchainService>()
 val customLauncher = service.launcherFor {
         languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+repositories {
+    maven("https://oss.sonatype.org/content/repositories/snapshots/")
+    maven("https://www.jetbrains.com/intellij-repository/releases")
+    maven("https://www.jetbrains.com/intellij-repository/snapshots")
+    maven("https://cache-redirector.jetbrains.com/intellij-dependencies")
+    gradlePluginPortal()
+    mavenCentral()
 }
 
 dependencies {
@@ -43,7 +40,7 @@ intellij {
     pluginName.set(properties("pluginName"))
     version.set(properties("platformVersion"))
     type.set(properties("platformType"))
-    downloadSources.set(!System.getenv().containsKey("UI"))
+    downloadSources.set(!System.getenv().containsKey("IU"))
     updateSinceUntilBuild.set(false)
     plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
 
@@ -81,14 +78,14 @@ kover.xmlReport {
 tasks {
     // Set the JVM compatibility versions
     withType<JavaCompile> {
-        sourceCompatibility = "17"
-        targetCompatibility = "17"
+        sourceCompatibility = properties("sourceCompatibility")
+        targetCompatibility = properties("targetCompatibility")
     }
     withType<org.jetbrains.kotlin.gradle.tasks.UsesKotlinJavaToolchain>().configureEach {
         kotlinJavaToolchain.toolchain.use(customLauncher)
     }
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.jvmTarget = properties("sourceCompatibility")
     }
     wrapper {
         gradleVersion = properties("gradleVersion")
@@ -127,11 +124,11 @@ tasks {
         enabled = true
     }
     compileKotlin {
-        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.jvmTarget = properties("jvmTarget")
     }
 
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.jvmTarget  = properties("jvmTarget")
     }
 
     runIdeForUiTests {

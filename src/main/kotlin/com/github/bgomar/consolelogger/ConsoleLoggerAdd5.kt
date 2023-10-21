@@ -14,7 +14,7 @@ import com.intellij.psi.PsiFileFactory
 import com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings
 
 
-class ConsoleLoggerAddGroup : AnAction("INSERT_GROUP") {
+class ConsoleLoggerAdd5 : AnAction("INSERT_LOG5") {
   override fun actionPerformed(e: AnActionEvent) {
     // Editor is known to exist from update, so it's not null
     val editor = e.getRequiredData(CommonDataKeys.EDITOR)
@@ -26,9 +26,9 @@ class ConsoleLoggerAddGroup : AnAction("INSERT_GROUP") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.instance.pattern8.run {
+    val pattern = ConsoleLoggerSettings.instance.pattern5.run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
-        .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 3).toString())
+        .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }
 
     val insertionPositions = "\\$\\$".toRegex().findAll(pattern)

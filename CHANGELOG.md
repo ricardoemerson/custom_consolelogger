@@ -1,6 +1,11 @@
 # Changelog
 
 ## [Unreleased]
+
+## [0.0.18]
+- Upgrade dependencies
+- Added ConsoleLogger 7-8-9 for .error .group & .table
+
 ## [0.0.17]
 - Changes in description
 

@@ -25,5 +25,5 @@ Defaults for CTRL + ALT + (1-9)
 #### `(CTRL + ALT + 0)`  
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview6.png?raw=true" width="30%"/>]()  
 ### `Settings` -> `Tools` -> `ConsoleLogger`  
-#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/SettingsPreview.png?raw=true" width="90%"/>]()  
+#### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/SettingPreview.png?raw=true" width="90%"/>]()  
 <!-- Plugin description end -->

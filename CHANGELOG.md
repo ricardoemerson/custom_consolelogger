@@ -1,6 +1,11 @@
 # Changelog
 
 ## [Unreleased]
+- 🐛 Bugfix for (ctrl + alt + 1/2 ) 
+- 🤏 Small changes to Loggers defaults:
+- Added Arduino C++ (ctrl + alt + 4) = Serial.print(); 
+- Added CLion   C++ (ctrl + alt + 5) = cout << ""; 
+- Added PyCharm Py  (ctrl + alt + 6) print() 😁👌
 
 ## [0.0.18]
 - Upgrade dependencies

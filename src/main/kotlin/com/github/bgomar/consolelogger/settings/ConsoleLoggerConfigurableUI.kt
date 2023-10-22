@@ -16,7 +16,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
         .align(AlignX.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
+          component.toolTipText = "You can put here whatever you want, $$ is the selected variable, {FP} filepath, {FN} filename, {LN} line number "
         }
 
       button("Default", actionListener = {
@@ -33,7 +33,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
         .align(AlignX.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
+         component.toolTipText = "You can put here whatever you want, $$ is the selected variable, {FP} filepath, {FN} filename, {LN} line number "
         }
 
       button("Default", actionListener = {
@@ -67,7 +67,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
         .align(AlignX.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
+         component.toolTipText = "Serial.print(\" ---> \$\$: \", \$\$);, where \$\$ = selected,,  {FP} filepath, {FN} filename, {LN} line number "
         }
 
       button("Default", actionListener = {
@@ -84,7 +84,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
         .align(AlignX.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number " 
+         component.toolTipText = "cout << \"      ---> \$\$: \" << \$\$ << endl;, where \$\$ = selected,  {FP} filepath, {FN} filename, {LN} line number "
         }
 
       button("Default", actionListener = {
@@ -101,7 +101,7 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
         .align(AlignX.FILL)
         .gap(RightGap.SMALL)
         .resizableColumn().apply {
-          component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number "
+          component.toolTipText = "print(\"{:>30}\".format(\" ---> \$\$: \" + \$\$)), where \$\$ = selected, {:>30} = start string from 30,  {FP} filepath, {FN} filename, {LN} line number "
         }
 
       button("Default", actionListener = {

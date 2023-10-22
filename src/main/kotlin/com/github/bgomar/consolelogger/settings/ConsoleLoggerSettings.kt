@@ -8,12 +8,13 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
 
-internal const val DEFAULT_PATTERN_1 =  """console.log( -----> $$: ", $$);"""
-internal const val DEFAULT_PATTERN_2 =  """console.debug( -----> $$: ", $$);"""
-internal const val DEFAULT_PATTERN_3 =  """console.log("%c ---> $$: ","color:#F0F;", $$);"""
-internal const val DEFAULT_PATTERN_4 =  """console.log("%c ---> $$: ","color:#0F0;", $$);"""
-internal const val DEFAULT_PATTERN_5 =  """console.warn("%c ---> $$: ","color:#F00;", $$);"""
-internal const val DEFAULT_PATTERN_6 =  """console.warn("%c ---> $$: ","color:#00F;", $$);"""
+internal const val DEFAULT_PATTERN_1 =  """console.log("%c ---> $$: ","color:#F0F;", $$);"""
+internal const val DEFAULT_PATTERN_2 =  """console.debug("%c ---> $$: ","color:#0F0;", $$);"""
+internal const val DEFAULT_PATTERN_3 =  """console.warn("%c ---> $$: ","color:#F00;", $$);"""
+
+internal const val DEFAULT_PATTERN_4 =  """Serial.print(" ---> $$: ", $$);"""
+internal const val DEFAULT_PATTERN_5 =  """cout << "      ---> $$: " << $$ << endl;"""
+internal const val DEFAULT_PATTERN_6 =  """print("{:>30}".format(" ---> $$: " + $$))"""
 
 internal const val DEFAULT_PATTERN_7 =  """console.error("%c ({FP}:{LN}) $$: ", "color:#FF0;", $$);"""
 internal const val DEFAULT_PATTERN_8 =  """${'\n'}console.groupCollapsed("group $$");""" +

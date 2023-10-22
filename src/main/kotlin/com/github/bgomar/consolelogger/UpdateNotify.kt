@@ -23,10 +23,14 @@ class UpdateNotify : StartupActivity {
   private val updateContent: String by lazy {
     //language=HTML
     """
-    <br/>
-        Console Logger (ctrl + alt + 1-9)😁👌<br><br>
+    🐛 Bugfix for (ctrl + alt + 1/2 ) <br/>
+    🤏 Small changes to defaults: <br> 
+    4 = Arduino Serial.print() <br> 
+    5 = C++ cout << "" << endl;<br> 
+    6 = Python print("{:>30}".format()) 😁👌<br><br>
 
-    Use ConsoleLogger settings (ctrl + alt + S) <b>Code | ConsoleLogger</b> to change the loggers.
+    You can always <b>change defaults<b> in settings (ctrl + alt + S)<br>
+    <b>Settings | Tools | ConsoleLogger</b> 
     """
   }
 

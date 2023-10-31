@@ -2,7 +2,8 @@
     <id>com.github.bgomar.consolelogger</id>
     <name>ConsoleLogger</name>
     <vendor email="info@omariskandarani.com" url="https://github.com/bg-omar/consolelogger">bgOmar</vendor>
-    <idea-version since-build="223.7571.182" until-build="232.*"/>
+
+    <idea-version since-build="223.7571.182" />
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>JavaScript</depends>

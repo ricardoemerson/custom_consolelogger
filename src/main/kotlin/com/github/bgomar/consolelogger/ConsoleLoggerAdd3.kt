@@ -53,11 +53,11 @@ class ConsoleLoggerAdd3 : AnAction("INSERT_LOG3") {
       }
       WriteCommandAction.runWriteCommandAction(editor.project, runnable)
 
-      positionCaret(editor, insertionPositions, variableName.replace("<CR>", "").trim())
+      positionCaret(editor, insertionPositions, line2insert, variableName.replace("<CR>", "").trim())
     }
   }
 
-  private fun positionCaret(editor: Editor, insertionPositions: List<Int>, variableName: String) {
+  private fun positionCaret(editor: Editor, insertionPositions: List<Int>, lineToInsert: String, variableName: String) {
     val offset = editor.caretModel.currentCaret.offset
     val logicalPosition = editor.offsetToLogicalPosition(offset)
 

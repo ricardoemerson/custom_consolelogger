@@ -2,13 +2,22 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
 
+//abstract class SomeTask : DefaultTask() {
+//
+//    @get:Inject abstract val fs: FileSystemOperations
+//
+//    @TaskAction
+//    fun properties(key: String)  {
+//        project.findProperty(key).toString()
+//    }
+//}
 fun properties(key: String) = project.findProperty(key).toString()
 
 plugins {
     id("java") // Java support
     id("org.jetbrains.kotlin.jvm") version "1.9.10"     // Kotlin support
     id("org.jetbrains.intellij") version "1.16.0"    // Gradle IntelliJ Plugin
-    id("org.jetbrains.changelog") version "2.2.0"    // Gradle Changelog Plugin
+    id("org.jetbrains.changelog") version "2.2.0"    // Gradle Changelog Plugin "com.intellij.clion"
     id("org.jetbrains.qodana") version "0.1.13"    // Gradle Qodana Plugin
     id("org.jetbrains.kotlinx.kover") version "0.6.1"    // Gradle Kover Plugin
 }
@@ -40,10 +49,9 @@ intellij {
     pluginName.set(properties("pluginName"))
     version.set(properties("platformVersion"))
     type.set(properties("platformType"))
-    downloadSources.set(!System.getenv().containsKey("IU"))
-    updateSinceUntilBuild.set(false)
-    plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
-
+    downloadSources.set(!System.getenv().containsKey("CI"))
+    updateSinceUntilBuild.set(true)
+    plugins.set(listOf("JavaScript"))
     sandboxDir.set(project.rootDir.canonicalPath + "/.sandbox")
 }
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
@@ -148,5 +156,19 @@ tasks {
         dependsOn("patchChangelog")
         token.set(System.getenv("PUBLISH_TOKEN"))
         channels.set(listOf(properties("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first()))
+    }
+/*
+
+    runIde {
+        ideDir.set(file("/Users/mr/AppData/Roaming/JetBrains/"))
+    }
+*/
+
+    patchPluginXml {
+        changeNotes.set(
+            """<br>
+
+            """
+        )
     }
 }

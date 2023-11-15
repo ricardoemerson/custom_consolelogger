@@ -1,6 +1,7 @@
 # Changelog
 
-## [Unreleased]
+## [0.0.20] - 2023-11-15
+- 🐛 Small Bugfix: FIX: Handle cases where the editor might be missing. 
 
 ## [0.0.19] - 2023-10-23
 

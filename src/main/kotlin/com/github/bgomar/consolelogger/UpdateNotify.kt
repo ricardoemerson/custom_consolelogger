@@ -7,15 +7,22 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.StartupActivity
 import com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings
 
+fun properties(key: String) {
+  findProperty(key).toString()}
+
+private fun findProperty(key: String) {
+
+}
+
 class UpdateNotify : StartupActivity {
   private val plugin = PluginManagerCore.getPlugin(PluginId.getId("com.github.bgomar.consolelogger"))!!
 
   override fun runActivity(project: Project) {
     val settings = ConsoleLoggerSettings.instance
-    if (settings.version == "Unknown") {
-      settings.version = plugin.version
-    } else if (plugin.version != settings.version) {
-      settings.version = plugin.version
+    if (settings.version.toString() == "Unknown") {
+      settings.version = com.github.bgomar.consolelogger.settings.properties("pluginVersion")
+    } else if (plugin.version.toString() != settings.version.toString()) {
+      settings.version = com.github.bgomar.consolelogger.settings.properties("pluginVersion")
       showUpdate(project)
     }
   }
@@ -23,14 +30,11 @@ class UpdateNotify : StartupActivity {
   private val updateContent: String by lazy {
     //language=HTML
     """
-    🐛 Bugfix for (ctrl + alt + 1/2 ) <br/>
-    🤏 Small changes to defaults: <br> 
-    4 = Arduino Serial.print() <br> 
-    5 = C++ cout << "" << endl;<br> 
-    6 = Python print("{:>30}".format()) 😁👌<br><br>
+     🤏 🐛 Small Bugfix:  <br/>
+    FIX: Handle cases where the editor might be missing. <br>
 
-    You can always <b>change defaults<b> in settings (ctrl + alt + S)<br>
-    <b>Settings | Tools | ConsoleLogger</b> 
+    🦄 You can always <b>change defaults<b> in settings (ctrl + alt + S)<br>
+    <b>Settings || Tools || ConsoleLogger</b>
     """
   }
 

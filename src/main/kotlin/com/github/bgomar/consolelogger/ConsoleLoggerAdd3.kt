@@ -16,8 +16,14 @@ import com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings
 
 class ConsoleLoggerAdd3 : AnAction("INSERT_LOG3") {
   override fun actionPerformed(e: AnActionEvent) {
-    // Editor is known to exist from update, so it's not null
-    val editor = e.getRequiredData(CommonDataKeys.EDITOR)
+    // Check if the editor is available
+    val editor = e.getData(CommonDataKeys.EDITOR)
+    if (editor == null) {
+        // Handle the case where the editor is missing, e.g., show an error message
+        // or log a message, and return from the method.
+        println("Editor is missing. Cannot perform the action.")
+        return
+    }
     val actionManager = EditorActionManager.getInstance()
     val startNewLineHandler = actionManager.getActionHandler(IdeActions.ACTION_EDITOR_START_NEW_LINE)
 

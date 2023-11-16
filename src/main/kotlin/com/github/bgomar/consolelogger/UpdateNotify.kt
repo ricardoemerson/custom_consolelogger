@@ -7,12 +7,8 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.StartupActivity
 import com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings
 
-fun properties(key: String) {
-  findProperty(key).toString()}
+fun properties() {  }
 
-private fun findProperty(key: String) {
-
-}
 
 class UpdateNotify : StartupActivity {
   private val plugin = PluginManagerCore.getPlugin(PluginId.getId("com.github.bgomar.consolelogger"))!!

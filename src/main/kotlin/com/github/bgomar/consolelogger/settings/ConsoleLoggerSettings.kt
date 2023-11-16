@@ -4,9 +4,9 @@ import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
+import com.intellij.ui.components.JBCheckBox
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
-
 
 
 internal const val DEFAULT_PATTERN_1 =  """console.log("%c ---> $$: ","color:#F0F;", $$);"""
@@ -22,12 +22,9 @@ internal const val DEFAULT_PATTERN_8 =  """${'\n'}console.groupCollapsed("group 
                                         """${'\n'}console.groupEnd("end of group $$");"""
 internal const val DEFAULT_PATTERN_9 =  """console.table($$);"""
 
-fun properties(key: String) {
-  findProperty(key).toString()}
 
-private fun findProperty(key: String) {
+fun properties(s: String) {}
 
-}
 
 @State(name = "ConsoleLoggerSettings", storages = [(Storage("consolelogger.xml"))])
 class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
@@ -42,6 +39,7 @@ class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
   var pattern7: String = DEFAULT_PATTERN_7
   var pattern8: String = DEFAULT_PATTERN_8
   var pattern9: String = DEFAULT_PATTERN_9
+  var jbCheckBox: JBCheckBox =  JBCheckBox()
 
   var version = properties("pluginVersion")
 
@@ -56,4 +54,6 @@ class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
   override fun loadState(state: ConsoleLoggerSettings) {
     XmlSerializerUtil.copyBean(state, this)
   }
+
+
 }

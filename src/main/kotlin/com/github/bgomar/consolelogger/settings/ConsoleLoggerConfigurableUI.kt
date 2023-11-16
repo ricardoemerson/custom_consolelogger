@@ -2,6 +2,7 @@ package com.github.bgomar.consolelogger.settings
 
 import com.intellij.openapi.options.ConfigurableUi
 import com.intellij.openapi.ui.DialogPanel
+import com.intellij.ui.components.JBCheckBox
 import com.intellij.ui.components.JBTextField
 import com.intellij.ui.dsl.builder.*
 import javax.swing.JComponent
@@ -160,6 +161,13 @@ class ConsoleLoggerConfigurableUI(setting: ConsoleLoggerSettings) : Configurable
       }).apply {
         component.toolTipText = "console.log(\"%c\$\$: \",\"color:#F0F;\", \$\$), where \$\$ = selected, %c = color:#......;,  {FP} filepath, {FN} filename, {LN} line number "
       }
+    }.layout(RowLayout.PARENT_GRID)
+
+
+
+    row(" Tool window ") {
+      (JBCheckBox() == setting::jbCheckBox).apply{checkBox("Show browser") }
+
     }.layout(RowLayout.PARENT_GRID)
 
 

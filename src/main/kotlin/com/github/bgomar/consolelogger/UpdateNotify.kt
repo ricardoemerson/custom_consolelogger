@@ -7,18 +7,15 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.StartupActivity
 import com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings
 
-fun properties() {  }
-
-
 class UpdateNotify : StartupActivity {
   private val plugin = PluginManagerCore.getPlugin(PluginId.getId("com.github.bgomar.consolelogger"))!!
 
   override fun runActivity(project: Project) {
     val settings = ConsoleLoggerSettings.instance
     if (settings.version.toString() == "Unknown") {
-      settings.version = com.github.bgomar.consolelogger.settings.properties("pluginVersion")
-    } else if (plugin.version.toString() != settings.version.toString()) {
-      settings.version = com.github.bgomar.consolelogger.settings.properties("pluginVersion")
+      settings.version = "0.0.21"
+    } else if (plugin.version.toString() !== "0.0.21") {
+      settings.version = "0.0.21"
       showUpdate(project)
     }
   }

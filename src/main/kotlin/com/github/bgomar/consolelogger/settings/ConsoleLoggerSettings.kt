@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable
 
 
 internal const val DEFAULT_PATTERN_1 =  """console.log("%c ---> $$: ","color:#F0F;", $$);"""
-internal const val DEFAULT_PATTERN_2 =  """console.debug("%c ---> $$: ","color:#0F0;", $$);"""
+internal const val DEFAULT_PATTERN_2 =  """console.log("%c ---> $$: ","color:#0F0;", $$);"""
 internal const val DEFAULT_PATTERN_3 =  """console.warn("%c ---> $$: ","color:#F00;", $$);"""
 
 internal const val DEFAULT_PATTERN_4 =  """Serial.print(" ---> $$: ", $$);"""
@@ -23,7 +23,6 @@ internal const val DEFAULT_PATTERN_8 =  """${'\n'}console.groupCollapsed("group 
 internal const val DEFAULT_PATTERN_9 =  """console.table($$);"""
 
 
-fun properties(s: String) {}
 
 
 @State(name = "ConsoleLoggerSettings", storages = [(Storage("consolelogger.xml"))])
@@ -41,8 +40,7 @@ class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
   var pattern9: String = DEFAULT_PATTERN_9
   var jbCheckBox: JBCheckBox =  JBCheckBox()
 
-  var version = properties("pluginVersion")
-
+  var version = "0.0.21"
   companion object {
     val instance: ConsoleLoggerSettings
       get() = ApplicationManager.getApplication().getService(ConsoleLoggerSettings::class.java)

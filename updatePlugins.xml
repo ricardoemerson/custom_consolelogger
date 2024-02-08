@@ -3,6 +3,6 @@
     <plugin id="com.github.bgomar.consolelogger"
             url="https://plugins.jetbrains.com/plugin/download?updateId=422111"
             version="0.0.20">
-        <idea-version since-build="213.5744.223" until-build="232.*"/>
+        <idea-version since-build="213.5744.223" until-build="233.*"/>
     </plugin>
 </plugins>

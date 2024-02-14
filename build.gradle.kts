@@ -3,11 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
 
-import com.github.benmanes.gradle.versions.reporter.PlainTextReporter
-import com.github.benmanes.gradle.versions.reporter.result.Result
-import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
-import com.palantir.gradle.gitversion.VersionDetails
-import groovy.lang.Closure
 import org.apache.commons.io.FileUtils
 import org.w3c.dom.Document
 import java.io.BufferedReader
@@ -21,10 +16,13 @@ import javax.xml.xpath.XPathConstants
 import javax.xml.xpath.XPathFactory
 
 
-
+interface Injected {
+    @get:Inject val fs: FileSystemOperations
+}
+val injected = project.objects.newInstance<Injected>()
 fun properties(key: String) = providers.gradleProperty(key)
 fun environment(key: String) = providers.environmentVariable(key)
-fun project(key: String) = project.findProperty(key).toString()
+fun project(key: String) = injected.fs[key].toString()
 
 // Import variables from gradle.properties file
 val pluginDownloadIdeaSources: String by project
@@ -32,26 +30,37 @@ val pluginVersion: String by project
 val pluginJavaVersion: String by project
 val pluginEnableDebugLogs: String by project
 val pluginClearSandboxedIDESystemLogsBeforeRun: String by project
+
+val pluginGroup: String by project
+val jvmTarget: String by project
+val pluginSinceBuild: String by project
+val pluginUntilBuild: String by project
+val pluginGradleVersion: String by project
+
+val sourceCompatibility: String by project
+val pluginRepositoryUrl: String by project
+val platformType: String by project
+val platformVersion: String by project
+
+
+
+
 val pluginIdeaVersion = detectBestIdeVersion()
 
 plugins {
     id("java") // Java support
     id("groovy")
-    id("org.jetbrains.kotlin.jvm") version "1.9.10"     // Kotlin support
-    id("org.jetbrains.intellij") version "1.16.1"    // Gradle IntelliJ Plugin
+    id("org.jetbrains.kotlin.jvm") version "1.9.22"     // Kotlin support
+    id("org.jetbrains.intellij") version "1.17.1"    // Gradle IntelliJ Plugin
     id("org.jetbrains.changelog") version "2.2.0"    // Gradle Changelog Plugin "com.intellij.clion"
     id("org.jetbrains.qodana") version "0.1.13"    // Gradle Qodana Plugin
-    id("org.jetbrains.kotlinx.kover") version "0.6.1"    // Gradle Kover Plugin
-    kotlin("plugin.serialization") version "1.9.10"
-    id("com.github.ben-manes.versions") version "0.50.0" // https://github.com/ben-manes/gradle-versions-plugin
-    id("com.palantir.git-version") version "3.0.0" // https://github.com/palantir/gradle-git-version
-    id("com.github.andygoossens.modernizer") version "1.9.0" // https://github.com/andygoossens/gradle-modernizer-plugin
-    id("biz.lermitage.oga") version "1.1.1" // https://github.com/bg-omar/oga-gradle-plugin
-
+    id("org.jetbrains.kotlinx.kover") version "0.7.4"    // Gradle Kover Plugin
+    kotlin("plugin.serialization") version "1.9.22"
 }
 
-group = project("pluginGroup")
-version = project("pluginVersion")
+
+group = pluginGroup
+version = pluginVersion
 logger.quiet("Will use IDEA $pluginIdeaVersion and Java $pluginJavaVersion. Plugin version set to $version")
 
 group = "com.github.bgomar.bgdevtoys"
@@ -82,6 +91,7 @@ dependencies {
     implementation("org.jetbrains:marketplace-zip-signer:0.1.8")
     implementation("org.jetbrains:annotations:24.0.1")
     implementation("org.apache.commons:commons-lang3:3.14.0") // because no longer bundled with IDE
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
     implementation("commons-codec:commons-codec:1.16.0") // for Hash
     implementation("com.thedeanda:lorem:2.2") // for Lorem Ipsum
@@ -105,16 +115,16 @@ dependencies {
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
 
-    pluginName.set(project("pluginName"))
-    version.set(project("platformVersion"))
-    type.set(project("platformType"))
+    pluginName.set(pluginName)
+    version.set(platformVersion)
+    type.set(platformType)
     downloadSources.set(!System.getenv().containsKey("CI"))
     updateSinceUntilBuild.set(true)
     plugins.set(listOf("JavaScript", "com.intellij.java", "com.intellij.database"))
     sandboxDir.set(project.rootDir.canonicalPath + "/.sandbox")
     downloadSources.set(pluginDownloadIdeaSources.toBoolean() && !System.getenv().containsKey("CI"))
     instrumentCode.set(true)
-    pluginName.set("BG-DevToys")
+    pluginName.set("BG-ConsoleLogger")
     sandboxDir.set("${rootProject.projectDir}/.idea-sandbox/${shortenIdeVersion(pluginIdeaVersion)}")
     updateSinceUntilBuild.set(false)
     version.set(pluginIdeaVersion)
@@ -122,17 +132,10 @@ intellij {
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
     groups.set(emptyList())
-    repositoryUrl.set(project("pluginRepositoryUrl"))
+    repositoryUrl.set(pluginRepositoryUrl)
     headerParserRegex.set("(.*)".toRegex())
     itemPrefix.set("*")
 }
-
-modernizer {
-    includeTestClasses = true
-    // Find exclusion names at https://github.com/gaul/modernizer-maven-plugin/blob/master/modernizer-maven-plugin/src/main/resources/modernizer.xml
-    exclusions = setOf("java/util/Optional.get:()Ljava/lang/Object;")
-}
-
 
 // Configure Gradle Qodana Plugin - read more: https://github.com/JetBrains/gradle-qodana-plugin
 qodana {
@@ -154,13 +157,6 @@ java {
     }
 }
 
-kover.htmlReport {
-    onCheck.set(true)
-}
-kover.xmlReport {
-    onCheck.set(true)
-}
-
 tasks {
     register("clearSandboxedIDESystemLogs") {
         doFirst {
@@ -175,8 +171,6 @@ tasks {
     }
     // Set the JVM compatibility versions
     withType<JavaCompile> {
-        sourceCompatibility = project("sourceCompatibility")
-        targetCompatibility = project("targetCompatibility")
         sourceCompatibility = pluginJavaVersion
         targetCompatibility = pluginJavaVersion
         options.compilerArgs = listOf("-Xlint:deprecation")
@@ -186,7 +180,7 @@ tasks {
         kotlinJavaToolchain.toolchain.use(customLauncher)
     }
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = project("sourceCompatibility")
+        kotlinOptions.jvmTarget = sourceCompatibility
     }
     withType<Test> {
         useJUnitPlatform()
@@ -200,22 +194,7 @@ tasks {
         // avoid JBUIScale "Must be precomputed" error, because IDE is not started (LoadingState.APP_STARTED.isOccurred is false)
         jvmArgs("-Djava.awt.headless=true")
     }
-    withType<DependencyUpdatesTask> {
-        checkForGradleUpdate = true
-        gradleReleaseChannel = "current"
-        revision = "release"
-        rejectVersionIf {
-            isNonStable(candidate.version)
-        }
-        outputFormatter = closureOf<Result> {
-            unresolved.dependencies.removeIf {
-                val coordinates = "${it.group}:${it.name}"
-                coordinates.startsWith("unzipped.com") || coordinates.startsWith("com.jetbrains:ideaI")
-            }
-            PlainTextReporter(project, revision, gradleReleaseChannel)
-                .write(System.out, this)
-        }
-    }
+
     runIde {
         dependsOn("clearSandboxedIDESystemLogs")
 
@@ -240,13 +219,13 @@ tasks {
         enabled = false
     }
     wrapper {
-        gradleVersion = project("gradleVersion")
+        gradleVersion = pluginGradleVersion
     }
 
     patchPluginXml {
-        version.set(project("pluginVersion"))
-        sinceBuild.set(project("pluginSinceBuild"))
-        untilBuild.set(project("pluginUntilBuild"))
+        version.set(pluginVersion)
+        sinceBuild.set(pluginSinceBuild)
+        untilBuild.set(pluginUntilBuild)
 
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription.set(
@@ -265,7 +244,7 @@ tasks {
         changeNotes.set(provider {
             with(changelog) {
                 renderItem(
-                    getOrNull(project("pluginVersion"))
+                    getOrNull(pluginVersion)
                         ?: runCatching { getLatest() }.getOrElse { getUnreleased() },
                     Changelog.OutputType.HTML,
                 )
@@ -276,11 +255,11 @@ tasks {
         enabled = true
     }
     compileKotlin {
-        kotlinOptions.jvmTarget = project("jvmTarget")
+        kotlinOptions.jvmTarget = jvmTarget
     }
 
     compileTestKotlin {
-        kotlinOptions.jvmTarget  = project("jvmTarget")
+        kotlinOptions.jvmTarget  = jvmTarget
     }
 
     runIdeForUiTests {
@@ -299,7 +278,7 @@ tasks {
     publishPlugin {
         dependsOn("patchChangelog")
         token.set(System.getenv("PUBLISH_TOKEN"))
-        channels.set(listOf(project("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first()))
+        channels.set(listOf(pluginVersion.split('-').getOrElse(1) { "default" }.split('.').first()))
     }
 
     patchPluginXml {
@@ -417,4 +396,8 @@ fun detectBestIdeVersion(): String {
         return "IU-${findLatestStableIdeVersion()}"
     }
     return pluginIdeaVersionFromProps.toString()
+}
+
+operator fun Any.get(key: String): Any {
+    return key
 }

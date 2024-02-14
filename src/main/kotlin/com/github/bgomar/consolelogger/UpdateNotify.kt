@@ -12,10 +12,10 @@ class UpdateNotify : StartupActivity {
 
   override fun runActivity(project: Project) {
     val settings = ConsoleLoggerSettings.instance
-    if (settings.version.toString() == "Unknown") {
-      settings.version = "0.0.21"
-    } else if (plugin.version.toString() !== "0.0.21") {
-      settings.version = "0.0.21"
+    if (settings.version == "Unknown") {
+      settings.version = plugin.version
+    } else if (plugin.version != settings.version) {
+      settings.version = plugin.version
       showUpdate(project)
     }
   }

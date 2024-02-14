@@ -9,3 +9,4 @@ pluginManagement {
         mavenCentral()
     }
 }
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")

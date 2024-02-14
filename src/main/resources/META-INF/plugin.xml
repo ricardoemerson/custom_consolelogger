@@ -3,11 +3,11 @@
     <name>ConsoleLogger</name>
     <vendor email="info@omariskandarani.com" url="https://github.com/bg-omar/consolelogger">bgOmar</vendor>
 
-    <idea-version since-build="223.7571.182" />
+    <idea-version since-build="232.7754.77" />
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>JavaScript</depends>
-
+    <depends>com.intellij.modules.platform</depends>
     <resource-bundle>messages.ConsoleLoggerBundle</resource-bundle>
 
     <description><![CDATA[
@@ -23,30 +23,28 @@
                                  id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable" displayName="BG-ConsoleLogger"/>
 
 
-        <applicationService serviceImplementation="com.github.bgomar.consolelogger.services.GivServiceSettings"/>
-        <projectConfigurable parentId="tools" instance="com.github.bgomar.consolelogger.settings.ProjectSettingsConfigurable"
-                             id="com.github.bgomar.consolelogger.settings.ProjectSettingsConfigurable"   displayName="BG-ConsoleBrowser" />
+        <applicationService serviceImplementation="com.github.bgomar.consolebrowser.services.GivServiceSettings"/>
+        <projectConfigurable parentId="tools" instance="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"
+                             id="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"   displayName="BG-ConsoleBrowser" />
 
-        <!-- How to develop a Tool Window:
-     https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window
-     https://plugins.jetbrains.com/docs/intellij/tool-windows.html#declarative-setup -->
 
-        <toolWindow id="ConsoleLogger" icon="/icons/BG2.svg" anchor="left"
-                    factoryClass="com.github.bgomar.consolelogger.GivToolWindowFactory"/>
+
+        <toolWindow id="ConsoleBrowser" icon="/icons/BG2.svg" anchor="left"
+                    factoryClass="com.github.bgomar.consolebrowser.GivToolWindowFactory"/>
 
         <!--suppress  PluginXmlValidity -->
-        <toolWindow id="bgDevTools" icon="/icons/BG.svg" anchor="right"
+        <toolWindow id="Tools" icon="/icons/BG.svg" anchor="right"
             factoryClass="com.github.bgomar.bgdevtoys.toolwindow.DevToysToolWindowFactory"/>
 
         <notificationGroup id="com.github.bgomar.consolelogger" displayType="STICKY_BALLOON"/>
         <applicationService serviceImplementation="com.github.bgomar.consolelogger.ApplicationServicePlaceholder" id="com.github.bgomar.consolelogger"/>
         <postStartupActivity implementation="com.github.bgomar.consolelogger.UpdateNotify"/>
-        <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-        <idea-version since-build="232.7754.77"/> <!-- needed by ModalityState.nonModal() -->
+
+
 
         <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html#modules-available-in-all-products
              on how to target different products -->
-        <depends>com.intellij.modules.platform</depends>
+
     </extensions>
 
     <actions>

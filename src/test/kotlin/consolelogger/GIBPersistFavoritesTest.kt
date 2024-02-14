@@ -2,7 +2,7 @@ package consolelogger
 
 //
 //import com.github.bgomar.consolelogger.services.GivServiceSettings
-//import com.github.bgomar.consolelogger.settings.FavoritesWeb
+//import com.github.bgomar.consolebrowser.settings.FavoritesWeb
 //import com.intellij.configurationStore.serialize
 //import com.intellij.openapi.util.JDOMUtil
 //import io.kotest.core.spec.style.BehaviorSpec

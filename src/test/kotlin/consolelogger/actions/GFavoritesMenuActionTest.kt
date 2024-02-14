@@ -1,7 +1,7 @@
 package consolelogger.actions
 //
 //import com.github.bgomar.consolelogger.services.GivServiceSettings
-//import com.github.bgomar.consolelogger.settings.FavoritesWeb
+//import com.github.bgomar.consolebrowser.settings.FavoritesWeb
 //import com.intellij.openapi.actionSystem.ActionManager
 //import com.intellij.openapi.application.Application
 //import com.intellij.openapi.application.ApplicationManager

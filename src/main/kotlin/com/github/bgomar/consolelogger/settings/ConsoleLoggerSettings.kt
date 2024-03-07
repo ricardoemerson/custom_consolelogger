@@ -4,7 +4,6 @@ import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
-import com.intellij.ui.components.JBCheckBox
 import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
@@ -13,7 +12,7 @@ internal const val DEFAULT_PATTERN_1 =  """console.log("%c ---> $$: ","color:#F0
 internal const val DEFAULT_PATTERN_2 =  """console.log("%c ---> $$: ","color:#0F0;", $$);"""
 internal const val DEFAULT_PATTERN_3 =  """console.warn("%c ---> $$: ","color:#F00;", $$);"""
 
-internal const val DEFAULT_PATTERN_4 =  """Serial.print(" ---> $$: ", $$);"""
+internal const val DEFAULT_PATTERN_4 =  """Serial.println($$);"""
 internal const val DEFAULT_PATTERN_5 =  """cout << "      ---> $$: " << $$ << endl;"""
 internal const val DEFAULT_PATTERN_6 =  """print("{:>30}".format(" ---> $$: " + $$))"""
 
@@ -38,9 +37,8 @@ class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
   var pattern7: String = DEFAULT_PATTERN_7
   var pattern8: String = DEFAULT_PATTERN_8
   var pattern9: String = DEFAULT_PATTERN_9
-  var jbCheckBox: JBCheckBox =  JBCheckBox()
 
-  var version = "0.0.21"
+  var version = "Unknown"
   companion object {
     val instance: ConsoleLoggerSettings
       get() = ApplicationManager.getApplication().getService(ConsoleLoggerSettings::class.java)

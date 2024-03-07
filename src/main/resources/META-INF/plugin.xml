@@ -7,9 +7,8 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>JavaScript</depends>
-    <depends>com.intellij.modules.platform</depends>
-    <resource-bundle>messages.ConsoleLoggerBundle</resource-bundle>
 
+    <resource-bundle>messages.ConsoleLoggerBundle</resource-bundle>
     <description><![CDATA[
       This free plugin is highly inspired from the <a href="https://devtoys.app"><b>DevToys</b></a> software available on Windows. Find useful tools in a Tool Window in the top right corner of your IDE:
       <ul>
@@ -113,4 +112,3 @@
         </group>
     </actions>
 </idea-plugin>
-

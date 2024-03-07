@@ -13,6 +13,7 @@ import com.intellij.ui.BalloonLayoutData
 import com.intellij.ui.awt.RelativePoint
 import java.awt.Point
 
+
 class ApplicationServicePlaceholder : Disposable {
   override fun dispose() = Unit
 

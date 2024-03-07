@@ -48,14 +48,6 @@ public class DevToysToolWindow {
     private JTextField passwordStrengthPasswordTextField;
     private JTextArea passwordStrengthReportTextArea;
 
-    private JPanel jsonyamlPanel;
-    private JTextArea jsonyamlJSONTextArea;
-    private JTextArea jsonyamlYAMLTextArea;
-
-    private JPanel bencodejsonPanel;
-    private JTextArea bencodejsonBENCODETextArea;
-    private JTextArea bencodejsonJSONTextArea;
-
     private JPanel timestampPanel;
     private JComboBox<ComboBoxWithImageItem> timestampTimezoneComboBox;
     private JTextArea timestampTextArea;
@@ -106,14 +98,11 @@ public class DevToysToolWindow {
     private JTextArea cronTextArea;
     private JButton explainButton;
 
-    private JPanel jsonStringPanel;
-    private JTextArea jsonStringJsonArea;
-    private JTextArea jsonStringStringTextArea;
 
-    private JPanel propertiesYamlPanel;
-    private JComboBox<String> propertiesYamlTypeComboBox;
-    private JTextArea propertiesYamlPropertiesTextArea;
-    private JTextArea propertiesYamlYamlTextArea;
+    private JPanel propertiesConsoleLoggerPanel;
+    private JComboBox<String> propertiesConsoleLoggerTypeComboBox;
+    private JTextArea propertiesConsoleLoggerPropertiesTextArea;
+    private JTextArea propertiesConsoleLoggerConsoleLoggerTextArea;
 
     private JPanel hmacPanel;
     private JComboBox<String> hmacAlgoComboBox;
@@ -125,7 +114,6 @@ public class DevToysToolWindow {
     private JTextField passwordVerifierHashTextField;
     private JBTextField passwordVerifierResultLabel;
     private JButton hashItButton;
-    private JEditorPane editorPane1;
 
     private final LinkedHashMap<String, PanelAndIcon> toolPanelsByTitle = new LinkedHashMap<>();
 
@@ -134,6 +122,7 @@ public class DevToysToolWindow {
 
     public DevToysToolWindow() {
         String iconsPath = "bgdevtoys/toolicons/";
+        toolPanelsByTitle.put("Properties of ConsoleLogger ", new PanelAndIcon(propertiesConsoleLoggerPanel, iconsPath + "PropertiesYaml.svg"));
         toolPanelsByTitle.put("Base64 encoder/decoder", new PanelAndIcon(base64Panel, iconsPath + "Base64EncoderDecoder.svg"));
         toolPanelsByTitle.put("URL encoder/decoder", new PanelAndIcon(urlCodecPanel, iconsPath + "UrlEncoderDecoder.svg"));
         toolPanelsByTitle.put("Fake Data generator", new PanelAndIcon(dataFakerPanel, iconsPath + "DataFaker.svg"));
@@ -148,11 +137,10 @@ public class DevToysToolWindow {
         toolPanelsByTitle.put("Password hash verifier", new PanelAndIcon(passwordVerifierPanel, iconsPath + "PasswordHashVerifier.svg"));
         toolPanelsByTitle.put("Text escape/unescape", new PanelAndIcon(escapePanel, iconsPath + "Escaper.svg"));
         toolPanelsByTitle.put("ASCII <> HEX converter", new PanelAndIcon(asciihexPanel, iconsPath + "AsciiHex.svg"));
-        toolPanelsByTitle.put("BENCODE <> JSON converter", new PanelAndIcon(bencodejsonPanel, iconsPath + "BencodeJson.svg"));
-        toolPanelsByTitle.put("JSON <> YAML converter", new PanelAndIcon(jsonyamlPanel, iconsPath + "JsonYaml.svg"));
-        toolPanelsByTitle.put("JSON to String converter", new PanelAndIcon(jsonStringPanel, iconsPath + "JsonString.svg"));
-        toolPanelsByTitle.put("Properties to YAML converter ", new PanelAndIcon(propertiesYamlPanel, iconsPath + "PropertiesYaml.svg"));
 
+        new PropertiesConsoleLoggerToolSetup(
+            propertiesConsoleLoggerPropertiesTextArea,
+            propertiesConsoleLoggerConsoleLoggerTextArea).setup();
         new Base64ToolSetup(
             base64RadioButtonUTF8,
             base64RadioButtonASCII,
@@ -221,19 +209,6 @@ public class DevToysToolWindow {
         new UUIDToolSetup(
             uuidGenerateButton,
             uuidTextArea).setup();
-        new JSONStringToolSetup(
-            jsonStringJsonArea,
-            jsonStringStringTextArea).setup();
-        new JSONYAMLToolSetup(
-            jsonyamlJSONTextArea,
-            jsonyamlYAMLTextArea).setup();
-        new BENCODEJSONToolSetup(
-            bencodejsonBENCODETextArea,
-            bencodejsonJSONTextArea).setup();
-        new PropertiesYamlToolSetup(
-            propertiesYamlTypeComboBox,
-            propertiesYamlPropertiesTextArea,
-            propertiesYamlYamlTextArea).setup();
         new ASCIIHEXToolSetup(
             asciihexASCIITextArea,
             asciihexHEXTextArea,
@@ -298,24 +273,6 @@ public class DevToysToolWindow {
                         "and the tool will say if the password<br>" +
                         "verifies the hash with an algorithm like MD5,<br>" +
                         "SHA1/256/384/512 or BCrypt 2A/2B/2Y.</html>");
-                }
-                case "JSON to String converter" -> {
-                    helpLabel.setVisible(true);
-                    helpLabel.setToolTipText("<html>" +
-                        "Type some JSON and it will be automatically<br>" +
-                        "converted to String as you type.</html>");
-                }
-                case "JSON <> YAML converter" -> {
-                    helpLabel.setVisible(true);
-                    helpLabel.setToolTipText("<html>" +
-                        "Type some JSON or YAML and it will be<br>" +
-                        "automatically converted as you type.</html>");
-                }
-                case "BENCODE <> JSON converter" -> {
-                    helpLabel.setVisible(true);
-                    helpLabel.setToolTipText("<html>" +
-                        "Type some BENCODE or JSON and it will be<br>" +
-                        "automatically converted as you type.</html>");
                 }
                 case "Timestamp converter" -> {
                     helpLabel.setVisible(true);

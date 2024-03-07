@@ -10,22 +10,15 @@ import net.datafaker.providers.base.Animal;
 import net.datafaker.providers.base.Appliance;
 import net.datafaker.providers.base.Artist;
 import net.datafaker.providers.base.Barcode;
-import net.datafaker.providers.base.Book;
 import net.datafaker.providers.base.Company;
 import net.datafaker.providers.base.IdNumber;
 import net.datafaker.providers.base.Job;
 import net.datafaker.providers.base.Music;
 import net.datafaker.providers.base.Twitter;
 import net.datafaker.providers.base.University;
-import net.datafaker.providers.entertainment.Babylon5;
-import net.datafaker.providers.entertainment.BackToTheFuture;
-import net.datafaker.providers.entertainment.Buffy;
-import net.datafaker.providers.entertainment.ChuckNorris;
-import net.datafaker.providers.entertainment.Ghostbusters;
 import net.datafaker.providers.entertainment.Movie;
 import net.datafaker.providers.entertainment.Pokemon;
 import net.datafaker.providers.entertainment.RickAndMorty;
-import net.datafaker.providers.entertainment.TheItCrowd;
 import net.datafaker.providers.food.Food;
 import net.datafaker.providers.videogame.SuperMario;
 
@@ -40,53 +33,8 @@ public class DataFakerTools {
         "en",
         "en-CA",
         "en-US",
-        "fr",
-        "fr-CA",
-        "fr-CH",
-        "ar",
-        "bg",
-        "by",
-        "ca",
-        "cs",
-        "cs-CZ",
-        "da-DK",
-        "de",
-        "de-AT",
-        "de-CH",
-        "dk",
-        "ee",
-        "es",
-        "es-AR",
-        "es-MX",
-        "es-PY",
-        "fa",
-        "fi-FI",
-        "he",
-        "hr",
-        "hu",
-        "hy",
-        "id",
-        "in-ID",
-        "it",
-        "ja",
-        "ko",
-        "lv",
-        "nb-NO",
         "nl",
-        "no-NO",
-        "pl",
-        "pt",
-        "pt-BR",
-        "ru",
-        "sk",
-        "sv",
-        "sv-SE",
-        "th",
-        "tr",
-        "uk",
-        "vi",
-        "zh-CN",
-        "zh-TW");
+        "uk");
 
     public static final List<String> FAKER_GENERATORS = List.of(
         "Address",
@@ -98,24 +46,11 @@ public class DataFakerTools {
         "Appliance brand",
         "Appliance equipment",
         "Artist",
-        "Babylon5 character",
-        "Babylon5 quote",
-        "Back To The Future character",
-        "Back To The Future quote",
         "Banking - IBAN",
         "Bar code",
-        "Book author",
-        "Book title",
-        "Buffy character",
-        "Buffy episode",
-        "Buffy quote",
-        "Chuck Norris fact",
         "Company buzzword",
         "Company name",
         "Food",
-        "GhostBusters actor",
-        "GhostBusters character",
-        "GhostBusters quote",
         "Id number",
         "Job key skill",
         "Job position",
@@ -128,10 +63,6 @@ public class DataFakerTools {
         "Super Mario game",
         "Rick and Morty character",
         "Rick and Morty quote",
-        "The It Crowd actor",
-        "The It Crowd character",
-        "The It Crowd email",
-        "The It Crowd quote",
         "Twitter user id",
         "Twitter username",
         "University name");
@@ -213,30 +144,6 @@ public class DataFakerTools {
                         lines.add(artist.name());
                     }
                 }
-                case "Babylon5 character" -> {
-                    Babylon5 babylon5 = faker.babylon5();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(babylon5.character());
-                    }
-                }
-                case "Babylon5 quote" -> {
-                    Babylon5 babylon5 = faker.babylon5();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(babylon5.quote());
-                    }
-                }
-                case "Back To The Future character" -> {
-                    BackToTheFuture backToTheFuture = faker.backToTheFuture();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(backToTheFuture.character());
-                    }
-                }
-                case "Back To The Future quote" -> {
-                    BackToTheFuture backToTheFuture = faker.backToTheFuture();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(backToTheFuture.quote());
-                    }
-                }
                 case "Banking - IBAN" -> {
                     needToLimitResultSize = false;
                     needToSortResult = false;
@@ -285,42 +192,6 @@ public class DataFakerTools {
                         lines.add(Long.toString(barcode.gtin14()));
                     }
                 }
-                case "Book author" -> {
-                    Book book = faker.book();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(book.author());
-                    }
-                }
-                case "Book title" -> {
-                    Book book = faker.book();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(book.title());
-                    }
-                }
-                case "Buffy character" -> {
-                    Buffy buffy = faker.buffy();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(buffy.characters());
-                    }
-                }
-                case "Buffy episode" -> {
-                    Buffy buffy = faker.buffy();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(buffy.episodes());
-                    }
-                }
-                case "Buffy quote" -> {
-                    Buffy buffy = faker.buffy();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(buffy.quotes());
-                    }
-                }
-                case "Chuck Norris fact" -> {
-                    ChuckNorris chuckNorris = faker.chuckNorris();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(chuckNorris.fact());
-                    }
-                }
                 case "Company name" -> {
                     Company company = faker.company();
                     for (int i = 0; i < howManyPlusExtra; i++) {
@@ -337,24 +208,6 @@ public class DataFakerTools {
                     Food food = faker.food();
                     for (int i = 0; i < howManyPlusExtra; i++) {
                         lines.add(food.ingredient());
-                    }
-                }
-                case "GhostBusters actor" -> {
-                    Ghostbusters ghostbusters = faker.ghostbusters();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(ghostbusters.actor());
-                    }
-                }
-                case "GhostBusters character" -> {
-                    Ghostbusters ghostbusters = faker.ghostbusters();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(ghostbusters.character());
-                    }
-                }
-                case "GhostBusters quote" -> {
-                    Ghostbusters ghostbusters = faker.ghostbusters();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(ghostbusters.quote());
                     }
                 }
                 case "Id number" -> {
@@ -427,30 +280,6 @@ public class DataFakerTools {
                     RickAndMorty rickAndMorty = faker.rickAndMorty();
                     for (int i = 0; i < howManyPlusExtra; i++) {
                         lines.add(rickAndMorty.quote());
-                    }
-                }
-                case "The It Crowd character" -> {
-                    TheItCrowd theItCrowd = faker.theItCrowd();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(theItCrowd.characters());
-                    }
-                }
-                case "The It Crowd quote" -> {
-                    TheItCrowd theItCrowd = faker.theItCrowd();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(theItCrowd.quotes());
-                    }
-                }
-                case "The It Crowd actor" -> {
-                    TheItCrowd theItCrowd = faker.theItCrowd();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(theItCrowd.actors());
-                    }
-                }
-                case "The It Crowd email" -> {
-                    TheItCrowd theItCrowd = faker.theItCrowd();
-                    for (int i = 0; i < howManyPlusExtra; i++) {
-                        lines.add(theItCrowd.emails());
                     }
                 }
                 case "Twitter username" -> {

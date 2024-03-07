@@ -11,7 +11,7 @@ import com.intellij.openapi.editor.actionSystem.EditorActionManager
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFileFactory
-import com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings
+import com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings
 
 
 class ConsoleLoggerAdd4 : AnAction("INSERT_LOG4") {
@@ -32,7 +32,7 @@ class ConsoleLoggerAdd4 : AnAction("INSERT_LOG4") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.instance.pattern4.run {
+    val pattern = ConsoleLoggerSettings.getPattern(4).run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
         .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }

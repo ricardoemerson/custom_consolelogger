@@ -17,14 +17,18 @@
     </description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings"/>
-        <applicationConfigurable parentId="tools" instance="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"
-                                 id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable" displayName="BG-ConsoleLogger"/>
+<!--        <applicationService serviceImplementation="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings"/>-->
+<!--        <applicationConfigurable parentId="tools" instance="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"-->
+<!--                                 id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable" displayName="BG-ConsoleLogger"/>-->
 
+        <applicationService serviceImplementation="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings" />
+        <applicationConfigurable parentId="tools" instance="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable"
+            id="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable" displayName="BG-ConsoleLogger"/>
 
         <applicationService serviceImplementation="com.github.bgomar.consolebrowser.services.GivServiceSettings"/>
         <projectConfigurable parentId="tools" instance="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"
                              id="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"   displayName="BG-ConsoleBrowser" />
+
 
 
 

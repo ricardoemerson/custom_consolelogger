@@ -17,6 +17,6 @@ public class ConsoleLoggerSettingsConfigurable extends ConfigurableBase<Properti
 
   @Override
   protected PropertiesConsoleLoggerToolSetup createUi() {
-    return new PropertiesConsoleLoggerToolSetup.ConsoleLoggerConfig(getSettings());
+    return new ConsoleLoggerTools.ConsoleLoggerConfig(getSettings());
   }
 }

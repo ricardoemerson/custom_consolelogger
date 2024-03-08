@@ -1,10 +1,12 @@
 @file:Suppress("VulnerableLibrariesLocal")
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.changelog.Changelog
-import org.jetbrains.changelog.markdownToHTML
 
 import org.apache.commons.io.FileUtils
+import org.jetbrains.changelog.Changelog
+import org.jetbrains.changelog.markdownToHTML
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.w3c.dom.Document
+import java.lang.StringBuilder
+import java.io.File
 import java.io.BufferedReader
 import java.io.ByteArrayInputStream
 import java.io.InputStreamReader
@@ -14,7 +16,7 @@ import java.nio.file.Files
 import javax.xml.parsers.DocumentBuilderFactory
 import javax.xml.xpath.XPathConstants
 import javax.xml.xpath.XPathFactory
-
+import kotlin.script.experimental.api.ScriptDiagnostic
 
 interface Injected {
     @get:Inject val fs: FileSystemOperations
@@ -61,16 +63,16 @@ plugins {
 
 group = pluginGroup
 version = pluginVersion
-logger.quiet("Will use IDEA $pluginIdeaVersion and Java $pluginJavaVersion. Plugin version set to $version")
+logger.log(LogLevel.INFO, "Will use IDEA $pluginIdeaVersion and Java $pluginJavaVersion. Plugin version set to $version")
 
-group = "com.github.bgomar.bgdevtoys"
+group = "com.github.bgomar.consolelogger"
 
 repositories {
     mavenCentral()
 }
 
 val junitVersion = "5.10.1"
-val junitPlatformLauncher = "0.0.1"
+val junitPlatformLauncher = "1.10.1"
 
 
 val service = project.extensions.getByType<JavaToolchainService>()
@@ -88,17 +90,17 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains:marketplace-zip-signer:0.1.8")
-    implementation("org.jetbrains:annotations:24.0.1")
+    implementation("org.jetbrains:marketplace-zip-signer:0.1.24")
+    implementation("org.jetbrains:annotations:24.1.0")
     implementation("org.apache.commons:commons-lang3:3.14.0") // because no longer bundled with IDE
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 
     implementation("commons-codec:commons-codec:1.16.0") // for Hash
     implementation("com.thedeanda:lorem:2.2") // for Lorem Ipsum
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.1") // for JSON <> YAML
     implementation("com.dampcake:bencode:1.4.1") // for JSON <> BENCODE
     implementation("com.cronutils:cron-utils:9.2.1") // for cron expression parser https://github.com/jmrozanec/cron-utils
-    implementation("net.datafaker:datafaker:2.0.2") // for Data Faker
+    implementation("net.datafaker:datafaker:2.1.0") // for Data Faker
     implementation("org.yaml:snakeyaml:2.2") // for JSON <> YAML
     implementation("org.apache.commons:commons-text:1.11.0") // for JSON (un)escape
     implementation("com.nulab-inc:zxcvbn:1.8.2") // for password strength evaluation
@@ -109,6 +111,23 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformLauncher")
+}
+
+abstract class UpdatePluginXml : DefaultTask() {
+
+    @TaskAction
+    fun action() {
+        val generatedActionsXml = generateConsoleLoggerActionsXml()
+        val pluginXmlFile = File("src/main/resources/META-INF/plugin.xml")
+
+        doFirst {
+            var pluginXmlContent = pluginXmlFile.readText()
+
+            pluginXmlContent = pluginXmlContent.replace("\${generatedActionsXml}", generatedActionsXml)
+
+            pluginXmlFile.writeText(pluginXmlContent)
+        }
+    }
 }
 
 // Configure Gradle IntelliJ Plugin
@@ -124,7 +143,7 @@ intellij {
     sandboxDir.set(project.rootDir.canonicalPath + "/.sandbox")
     downloadSources.set(pluginDownloadIdeaSources.toBoolean() && !System.getenv().containsKey("CI"))
     instrumentCode.set(true)
-    pluginName.set("BG-ConsoleLogger")
+    pluginName.set("ConsoleLogger")
     sandboxDir.set("${rootProject.projectDir}/.idea-sandbox/${shortenIdeVersion(pluginIdeaVersion)}")
     updateSinceUntilBuild.set(false)
     version.set(pluginIdeaVersion)
@@ -169,6 +188,19 @@ tasks {
             }
         }
     }
+
+    register("updatePluginXml") {
+        doFirst {
+            val generatedActionsXml = generateConsoleLoggerActionsXml()
+            val pluginXmlFile = File("src/main/resources/META-INF/plugin.xml")
+            var pluginXmlContent = pluginXmlFile.readText()
+            pluginXmlContent = pluginXmlContent.replace("\${generatedActionsXml}", generatedActionsXml)
+            pluginXmlFile.writeText(pluginXmlContent)
+        }
+    }
+
+
+
     // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = pluginJavaVersion
@@ -226,7 +258,7 @@ tasks {
         version.set(pluginVersion)
         sinceBuild.set(pluginSinceBuild)
         untilBuild.set(pluginUntilBuild)
-
+        updatePluginXml()
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription.set(
             file("README.md").readText().lines().run {
@@ -278,7 +310,7 @@ tasks {
     publishPlugin {
         dependsOn("patchChangelog")
         token.set(System.getenv("PUBLISH_TOKEN"))
-        channels.set(listOf(pluginVersion.split('-').getOrElse(1) { "default" }.split('.').first()))
+       /* channels.set(listOf(pluginVersion.split('-').getOrElse(1) { "default" }.split('.').first()))*/
     }
 
     patchPluginXml {
@@ -400,4 +432,54 @@ fun detectBestIdeVersion(): String {
 
 operator fun Any.get(key: String): Any {
     return key
+}
+
+fun generateConsoleLoggerActionsXml(): String {
+    val actionsXml: StringBuilder = StringBuilder()
+    actionsXml.append("            <!-- Include actions XML -->\n")
+    for (i in 1..9) {
+        actionsXml.append(createActionXml(i))
+    }
+
+    actionsXml.append("            <action id=\"com.github.bgomar.consolelogger.removeLogs\" class=\"com.github.bgomar.consolelogger.ConsoleLoggerRemove\" text=\"Remove ConsoleLogger's Console.Log\"\n")
+    actionsXml.append("                    description=\"Remove console.log() generate by ConsoleLogger plugin\">\n")
+    actionsXml.append("                 <keyboard-shortcut keymap=\"\$default\" first-keystroke=\"ctrl alt 0\"/>\n")
+    actionsXml.append("                 <keyboard-shortcut keymap=\"Mac OS X\" first-keystroke=\"ctrl alt 0\"/>\n")
+    actionsXml.append("            </action>\n")
+    actionsXml.append("            <!-- Include actions end -->")
+    return actionsXml.toString()
+}
+
+fun createActionXml(i: Int): String {
+    val actionXml: StringBuilder = StringBuilder()
+    actionXml.append("             <action id=\"com.github.bgomar.consolelogger.add").append(i).append("\" class=\"com.github.bgomar.consolelogger.ConsoleLoggerAdd").append(i).append("\"\n")
+    actionXml.append("                    text=\"Insert ConsoleLogger ").append(i).append("\"\n")
+    actionXml.append("                    description=\"Generate a console.log() for that variable\">\n")
+    actionXml.append("                 <keyboard-shortcut keymap=\"\$default\" first-keystroke=\"ctrl alt ").append(i).append("\"/>\n")
+    actionXml.append("                 <keyboard-shortcut keymap=\"Mac OS X\" first-keystroke=\"ctrl alt ").append(i).append("\"/>\n")
+    actionXml.append("             </action>\n")
+
+    return actionXml.toString()
+}
+
+fun updatePluginXml() {
+    val generatedActionsXml = generateConsoleLoggerActionsXml()
+    val pluginXmlFile = File("src/main/resources/META-INF/plugin.xml")
+
+    val pluginXmlContent = pluginXmlFile.readText()
+    val startTag = "<!-- Include actions XML -->"
+    val endTag = "<!-- Include actions end -->"
+
+    val startIndex = pluginXmlContent.indexOf(startTag)
+    val endIndex = pluginXmlContent.indexOf(endTag) + endTag.length
+
+    if (startIndex != -1 && endIndex != -1) {
+        val updatedPluginXmlContent = pluginXmlContent.substring(0, startIndex) +
+                "\n$generatedActionsXml\n" +
+                pluginXmlContent.substring(endIndex)
+
+        pluginXmlFile.writeText(updatedPluginXmlContent)
+    } else {
+        throw GradleException("Plugin description section not found in src/main/resources/META-INF/plugin.xml")
+    }
 }

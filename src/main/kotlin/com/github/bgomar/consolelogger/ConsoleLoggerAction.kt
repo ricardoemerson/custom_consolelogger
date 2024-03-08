@@ -14,7 +14,7 @@ import com.intellij.psi.PsiFileFactory
 import com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings
 
 
-class ConsoleLoggerAddError : AnAction("INSERT_ERROR") {
+class ConsoleLoggerAction(private val patternIndex: Int) : AnAction("INSERT_LOG$patternIndex") {
   override fun actionPerformed(e: AnActionEvent) {
     // Check if the editor is available
     val editor = e.getData(CommonDataKeys.EDITOR)
@@ -32,7 +32,7 @@ class ConsoleLoggerAddError : AnAction("INSERT_ERROR") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.getPattern(7).run {
+    val pattern = ConsoleLoggerSettings.getPattern(patternIndex).run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
         .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }
@@ -105,14 +105,9 @@ class ConsoleLoggerAddError : AnAction("INSERT_ERROR") {
    * search for the cursor insertion point
    * return the name of the element to log
    */
-  private fun moveCursorToInsertionPoint(
-    editor: Editor
-  ): String? {
+  private fun moveCursorToInsertionPoint(editor: Editor): String? {
     // parse the file as a simple JavaScript file
-    val psiFile =
-      PsiFileFactory.getInstance(editor.project).createFileFromText(
-        "dummy.js", JavascriptLanguage.INSTANCE, editor.document.text
-      )
+    val psiFile = PsiFileFactory.getInstance(editor.project).createFileFromText("dummy.js", JavascriptLanguage.INSTANCE, editor.document.text)
 
     val valueToLog: String
     val element: PsiElement?

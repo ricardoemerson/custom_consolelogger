@@ -100,9 +100,15 @@ public class DevToysToolWindow {
 
 
     private JPanel propertiesConsoleLoggerPanel;
-    private JComboBox<String> propertiesConsoleLoggerTypeComboBox;
-    private JTextArea propertiesConsoleLoggerPropertiesTextArea;
-    private JTextArea propertiesConsoleLoggerConsoleLoggerTextArea;
+    private JTextArea propertiesConsoleLoggerTextArea1;
+    private JTextArea propertiesConsoleLoggerTextArea2;
+    private JTextArea propertiesConsoleLoggerTextArea3;
+    private JTextArea propertiesConsoleLoggerTextArea4;
+    private JTextArea propertiesConsoleLoggerTextArea5;
+    private JTextArea propertiesConsoleLoggerTextArea6;
+    private JTextArea propertiesConsoleLoggerTextArea7;
+    private JTextArea propertiesConsoleLoggerTextArea8;
+    private JTextArea propertiesConsoleLoggerTextArea9;
 
     private JPanel hmacPanel;
     private JComboBox<String> hmacAlgoComboBox;
@@ -139,8 +145,15 @@ public class DevToysToolWindow {
         toolPanelsByTitle.put("ASCII <> HEX converter", new PanelAndIcon(asciihexPanel, iconsPath + "AsciiHex.svg"));
 
         new PropertiesConsoleLoggerToolSetup(
-            propertiesConsoleLoggerPropertiesTextArea,
-            propertiesConsoleLoggerConsoleLoggerTextArea).setup();
+                propertiesConsoleLoggerTextArea1,
+                propertiesConsoleLoggerTextArea2,
+                propertiesConsoleLoggerTextArea3,
+                propertiesConsoleLoggerTextArea4,
+                propertiesConsoleLoggerTextArea5,
+                propertiesConsoleLoggerTextArea6,
+                propertiesConsoleLoggerTextArea7,
+                propertiesConsoleLoggerTextArea8,
+                propertiesConsoleLoggerTextArea9).setup();
         new Base64ToolSetup(
             base64RadioButtonUTF8,
             base64RadioButtonASCII,

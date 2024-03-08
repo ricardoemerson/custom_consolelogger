@@ -14,15 +14,15 @@ import com.intellij.psi.PsiFileFactory
 import com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings
 
 
-class ConsoleLoggerAdd1 : AnAction("INSERT_LOG1") {
+class ConsoleLoggerAdd7 : AnAction("INSERT_LOG7") {
   override fun actionPerformed(e: AnActionEvent) {
     // Check if the editor is available
     val editor = e.getData(CommonDataKeys.EDITOR)
     if (editor == null) {
-      // Handle the case where the editor is missing, e.g., show an error message
-      // or log a message, and return from the method.
-      println("Editor is missing. Cannot perform the action.")
-      return
+        // Handle the case where the editor is missing, e.g., show an error message
+        // or log a message, and return from the method.
+        println("Editor is missing. Cannot perform the action.")
+        return
     }
     val actionManager = EditorActionManager.getInstance()
     val startNewLineHandler = actionManager.getActionHandler(IdeActions.ACTION_EDITOR_START_NEW_LINE)
@@ -32,7 +32,7 @@ class ConsoleLoggerAdd1 : AnAction("INSERT_LOG1") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.getPattern(1).run {
+    val pattern = ConsoleLoggerSettings.getPattern(7).run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
         .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }
@@ -105,9 +105,14 @@ class ConsoleLoggerAdd1 : AnAction("INSERT_LOG1") {
    * search for the cursor insertion point
    * return the name of the element to log
    */
-  private fun moveCursorToInsertionPoint(editor: Editor): String? {
+  private fun moveCursorToInsertionPoint(
+    editor: Editor
+  ): String? {
     // parse the file as a simple JavaScript file
-    val psiFile = PsiFileFactory.getInstance(editor.project).createFileFromText("dummy.js", JavascriptLanguage.INSTANCE, editor.document.text)
+    val psiFile =
+      PsiFileFactory.getInstance(editor.project).createFileFromText(
+        "dummy.js", JavascriptLanguage.INSTANCE, editor.document.text
+      )
 
     val valueToLog: String
     val element: PsiElement?

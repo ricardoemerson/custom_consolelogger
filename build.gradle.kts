@@ -436,7 +436,7 @@ operator fun Any.get(key: String): Any {
 
 fun generateConsoleLoggerActionsXml(): String {
     val actionsXml: StringBuilder = StringBuilder()
-    actionsXml.append("            <!-- Include actions XML -->\n")
+    actionsXml.append("<!-- Include actions XML -->\n")
     for (i in 1..9) {
         actionsXml.append(createActionXml(i))
     }
@@ -452,7 +452,7 @@ fun generateConsoleLoggerActionsXml(): String {
 
 fun createActionXml(i: Int): String {
     val actionXml: StringBuilder = StringBuilder()
-    actionXml.append("             <action id=\"com.github.bgomar.consolelogger.add").append(i).append("\" class=\"com.github.bgomar.consolelogger.ConsoleLoggerAdd").append(i).append("\"\n")
+    actionXml.append("\n           <action id=\"com.github.bgomar.consolelogger.add").append(i).append("\" class=\"com.github.bgomar.consolelogger.ConsoleLoggerAdd").append(i).append("\"\n")
     actionXml.append("                    text=\"Insert ConsoleLogger ").append(i).append("\"\n")
     actionXml.append("                    description=\"Generate a console.log() for that variable\">\n")
     actionXml.append("                 <keyboard-shortcut keymap=\"\$default\" first-keystroke=\"ctrl alt ").append(i).append("\"/>\n")
@@ -475,7 +475,7 @@ fun updatePluginXml() {
 
     if (startIndex != -1 && endIndex != -1) {
         val updatedPluginXmlContent = pluginXmlContent.substring(0, startIndex) +
-                "\n$generatedActionsXml\n" +
+                generatedActionsXml +
                 pluginXmlContent.substring(endIndex)
 
         pluginXmlFile.writeText(updatedPluginXmlContent)

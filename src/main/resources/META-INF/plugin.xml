@@ -18,28 +18,39 @@
     </description>
 
     <extensions defaultExtensionNs="com.intellij">
-<!--        <applicationService serviceImplementation="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings"/>-->
-<!--        <applicationConfigurable parentId="tools" instance="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"-->
-<!--                                 id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable" displayName="BG-ConsoleLogger"/>-->
+        <applicationService serviceImplementation="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings"/>
+        <applicationConfigurable parentId="tools"
+                                 instance="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"
+                                 id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"
+                                 displayName="BG-ConsoleLogger"/>
+
         <applicationService serviceImplementation="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings" />
-        <applicationConfigurable parentId="tools" instance="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable"
-            id="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable" displayName="BG-ConsoleLogger"/>
+        <applicationConfigurable parentId="tools"
+                                 instance="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable"
+                                 id="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable"
+                                 displayName="BG-ConsoleLogger"/>
 
         <applicationService serviceImplementation="com.github.bgomar.consolebrowser.services.GivServiceSettings"/>
-        <projectConfigurable parentId="tools" instance="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"
-                             id="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"   displayName="BG-ConsoleBrowser" />
+        <projectConfigurable parentId="tools"
+                             instance="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"
+                             id="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"
+                             displayName="BG-ConsoleBrowser" />
 
 
-
-
-        <toolWindow id="ConsoleBrowser" icon="/icons/BG2.svg" anchor="left"
+        <toolWindow id="ConsoleBrowser"
+                    icon="/icons/BG2.svg"
+                    anchor="left"
                     factoryClass="com.github.bgomar.consolebrowser.GivToolWindowFactory"/>
 
         <!--suppress  PluginXmlValidity -->
-        <toolWindow id="Tools" icon="/icons/BG.svg" anchor="right"
-            factoryClass="com.github.bgomar.bgdevtoys.toolwindow.DevToysToolWindowFactory"/>
+        <toolWindow id="Tools"
+                    icon="/icons/BG.svg"
+                    anchor="right"
+                    factoryClass="com.github.bgomar.bgdevtoys.toolwindow.DevToysToolWindowFactory"/>
 
         <notificationGroup id="com.github.bgomar.consolelogger" displayType="STICKY_BALLOON"/>
+
+
         <applicationService serviceImplementation="com.github.bgomar.consolelogger.ApplicationServicePlaceholder" id="com.github.bgomar.consolelogger"/>
         <postStartupActivity implementation="com.github.bgomar.consolelogger.UpdateNotify"/>
 
@@ -50,72 +61,70 @@
 
     </extensions>
 
-
-
     <actions>
         <group id="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup" class="com.github.bgomar.consolelogger.ConsoleLoggerActionsGroup"
                text="Console Log"
                description="Generate javascript logs" popup="true">
             <add-to-group group-id="CodeMenu" anchor="last"/>
+             <!-- Include actions XML -->
 
-
-            
-            
-            
-            
-            
-            
-            
-            <!-- Include actions XML -->
-             <action id="com.github.bgomar.consolelogger.add1" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd1"
+           <action id="com.github.bgomar.consolelogger.add1" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd1"
                     text="Insert ConsoleLogger 1"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 1"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 1"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add2" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd2"
+
+           <action id="com.github.bgomar.consolelogger.add2" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd2"
                     text="Insert ConsoleLogger 2"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 2"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 2"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add3" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd3"
+
+           <action id="com.github.bgomar.consolelogger.add3" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd3"
                     text="Insert ConsoleLogger 3"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 3"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 3"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add4" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd4"
+
+           <action id="com.github.bgomar.consolelogger.add4" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd4"
                     text="Insert ConsoleLogger 4"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 4"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 4"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add5" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd5"
+
+           <action id="com.github.bgomar.consolelogger.add5" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd5"
                     text="Insert ConsoleLogger 5"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 5"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 5"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add6" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd6"
+
+           <action id="com.github.bgomar.consolelogger.add6" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd6"
                     text="Insert ConsoleLogger 6"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 6"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 6"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add7" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd7"
+
+           <action id="com.github.bgomar.consolelogger.add7" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd7"
                     text="Insert ConsoleLogger 7"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 7"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 7"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add8" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd8"
+
+           <action id="com.github.bgomar.consolelogger.add8" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd8"
                     text="Insert ConsoleLogger 8"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 8"/>
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 8"/>
              </action>
-             <action id="com.github.bgomar.consolelogger.add9" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd9"
+
+           <action id="com.github.bgomar.consolelogger.add9" class="com.github.bgomar.consolelogger.ConsoleLoggerAdd9"
                     text="Insert ConsoleLogger 9"
                     description="Generate a console.log() for that variable">
                  <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 9"/>
@@ -127,14 +136,6 @@
                  <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl alt 0"/>
             </action>
             <!-- Include actions end -->
-
-
-
-
-
-
-
-
         </group>
     </actions>
 </idea-plugin>

@@ -30,7 +30,8 @@ public class PropertiesConsoleLoggerToolSetup  extends AbstractToolSetup impleme
             JTextArea propertiesConsoleLoggerTextArea6,
             JTextArea propertiesConsoleLoggerTextArea7,
             JTextArea propertiesConsoleLoggerTextArea8,
-            JTextArea propertiesConsoleLoggerTextArea9) {
+            JTextArea propertiesConsoleLoggerTextArea9
+    ) {
         super();
         PropertiesConsoleLoggerToolSetup.propertiesConsoleLoggerTextArea1 = propertiesConsoleLoggerTextArea1;
         PropertiesConsoleLoggerToolSetup.propertiesConsoleLoggerTextArea2 = propertiesConsoleLoggerTextArea2;
@@ -41,7 +42,6 @@ public class PropertiesConsoleLoggerToolSetup  extends AbstractToolSetup impleme
         PropertiesConsoleLoggerToolSetup.propertiesConsoleLoggerTextArea7 = propertiesConsoleLoggerTextArea7;
         PropertiesConsoleLoggerToolSetup.propertiesConsoleLoggerTextArea8 = propertiesConsoleLoggerTextArea8;
         PropertiesConsoleLoggerToolSetup.propertiesConsoleLoggerTextArea9 = propertiesConsoleLoggerTextArea9;
-
     }
 
     public PropertiesConsoleLoggerToolSetup() {

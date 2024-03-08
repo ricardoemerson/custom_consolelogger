@@ -47,5 +47,5 @@ public class ConsoleLoggerTools extends PropertiesConsoleLoggerToolSetup {
         }
 
 
-}
+    }
 }

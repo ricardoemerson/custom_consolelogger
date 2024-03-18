@@ -11,7 +11,7 @@
 
     <resource-bundle>messages.ConsoleLoggerBundle</resource-bundle>
     <description><![CDATA[
-      This free plugin is highly inspired from the <a href="https://devtoys.app"><b>DevToys</b></a> software available on Windows. Find useful tools in a Tool Window in the top right corner of your IDE:
+      This is an educational joke project, still usefull for many developers. Find useful tools in in the Cat Window
       <ul>
         💙 Help  💛</a>
     ]]>
@@ -38,13 +38,13 @@
 
 
         <toolWindow id="ConsoleBrowser"
-                    icon="/icons/BG2.svg"
+                    icon="/icons/cryingcatt.svg"
                     anchor="left"
                     factoryClass="com.github.bgomar.consolebrowser.GivToolWindowFactory"/>
 
         <!--suppress  PluginXmlValidity -->
         <toolWindow id="Tools"
-                    icon="/icons/BG.svg"
+                    icon="/icons/pika.svg"
                     anchor="right"
                     factoryClass="com.github.bgomar.bgdevtoys.toolwindow.DevToysToolWindowFactory"/>
 

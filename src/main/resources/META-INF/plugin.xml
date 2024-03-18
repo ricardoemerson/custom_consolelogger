@@ -38,13 +38,13 @@
 
 
         <toolWindow id="ConsoleBrowser"
-                    icon="/icons/cryingcatt.svg"
+                    icon="/icons/pika.svg"
                     anchor="left"
                     factoryClass="com.github.bgomar.consolebrowser.GivToolWindowFactory"/>
 
         <!--suppress  PluginXmlValidity -->
         <toolWindow id="Tools"
-                    icon="/icons/pika.svg"
+                    icon="/icons/cryingcatt.svg"
                     anchor="right"
                     factoryClass="com.github.bgomar.bgdevtoys.toolwindow.DevToysToolWindowFactory"/>
 

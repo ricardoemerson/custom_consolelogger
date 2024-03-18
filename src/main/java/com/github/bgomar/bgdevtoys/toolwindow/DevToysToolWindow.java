@@ -25,10 +25,6 @@ public class DevToysToolWindow {
     private JBTextField urlCodecDecodedTextField;
     private JBTextField urlCodecEncodedTextField;
 
-    private JPanel loremIpsumPanel;
-    private JButton loremIpsumGenerateButton;
-    private JTextArea loremIpsumTextArea;
-
     private JPanel hashPanel;
     private JTextArea hashInputTextArea;
     private JBTextField hashMD5TextField;
@@ -39,14 +35,6 @@ public class DevToysToolWindow {
     private JBTextField hashBCrypt2ATextField;
     private JBTextField hashBCrypt2BTextField;
     private JBTextField hashBCrypt2YTextField;
-
-    private JPanel uuidPanel;
-    private JButton uuidGenerateButton;
-    private JTextArea uuidTextArea;
-
-    private JPanel passwordStrengthPanel;
-    private JTextField passwordStrengthPasswordTextField;
-    private JTextArea passwordStrengthReportTextArea;
 
     private JPanel timestampPanel;
     private JComboBox<ComboBoxWithImageItem> timestampTimezoneComboBox;
@@ -71,15 +59,6 @@ public class DevToysToolWindow {
     private JButton dataFakerGenerateButton;
     private JComboBox<String> dataFakerLocaleComboBox;
     private JTextArea dataFakerTextArea;
-
-    private JPanel linesUtilsPanel;
-    private JComboBox<String> linesUtilsComboBox;
-    private JButton linesUtilsCompareButton;
-    private JCheckBox linesUtilsCaseSensitiveCheckBox;
-    private JTextArea linesUtilsTextArea1;
-    private JTextArea linesUtilsTextArea2;
-    private JTextArea linesUtilsResultTextArea;
-    private JCheckBox linesUtilsIgnoreEmptyLinesCheckBox;
 
     private JPanel asciihexPanel;
     private JTextArea asciihexASCIITextArea;
@@ -110,17 +89,6 @@ public class DevToysToolWindow {
     private JTextArea propertiesConsoleLoggerTextArea8;
     private JTextArea propertiesConsoleLoggerTextArea9;
 
-    private JPanel hmacPanel;
-    private JComboBox<String> hmacAlgoComboBox;
-    private JTextField hmacKeyTextField;
-    private JTextArea hmacInputTextArea;
-    private JTextField hmacResultTextField;
-    private JPanel     passwordVerifierPanel;
-    private JTextField passwordVerifierInputPassword;
-    private JTextField passwordVerifierHashTextField;
-    private JBTextField passwordVerifierResultLabel;
-    private JButton hashItButton;
-
     private final LinkedHashMap<String, PanelAndIcon> toolPanelsByTitle = new LinkedHashMap<>();
 
     private record PanelAndIcon(JPanel panel, String icon) {
@@ -128,21 +96,15 @@ public class DevToysToolWindow {
 
     public DevToysToolWindow() {
         String iconsPath = "bgdevtoys/toolicons/";
-        toolPanelsByTitle.put("Properties of ConsoleLogger ", new PanelAndIcon(propertiesConsoleLoggerPanel, iconsPath + "PropertiesYaml.svg"));
-        toolPanelsByTitle.put("Base64 encoder/decoder", new PanelAndIcon(base64Panel, iconsPath + "Base64EncoderDecoder.svg"));
-        toolPanelsByTitle.put("URL encoder/decoder", new PanelAndIcon(urlCodecPanel, iconsPath + "UrlEncoderDecoder.svg"));
-        toolPanelsByTitle.put("Fake Data generator", new PanelAndIcon(dataFakerPanel, iconsPath + "DataFaker.svg"));
-        toolPanelsByTitle.put("Timestamp converter", new PanelAndIcon(timestampPanel, iconsPath + "Timestamp.svg"));
-        toolPanelsByTitle.put("Cron parser", new PanelAndIcon(cronPanel, iconsPath + "CronParser.svg"));
-        toolPanelsByTitle.put("Lines utils", new PanelAndIcon(linesUtilsPanel, iconsPath + "SetDiff.svg"));
-        toolPanelsByTitle.put("Lorem Ipsum generator", new PanelAndIcon(loremIpsumPanel, iconsPath + "LoremIpsumGenerator.svg"));
-        toolPanelsByTitle.put("Hash generator", new PanelAndIcon(hashPanel, iconsPath + "HashGenerator.svg"));
-        toolPanelsByTitle.put("HMAC generator", new PanelAndIcon(hmacPanel, iconsPath + "HMACGenerator.svg"));
-        toolPanelsByTitle.put("UUID generator", new PanelAndIcon(uuidPanel, iconsPath + "UuidGenerator.svg"));
-        toolPanelsByTitle.put("Password strength evaluator", new PanelAndIcon(passwordStrengthPanel, iconsPath + "PasswordStrengthEvaluator.svg"));
-        toolPanelsByTitle.put("Password hash verifier", new PanelAndIcon(passwordVerifierPanel, iconsPath + "PasswordHashVerifier.svg"));
-        toolPanelsByTitle.put("Text escape/unescape", new PanelAndIcon(escapePanel, iconsPath + "Escaper.svg"));
-        toolPanelsByTitle.put("ASCII <> HEX converter", new PanelAndIcon(asciihexPanel, iconsPath + "AsciiHex.svg"));
+        toolPanelsByTitle.put("Properties of ConsoleLogger ", new PanelAndIcon(propertiesConsoleLoggerPanel, iconsPath + "cat1.svg"));
+        toolPanelsByTitle.put("Base64 encoder/decoder", new PanelAndIcon(base64Panel, iconsPath + "coolcat.svg"));
+        toolPanelsByTitle.put("URL encoder/decoder", new PanelAndIcon(urlCodecPanel, iconsPath + "devcat.svg"));
+        toolPanelsByTitle.put("Fake Data generator", new PanelAndIcon(dataFakerPanel, iconsPath + "pika.svg"));
+        toolPanelsByTitle.put("Timestamp converter", new PanelAndIcon(timestampPanel, iconsPath + "dude.svg"));
+        toolPanelsByTitle.put("Cron parser", new PanelAndIcon(cronPanel, iconsPath + "ConsoleBrowser.svg"));
+        toolPanelsByTitle.put("Hash generator", new PanelAndIcon(hashPanel, iconsPath + "f03.svg"));
+        toolPanelsByTitle.put("Text escape/unescape", new PanelAndIcon(escapePanel, iconsPath + "ConsoleLogger.svg"));
+        toolPanelsByTitle.put("ASCII <> HEX converter", new PanelAndIcon(asciihexPanel, iconsPath + "BG.svg"));
 
         new PropertiesConsoleLoggerToolSetup(
                 propertiesConsoleLoggerTextArea1,
@@ -190,19 +152,6 @@ public class DevToysToolWindow {
             cronTypeComboBox,
             cronTextArea,
             explainButton).setup();
-        LinesUtilsToolSetup linesUtilsToolSetup = new LinesUtilsToolSetup(
-            helpLabel,
-            linesUtilsComboBox,
-            linesUtilsCompareButton,
-            linesUtilsCaseSensitiveCheckBox,
-            linesUtilsTextArea1,
-            linesUtilsTextArea2,
-            linesUtilsResultTextArea,
-            linesUtilsIgnoreEmptyLinesCheckBox);
-        linesUtilsToolSetup.setup();
-        new LoremIpsumToolSetup(
-            loremIpsumGenerateButton,
-            loremIpsumTextArea).setup();
         var hashToolSetup = new HashToolSetup(
             hashInputTextArea,
             hashMD5TextField,
@@ -214,14 +163,6 @@ public class DevToysToolWindow {
             hashBCrypt2BTextField,
             hashBCrypt2YTextField);
         hashToolSetup.setup();
-        new PasswordVerifierToolSetup(
-            passwordVerifierHashTextField,
-            passwordVerifierInputPassword,
-            passwordVerifierResultLabel
-        ).setup();
-        new UUIDToolSetup(
-            uuidGenerateButton,
-            uuidTextArea).setup();
         new ASCIIHEXToolSetup(
             asciihexASCIITextArea,
             asciihexHEXTextArea,
@@ -230,21 +171,7 @@ public class DevToysToolWindow {
             escapeComboBox,
             unescapedTextArea,
             escapedTextArea).setup();
-        new PasswordStrengthToolSetup(
-            passwordStrengthPasswordTextField,
-            passwordStrengthReportTextArea,
-            hashItButton,
-            hashInputTextArea,
-            e -> {
-                hashInputTextArea.setText(passwordStrengthPasswordTextField.getText());
-                selectToolByName("Hash generator");
-                hashToolSetup.update();
-            }).setup();
-        new HMACToolSetup(
-            hmacAlgoComboBox,
-            hmacKeyTextField,
-            hmacInputTextArea,
-            hmacResultTextField).setup();
+
 
         toolPanelsByTitle.forEach((title, panelAndIcon) -> toolComboBox.addItem(new ComboBoxWithImageItem(title, panelAndIcon.icon)));
         toolComboBox.setRenderer(new ComboBoxWithImageRenderer());
@@ -294,9 +221,7 @@ public class DevToysToolWindow {
                         "then hit the <i>Update from timestamp</i> or<br>" +
                         "<i>Update from fields</i> button.</html>");
                 }
-                case "Lines utils" -> {
-                    linesUtilsToolSetup.activate();
-                }
+
             }
         });
         toolComboBox.setSelectedIndex(0);

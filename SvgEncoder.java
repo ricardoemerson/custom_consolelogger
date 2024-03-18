@@ -7,7 +7,16 @@ import org.w3c.dom.NodeList;
 import java.util.Map;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 import java.util.regex.Matcher;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
 public class SvgEncoder {
     private Document doc;
@@ -32,25 +41,53 @@ public class SvgEncoder {
         initializeElements();
         setupEventListeners();
     }
-
+    
+    private Element selectElementByCssSelector(String cssSelector) {
+        try {
+            XPathFactory xPathFactory = XPathFactory.newInstance();
+            XPath xpath = xPathFactory.newXPath();
+            XPathExpression expr = xpath.compile("//*[contains(concat(' ', normalize-space(@class), ' '), ' " + cssSelector + " ')]");
+            NodeList nodeList = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);
+            if (nodeList.getLength() > 0) {
+                return (Element) nodeList.item(0);
+            }
+        } catch (XPathExpressionException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
     private void initializeElements() {
         initTextarea = doc.getElementById("init");
         resultTextarea = doc.getElementById("result");
         resultCssTextarea = doc.getElementById("result-css");
         resultDemo = doc.getElementById("demo");
-        demoWrapper = doc.querySelector(".demo-wrapper");
-        contrastButtons = doc.querySelectorAll(".contrast-button");
+        demoWrapper = selectElementByCssSelector(".demo-wrapper");
+        contrastButtons = doc.setUserData(".contrast-button");
         dropzoneEl = doc.getElementById("dropzone");
         contrastButtonCurrent = null;
         backgroundColor = "";
-        expanders = doc.querySelectorAll(".expander");
+        expanders = (NodeList) doc.setUserData(".expander");
         expandedClass = "expanded";
         symbols = "[\\r\\n%#()<>?[\\\\\\]^`{|}]";
-        quotesInputs = doc.querySelectorAll(".options__input");
-        externalQuotesValue = doc.querySelector(".options__input:checked").value;
-        quotes = getQuotes();
+        quotesInputs = (NodeList) doc.setUserData(".options__input");
+        externalQuotesValue = Objects.requireNonNull(selectElementByCssSelector(".options__input:checked")).value;
+        quotes = getQuotes().toString();
     }
-
+    
+    private void addClickEventListener(Element element) {
+        element.setTextContent("click", e -> {
+            Element parent = element.getParentNode();
+            NodeList expandedElements = parent.getElementsByTagName("div"); // Assuming the expanded elements are divs
+            for (int i = 0; i < expandedElements.getLength(); i++) {
+                Element expanded = (Element) expandedElements.item(i);
+                if (expanded.getAttribute("class").contains(expandedClass)) {
+                    expanded.setAttribute("class", expanded.getAttribute("class").replace(expandedClass, "hidden"));
+                }
+            }
+            element.setAttribute("class", element.getAttribute("class") + " opened");
+        });
+    }
     private void setupEventListeners() {
         initTextarea.oninput = e -> getResults();
 
@@ -65,7 +102,7 @@ public class SvgEncoder {
 
         for (int i = 0; i < expanders.getLength(); i++) {
             Element expander = (Element) expanders.item(i);
-            expander.addEventListener("click", e -> {
+            addClickEventListener("click", e -> {
                 Element parent = expander.getParentNode();
                 Element expanded = parent.querySelector("." + expandedClass);
                 expanded.classList.toggle("hidden");
@@ -120,7 +157,7 @@ public class SvgEncoder {
         if (dropzoneEl != null) {
             String dropzoneActiveCls = "dropzone--active";
 
-            doc.addEventListener("dragover", e -> {
+            addClickEventListener("dragover", e -> {
                 e.preventDefault();
                 dropzoneEl.classList.add(dropzoneActiveCls);
             });

@@ -25,22 +25,8 @@
                                  displayName="BG-ConsoleLogger"/>
 
         <applicationService serviceImplementation="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings" />
-        <applicationConfigurable parentId="tools"
-                                 instance="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable"
-                                 id="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettingsConfigurable"
-                                 displayName="BG-ConsoleLogger"/>
-
-        <applicationService serviceImplementation="com.github.bgomar.consolebrowser.services.GivServiceSettings"/>
-        <projectConfigurable parentId="tools"
-                             instance="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"
-                             id="com.github.bgomar.consolebrowser.settings.ProjectSettingsConfigurable"
-                             displayName="BG-ConsoleBrowser" />
 
 
-        <toolWindow id="ConsoleBrowser"
-                    icon="/icons/pika.svg"
-                    anchor="left"
-                    factoryClass="com.github.bgomar.consolebrowser.GivToolWindowFactory"/>
 
         <!--suppress  PluginXmlValidity -->
         <toolWindow id="Tools"

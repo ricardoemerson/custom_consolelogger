@@ -60,16 +60,6 @@ public class DevToysToolWindow {
     private JComboBox<String> dataFakerLocaleComboBox;
     private JTextArea dataFakerTextArea;
 
-    private JPanel asciihexPanel;
-    private JTextArea asciihexASCIITextArea;
-    private JTextArea asciihexHEXTextArea;
-    private JCheckBox asciihexSpacesCheckBox;
-
-    private JPanel escapePanel;
-    private JComboBox<String> escapeComboBox;
-    private JTextArea unescapedTextArea;
-    private JTextArea escapedTextArea;
-
     private JPanel cronPanel;
     private JTextField cronExpressionTextField;
     private JSpinner cronExpressionHowManyDaysSpinner;
@@ -95,7 +85,7 @@ public class DevToysToolWindow {
     }
 
     public DevToysToolWindow() {
-        String iconsPath = "bgdevtoys/toolicons/";
+        String iconsPath = "icons/";
         toolPanelsByTitle.put("Properties of ConsoleLogger ", new PanelAndIcon(propertiesConsoleLoggerPanel, iconsPath + "cat1.svg"));
         toolPanelsByTitle.put("Base64 encoder/decoder", new PanelAndIcon(base64Panel, iconsPath + "coolcat.svg"));
         toolPanelsByTitle.put("URL encoder/decoder", new PanelAndIcon(urlCodecPanel, iconsPath + "devcat.svg"));
@@ -103,19 +93,17 @@ public class DevToysToolWindow {
         toolPanelsByTitle.put("Timestamp converter", new PanelAndIcon(timestampPanel, iconsPath + "dude.svg"));
         toolPanelsByTitle.put("Cron parser", new PanelAndIcon(cronPanel, iconsPath + "ConsoleBrowser.svg"));
         toolPanelsByTitle.put("Hash generator", new PanelAndIcon(hashPanel, iconsPath + "f03.svg"));
-        toolPanelsByTitle.put("Text escape/unescape", new PanelAndIcon(escapePanel, iconsPath + "ConsoleLogger.svg"));
-        toolPanelsByTitle.put("ASCII <> HEX converter", new PanelAndIcon(asciihexPanel, iconsPath + "BG.svg"));
 
         new PropertiesConsoleLoggerToolSetup(
-                propertiesConsoleLoggerTextArea1,
-                propertiesConsoleLoggerTextArea2,
-                propertiesConsoleLoggerTextArea3,
-                propertiesConsoleLoggerTextArea4,
-                propertiesConsoleLoggerTextArea5,
-                propertiesConsoleLoggerTextArea6,
-                propertiesConsoleLoggerTextArea7,
-                propertiesConsoleLoggerTextArea8,
-                propertiesConsoleLoggerTextArea9).setup();
+            propertiesConsoleLoggerTextArea1,
+            propertiesConsoleLoggerTextArea2,
+            propertiesConsoleLoggerTextArea3,
+            propertiesConsoleLoggerTextArea4,
+            propertiesConsoleLoggerTextArea5,
+            propertiesConsoleLoggerTextArea6,
+            propertiesConsoleLoggerTextArea7,
+            propertiesConsoleLoggerTextArea8,
+            propertiesConsoleLoggerTextArea9).setup();
         new Base64ToolSetup(
             base64RadioButtonUTF8,
             base64RadioButtonASCII,
@@ -163,14 +151,6 @@ public class DevToysToolWindow {
             hashBCrypt2BTextField,
             hashBCrypt2YTextField);
         hashToolSetup.setup();
-        new ASCIIHEXToolSetup(
-            asciihexASCIITextArea,
-            asciihexHEXTextArea,
-            asciihexSpacesCheckBox).setup();
-        new EscapeToolSetup(
-            escapeComboBox,
-            unescapedTextArea,
-            escapedTextArea).setup();
 
 
         toolPanelsByTitle.forEach((title, panelAndIcon) -> toolComboBox.addItem(new ComboBoxWithImageItem(title, panelAndIcon.icon)));
@@ -207,13 +187,6 @@ public class DevToysToolWindow {
                         "Type text and various hash values will<br>" +
                         "be automatically computed as you type.</html>");
                 }
-                case "Password hash verifier" -> {
-                    helpLabel.setVisible(true);
-                    helpLabel.setToolTipText("<html>Type a password and a hash<br>" +
-                        "and the tool will say if the password<br>" +
-                        "verifies the hash with an algorithm like MD5,<br>" +
-                        "SHA1/256/384/512 or BCrypt 2A/2B/2Y.</html>");
-                }
                 case "Timestamp converter" -> {
                     helpLabel.setVisible(true);
                     helpLabel.setToolTipText("<html>" +
@@ -230,15 +203,6 @@ public class DevToysToolWindow {
     private void displayToolPanel(String toolPanelTitle) {
         toolPanelsByTitle.forEach((s, jPanel) -> jPanel.panel().setVisible(false));
         toolPanelsByTitle.get(toolPanelTitle).panel().setVisible(true);
-    }
-
-    private void selectToolByName(String toolName) {
-        for (int i = 0; i < toolComboBox.getItemCount(); i++) {
-            if (toolComboBox.getItemAt(i).title().equals(toolName)) {
-                toolComboBox.setSelectedIndex(i);
-                break;
-            }
-        }
     }
 
     public JPanel getContent() {

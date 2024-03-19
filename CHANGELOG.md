@@ -1,9 +1,17 @@
 # Changelog
 
-## [0.0.20] - 2023-11-15
+## [0.0.21] - 19-03-2024
+- 💥 Big Changes to the visuals
+- 💻 Added a toolwindow ➡️ 
+- Base64 & url En/Decoder, Fake data Generator, Cron Parser, Text -> Hash
+- 😸 Used cat memes for icos
+- 🧼 Cleanup of code and bugs - 🐛
+
+
+## [0.0.20] - 15-11-2023
 - 🐛 Small Bugfix: FIX: Handle cases where the editor might be missing. 
 
-## [0.0.19] - 2023-10-23
+## [0.0.19] - 23-10-2023
 
 - 🐛 Bugfix for (ctrl + alt + 1/2 ) 
 - 🤏 Small changes to Loggers defaults:

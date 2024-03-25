@@ -136,17 +136,20 @@ intellij {
 
     pluginName.set(pluginName)
     version.set(platformVersion)
-    type.set(platformType)
-    downloadSources.set(!System.getenv().containsKey("CI"))
+    version.set(pluginIdeaVersion)
+    type.set("IU")
+
     updateSinceUntilBuild.set(true)
+
     plugins.set(listOf("JavaScript", "com.intellij.java", "com.intellij.database"))
     sandboxDir.set(project.rootDir.canonicalPath + "/.sandbox")
-    downloadSources.set(pluginDownloadIdeaSources.toBoolean() && !System.getenv().containsKey("CI"))
-    instrumentCode.set(true)
     pluginName.set("ConsoleLogger")
     sandboxDir.set("${rootProject.projectDir}/.idea-sandbox/${shortenIdeVersion(pluginIdeaVersion)}")
-    updateSinceUntilBuild.set(false)
-    version.set(pluginIdeaVersion)
+
+    downloadSources.set(!System.getenv().containsKey("IU"))
+    downloadSources.set(pluginDownloadIdeaSources.toBoolean() && !System.getenv().containsKey("IU"))
+    instrumentCode.set(true)
+
 }
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {

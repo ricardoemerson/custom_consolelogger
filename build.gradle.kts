@@ -61,11 +61,9 @@ plugins {
 }
 
 
-group = pluginGroup
-version = pluginVersion
-logger.log(LogLevel.INFO, "Will use IDEA $pluginIdeaVersion and Java $pluginJavaVersion. Plugin version set to $version")
+group = properties("pluginGroup").get()
+version = properties("pluginVersion").get()
 
-group = "com.github.bgomar.consolelogger"
 
 repositories {
     mavenCentral()
@@ -90,6 +88,9 @@ repositories {
 }
 
 dependencies {
+
+    // no version required
+    api("commons-httpclient:commons-httpclient")
     implementation("org.jetbrains:marketplace-zip-signer:0.1.24")
     implementation("org.jetbrains:annotations:24.1.0")
     implementation("org.apache.commons:commons-lang3:3.14.0") // because no longer bundled with IDE
@@ -97,13 +98,10 @@ dependencies {
 
     implementation("commons-codec:commons-codec:1.16.0") // for Hash
     implementation("com.thedeanda:lorem:2.2") // for Lorem Ipsum
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.1") // for JSON <> YAML
-    implementation("com.dampcake:bencode:1.4.1") // for JSON <> BENCODE
+
     implementation("com.cronutils:cron-utils:9.2.1") // for cron expression parser https://github.com/jmrozanec/cron-utils
     implementation("net.datafaker:datafaker:2.1.0") // for Data Faker
-    implementation("org.yaml:snakeyaml:2.2") // for JSON <> YAML
-    implementation("org.apache.commons:commons-text:1.11.0") // for JSON (un)escape
-    implementation("com.nulab-inc:zxcvbn:1.8.2") // for password strength evaluation
+
     implementation("fr.marcwrobel:jbanking:4.2.0") // for IBAN generation
     implementation("at.favre.lib:bcrypt:0.10.2") // for Bcrypt hash
 
@@ -134,16 +132,15 @@ abstract class UpdatePluginXml : DefaultTask() {
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
 
-    pluginName.set(pluginName)
-    version.set(platformVersion)
-    version.set(pluginIdeaVersion)
-    type.set("IU")
+    pluginName = properties("pluginName")
+    version = properties("platformVersion")
+    type = properties("platformType")
+
+    // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
+    plugins = properties("platformPlugins").map { it.split(',').map(String::trim).filter(String::isNotEmpty) }
 
     updateSinceUntilBuild.set(true)
 
-    plugins.set(listOf("JavaScript", "com.intellij.java", "com.intellij.database"))
-    sandboxDir.set(project.rootDir.canonicalPath + "/.sandbox")
-    pluginName.set("ConsoleLogger")
     sandboxDir.set("${rootProject.projectDir}/.idea-sandbox/${shortenIdeVersion(pluginIdeaVersion)}")
 
     downloadSources.set(!System.getenv().containsKey("IU"))
@@ -153,10 +150,19 @@ intellij {
 }
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
-    groups.set(emptyList())
-    repositoryUrl.set(pluginRepositoryUrl)
+    groups.empty()
+    repositoryUrl = properties("pluginRepositoryUrl")
     headerParserRegex.set("(.*)".toRegex())
     itemPrefix.set("*")
+}
+
+// Configure Gradle Kover Plugin - read more: https://github.com/Kotlin/kotlinx-kover#configuration
+koverReport {
+    defaults {
+        xml {
+            onCheck = true
+        }
+    }
 }
 
 // Configure Gradle Qodana Plugin - read more: https://github.com/JetBrains/gradle-qodana-plugin
@@ -167,11 +173,11 @@ qodana {
     showReport.set(System.getenv("QODANA_SHOW_REPORT")?.toBoolean() ?: false)
 }
 
+// Set the JVM language level used to build the project.
 kotlin {
-    jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
-    }
+    jvmToolchain(17)
 }
+
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     toolchain {
@@ -254,13 +260,13 @@ tasks {
         enabled = false
     }
     wrapper {
-        gradleVersion = pluginGradleVersion
+        gradleVersion = properties("gradleVersion").get()
     }
 
     patchPluginXml {
-        version.set(pluginVersion)
-        sinceBuild.set(pluginSinceBuild)
-        untilBuild.set(pluginUntilBuild)
+        version = properties("pluginVersion")
+        sinceBuild = properties("pluginSinceBuild")
+        untilBuild = properties("pluginUntilBuild")
         updatePluginXml()
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription.set(
@@ -286,6 +292,7 @@ tasks {
             }
         })
     }
+
     buildSearchableOptions {
         enabled = true
     }
@@ -307,13 +314,13 @@ tasks {
     signPlugin {
         certificateChainFile.set(file("./secrets/chain.crt"))
         privateKeyFile.set(file("./secrets/private_encrypted.pem"))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+        password = environment("PRIVATE_KEY_PASSWORD")
     }
 
     publishPlugin {
         dependsOn("patchChangelog")
-        token.set(System.getenv("PUBLISH_TOKEN"))
-       /* channels.set(listOf(pluginVersion.split('-').getOrElse(1) { "default" }.split('.').first()))*/
+        token = environment("PUBLISH_TOKEN")
+        channels = properties("pluginVersion").map { listOf(it.substringAfter('-', "").substringBefore('.').ifEmpty { "default" }) }
     }
 
     patchPluginXml {

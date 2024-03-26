@@ -6,7 +6,6 @@
     <idea-version since-build="232.7754.77" />
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
-    <depends>com.intellij.modules.lang</depends>
     <depends>JavaScript</depends>
 
     <resource-bundle>messages.ConsoleLoggerBundle</resource-bundle>
@@ -24,7 +23,7 @@
                                  id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"
                                  displayName="BG-ConsoleLogger"/>
 
-        <applicationService serviceImplementation="com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings" />
+        <applicationService serviceImplementation="com.github.bgomar.bgconsolelogger.tools.ConsoleLoggerSettings" />
 
 
 
@@ -32,7 +31,7 @@
         <toolWindow id="Tools"
                     icon="/icons/cryingcatt.svg"
                     anchor="right"
-                    factoryClass="com.github.bgomar.bgdevtoys.toolwindow.DevToysToolWindowFactory"/>
+                    factoryClass="com.github.bgomar.bgconsolelogger.toolwindow.DevToysToolWindowFactory"/>
 
         <notificationGroup id="com.github.bgomar.consolelogger" displayType="STICKY_BALLOON"/>
 

@@ -88,9 +88,10 @@ repositories {
 }
 
 dependencies {
+// https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient
 
-    // no version required
-    api("commons-httpclient:commons-httpclient")
+    implementation("commons-httpclient:commons-httpclient:3.1")
+
     implementation("org.jetbrains:marketplace-zip-signer:0.1.24")
     implementation("org.jetbrains:annotations:24.1.0")
     implementation("org.apache.commons:commons-lang3:3.14.0") // because no longer bundled with IDE
@@ -246,7 +247,7 @@ tasks {
 
         if (pluginEnableDebugLogs.toBoolean()) {
             systemProperties(
-                "idea.log.debug.categories" to "#com.github.bgomar.bgdevtoys"
+                "idea.log.debug.categories" to "#com.github.bgomar.bgconsolelogger"
             )
         }
 
@@ -360,7 +361,7 @@ fun shortenIdeVersion(version: String): String {
 /** Find latest IntelliJ stable version from JetBrains website. Result is cached locally for 24h. */
 fun findLatestStableIdeVersion(): String {
     val t1 = System.currentTimeMillis()
-    val definitionsUrl = URL("https://www.jetbrains.com/updates/updates.xml")
+    val definitionsUrl = URL("https://www.jetbrains.com/updates/updates.xml").toURI().toURL()
     val cachedLatestVersionFile = File(System.getProperty("java.io.tmpdir") + "/jle-ij-latest-version.txt")
     var latestVersion: String
     try {

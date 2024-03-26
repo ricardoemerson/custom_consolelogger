@@ -1,4 +1,4 @@
-package com.github.bgomar.bgdevtoys.tools;
+package com.github.bgomar.bgconsolelogger.tools;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

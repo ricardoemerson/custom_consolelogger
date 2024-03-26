@@ -90,6 +90,7 @@ public class DevToysToolWindow {
 
     public DevToysToolWindow() {
         String iconsPath = "icons/";
+        toolPanelsByTitle.put("Pixels to REM", new PanelAndIcon(px2RemPanel, iconsPath + "cryingcatt.svg"));
         toolPanelsByTitle.put("Properties of ConsoleLogger ", new PanelAndIcon(propertiesConsoleLoggerPanel, iconsPath + "cat1.svg"));
         toolPanelsByTitle.put("Base64 encoder/decoder", new PanelAndIcon(base64Panel, iconsPath + "coolcat.svg"));
         toolPanelsByTitle.put("URL encoder/decoder", new PanelAndIcon(urlCodecPanel, iconsPath + "devcat.svg"));
@@ -117,8 +118,8 @@ public class DevToysToolWindow {
             urlCodecDecodedTextField,
             urlCodecEncodedTextField).setup();
         new Px2RemToolSetup(
-                px2RemTextField,
-                rem2PxTextField).setup();
+            px2RemTextField,
+            rem2PxTextField).setup();
         new DataFakerToolSetup(
             dataFakerGeneratorComboBox,
             dataFakerGenerateButton,

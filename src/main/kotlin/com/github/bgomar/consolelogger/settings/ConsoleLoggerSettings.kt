@@ -38,7 +38,7 @@ class ConsoleLoggerSettings : PersistentStateComponent<ConsoleLoggerSettings> {
   var pattern8: String = DEFAULT_PATTERN_8
   var pattern9: String = DEFAULT_PATTERN_9
 
-  var version = "Unknown"
+  var version = "0.0.22"
   companion object {
     val instance: ConsoleLoggerSettings
       get() = ApplicationManager.getApplication().getService(ConsoleLoggerSettings::class.java)

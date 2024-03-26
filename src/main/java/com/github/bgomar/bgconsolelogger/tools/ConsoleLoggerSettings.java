@@ -33,7 +33,7 @@ public class ConsoleLoggerSettings implements PersistentStateComponent<ConsoleLo
             DEFAULT_PATTERN_9
     };
 
-    public String version = "Unknown";
+    public String version = "0.0.22";
 
     public static ConsoleLoggerSettings getInstance() {
         return ApplicationManager.getApplication().getService(ConsoleLoggerSettings.class);

@@ -25,6 +25,10 @@ public class DevToysToolWindow {
     private JBTextField urlCodecDecodedTextField;
     private JBTextField urlCodecEncodedTextField;
 
+    private JPanel px2RemPanel;
+    private JBTextField px2RemTextField;
+    private JBTextField rem2PxTextField;
+
     private JPanel hashPanel;
     private JTextArea hashInputTextArea;
     private JBTextField hashMD5TextField;
@@ -112,6 +116,9 @@ public class DevToysToolWindow {
         new URLCodecToolSetup(
             urlCodecDecodedTextField,
             urlCodecEncodedTextField).setup();
+        new Px2RemToolSetup(
+                px2RemTextField,
+                rem2PxTextField).setup();
         new DataFakerToolSetup(
             dataFakerGeneratorComboBox,
             dataFakerGenerateButton,

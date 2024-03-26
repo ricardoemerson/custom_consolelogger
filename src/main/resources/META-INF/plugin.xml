@@ -9,16 +9,13 @@
     <depends>JavaScript</depends>
 
     <resource-bundle>messages.ConsoleLoggerBundle</resource-bundle>
-    <description><![CDATA[
-      This is an educational joke project, still usefull for many developers. Find useful tools in your Cat Window
-    </description>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettings"/>
         <applicationConfigurable parentId="tools"
                                  instance="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"
                                  id="com.github.bgomar.consolelogger.settings.ConsoleLoggerSettingsConfigurable"
-                                 displayName="BG-ConsoleLogger"/>
+                                 displayName="ConsoleLogger"/>
 
         <applicationService serviceImplementation="com.github.bgomar.bgconsolelogger.tools.ConsoleLoggerSettings" />
 

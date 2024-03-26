@@ -11,7 +11,7 @@ import com.intellij.openapi.editor.actionSystem.EditorActionManager
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFileFactory
-import com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings
+import com.github.bgomar.bgconsolelogger.tools.ConsoleLoggerSettings
 
 
 class ConsoleLoggerAdd8 : AnAction("INSERT_LOG8") {

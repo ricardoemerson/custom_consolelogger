@@ -3,7 +3,7 @@
     <a href="">
       <img src="./src/main/resources/META-INF/pluginIcon.svg" width="84" height="84" alt="logo"/>
     </a><br/>
-    BG-DevToys
+    ConsoleLogger
 </h1>
 
 An Intellij IDEA plugin.
@@ -11,24 +11,24 @@ Find useful tools in a Tool Window in the top right corner of your IDE:
 
 **Work in progress**: 😎.
 ## Download
-
-Download plugin from the JetBrains marketplace or via your IDE: <kbd>File</kbd>, <kbd>Settings...</kbd>, <kbd>Plugins</kbd>, <kbd>Marketplace</kbd> then select `BG-DevToys`.
+Download plugin from the JetBrains marketplace or via your IDE: <kbd>File</kbd>, <kbd>Settings...</kbd>, <kbd>Plugins</kbd>, 
+<kbd>Marketplace</kbd> then select `ConsoleLogger`.
 
 ## ToDo
 * improve the GUI
     * settings: remember last opened tool
 * add more tools, like Base64 from file, GZip encoder/decoder, JWT encoder/decoder, text tools, graphics tools...
 
-Nota: I think we don't need to reproduce tools that exist in IntelliJ already, like the regex tester, diff viewer, conflict resolver, and markdown previewer.
 
 
 # ![Build](./src/main/resources/META-INF/pluginIcon.svg) Console Logger JetBrains Plugin
 
 <!-- Plugin description -->
-#### `CTRL + ALT + (1-9)` for console.logs
+####  `CTRL + ALT + (1-9)` for console.logs [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/pluginIcon.svg?raw=true" width="16px"/>]() 
+This is an educational joke project, still usefull for many developers.
 Defaults:  May need personal adjustments in settings.  
-( 1 ) = `console.log("$$: ", $$);`  
-( 2 ) = `console.log("%c ---> $$: ","color:#0F0;", $$);`   
+( 1 ) = ```console.log('$$: ', $$);```  
+( 2 ) = ```console.log('%c ---> $$: ','color:#0F0;', $$);```   
 
  `$$` = pre-selected variable / class / anything printable  
  `%c` = Console text color

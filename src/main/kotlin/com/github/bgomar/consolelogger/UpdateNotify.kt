@@ -5,7 +5,7 @@ import com.intellij.notification.NotificationType
 import com.intellij.openapi.extensions.PluginId
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.StartupActivity
-import com.github.bgomar.bgdevtoys.tools.ConsoleLoggerSettings
+import com.github.bgomar.bgconsolelogger.tools.ConsoleLoggerSettings
 
 class UpdateNotify : StartupActivity {
   private val plugin = PluginManagerCore.getPlugin(PluginId.getId("com.github.bgomar.consolelogger"))!!

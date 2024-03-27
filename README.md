@@ -1,7 +1,7 @@
 
 <h1 align="center">
     <a href="">
-      <img src="./src/main/resources/META-INF/pluginIcon.svg" width="84" height="84" alt="logo"/>
+      <img src="./src/main/resources/META-INF/pluginIcon3.svg" width="84" height="84" alt="logo"/>
     </a><br/>
     ConsoleLogger
 </h1>
@@ -14,18 +14,11 @@ Find useful tools in a Tool Window in the top right corner of your IDE:
 Download plugin from the JetBrains marketplace or via your IDE: <kbd>File</kbd>, <kbd>Settings...</kbd>, <kbd>Plugins</kbd>, 
 <kbd>Marketplace</kbd> then select `ConsoleLogger`.
 
-## ToDo
-* improve the GUI
-    * settings: remember last opened tool
-* add more tools, like Base64 from file, GZip encoder/decoder, JWT encoder/decoder, text tools, graphics tools...
-
-
-
 # ![Build](./src/main/resources/META-INF/pluginIcon.svg) Console Logger JetBrains Plugin
 
 <!-- Plugin description -->
 ####  `CTRL + ALT + (1-9)` for console.logs [<img src="https://github.com/bg-omar/consolelogger/blob/v0.0.22/.github/pics/pluginIcon.svg?raw=true"  width="16px"/>]() 
-This is an educational joke project, still usefull for many developers.
+
 Defaults:  May need personal adjustments in settings.  
 ( 1 ) = ```console.log('$$: ', $$);```  
 ( 2 ) = ```console.log('%c ---> $$: ','color:#0F0;', $$);```   
@@ -46,4 +39,8 @@ Defaults:  May need personal adjustments in settings.
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/preview6.png?raw=true" width="300px%"/>]()  
 ### `Settings` -> `Tools` -> `ConsoleLogger`  
 #### [<img src="https://github.com/bg-omar/consolelogger/blob/master/.github/pics/SettingPreview.png?raw=true" width="500px%"/>]()  
+
+This is an educational project, still usefull for many developers.
+This project is heavily based on LogIt by Laurent Soulet &  I Love DevToys by vshymanskyy
+
 <!-- Plugin description end -->

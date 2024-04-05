@@ -116,5 +116,10 @@
             </action>
             <!-- Include actions end -->
         </group>
+<!--        <action id="com.github.bgomar.consolelogger.ConsoleLoggerAction" class="com.github.bgomar.consolelogger.ConsoleLoggerAction" text="Logger"-->
+<!--                description="allin1">-->
+<!--            <parameter name="patternIndex" type="java.lang.Integer" />-->
+<!--            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt Q"/>-->
+<!--        </action>-->
     </actions>
 </idea-plugin>

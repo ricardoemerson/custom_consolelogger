@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.github.bgomar.bgconsolelogger.toolwindow.DevToysToolWindow">
   <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
@@ -870,7 +870,7 @@
               </grid>
             </children>
           </grid>
-          <grid id="8d462" binding="propertiesConsoleLoggerPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="8d462" binding="propertiesConsoleLoggerPanel" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -914,12 +914,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="9f15" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea1">
+                          <component id="9f15" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField1">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -955,12 +954,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="ec163" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea2">
+                          <component id="ec163" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField2">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -996,12 +994,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="5f463" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea3">
+                          <component id="5f463" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField3">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -1037,12 +1034,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="54637" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea4">
+                          <component id="54637" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField4">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -1078,12 +1074,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="f5e46" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea5">
+                          <component id="f5e46" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField5">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -1119,12 +1114,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="b3e48" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea6">
+                          <component id="b3e48" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField6">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -1160,12 +1154,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="594b9" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea7">
+                          <component id="594b9" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField7">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -1201,12 +1194,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="8aaa3" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea8">
+                          <component id="8aaa3" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField8">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -1242,12 +1234,11 @@
                         <properties/>
                         <border type="none"/>
                         <children>
-                          <component id="3d921" class="javax.swing.JTextArea" binding="propertiesConsoleLoggerTextArea9">
+                          <component id="3d921" class="javax.swing.JTextField" binding="propertiesConsoleLoggerTextField9">
                             <constraints/>
                             <properties>
                               <autoscrolls value="false"/>
                               <editable value="true"/>
-                              <lineWrap value="true"/>
                             </properties>
                           </component>
                         </children>
@@ -1263,6 +1254,14 @@
                 <properties>
                   <text value="Console Loggers (development)"/>
                   <toolTipText value=" (not working yet, in development)"/>
+                </properties>
+              </component>
+              <component id="71775" class="javax.swing.JButton" binding="propertiesConsoleLoggerbutton1">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Save"/>
                 </properties>
               </component>
             </children>

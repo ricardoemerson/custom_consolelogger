@@ -73,17 +73,19 @@ public class DevToysToolWindow {
 
 
     private JPanel propertiesConsoleLoggerPanel;
-    private JTextArea propertiesConsoleLoggerTextArea1;
-    private JTextArea propertiesConsoleLoggerTextArea2;
-    private JTextArea propertiesConsoleLoggerTextArea3;
-    private JTextArea propertiesConsoleLoggerTextArea4;
-    private JTextArea propertiesConsoleLoggerTextArea5;
-    private JTextArea propertiesConsoleLoggerTextArea6;
-    private JTextArea propertiesConsoleLoggerTextArea7;
-    private JTextArea propertiesConsoleLoggerTextArea8;
-    private JTextArea propertiesConsoleLoggerTextArea9;
+    private JTextField propertiesConsoleLoggerTextField1;
+    private JTextField propertiesConsoleLoggerTextField2;
+    private JTextField propertiesConsoleLoggerTextField3;
+    private JTextField propertiesConsoleLoggerTextField4;
+    private JTextField propertiesConsoleLoggerTextField5;
+    private JTextField propertiesConsoleLoggerTextField6;
+    private JTextField propertiesConsoleLoggerTextField7;
+    private JTextField propertiesConsoleLoggerTextField8;
+    private JTextField propertiesConsoleLoggerTextField9;
+    private JButton propertiesConsoleLoggerbutton1;
 
     private final LinkedHashMap<String, PanelAndIcon> toolPanelsByTitle = new LinkedHashMap<>();
+
 
     private record PanelAndIcon(JPanel panel, String icon) {
     }
@@ -100,15 +102,16 @@ public class DevToysToolWindow {
         toolPanelsByTitle.put("Hash generator", new PanelAndIcon(hashPanel, iconsPath + "f03.svg"));
 
         new PropertiesConsoleLoggerToolSetup(
-            propertiesConsoleLoggerTextArea1,
-            propertiesConsoleLoggerTextArea2,
-            propertiesConsoleLoggerTextArea3,
-            propertiesConsoleLoggerTextArea4,
-            propertiesConsoleLoggerTextArea5,
-            propertiesConsoleLoggerTextArea6,
-            propertiesConsoleLoggerTextArea7,
-            propertiesConsoleLoggerTextArea8,
-            propertiesConsoleLoggerTextArea9).setup();
+            propertiesConsoleLoggerTextField1,
+            propertiesConsoleLoggerTextField2,
+            propertiesConsoleLoggerTextField3,
+            propertiesConsoleLoggerTextField4,
+            propertiesConsoleLoggerTextField5,
+            propertiesConsoleLoggerTextField6,
+            propertiesConsoleLoggerTextField7,
+            propertiesConsoleLoggerTextField8,
+            propertiesConsoleLoggerTextField9,
+            propertiesConsoleLoggerbutton1).setup();
         new Base64ToolSetup(
             base64RadioButtonUTF8,
             base64RadioButtonASCII,

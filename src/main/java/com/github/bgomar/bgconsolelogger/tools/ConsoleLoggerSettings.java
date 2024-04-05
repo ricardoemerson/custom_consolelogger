@@ -5,6 +5,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.util.xmlb.XmlSerializerUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 @State(name = "ConsoleLoggerSettings", storages = {@Storage("consolelogger.xml")})
@@ -21,7 +22,7 @@ public class ConsoleLoggerSettings implements PersistentStateComponent<ConsoleLo
             "${'\n'}console.groupEnd(\"end of group $$\");";
     public static final String DEFAULT_PATTERN_9 = "console.table($$);";
 
-    private static String[] patterns = {
+    private static final String[] patterns = {
             DEFAULT_PATTERN_1,
             DEFAULT_PATTERN_2,
             DEFAULT_PATTERN_3,
@@ -33,7 +34,7 @@ public class ConsoleLoggerSettings implements PersistentStateComponent<ConsoleLo
             DEFAULT_PATTERN_9
     };
 
-    public String version = "0.0.22";
+    public String version = "0.0.23";
 
     public static ConsoleLoggerSettings getInstance() {
         return ApplicationManager.getApplication().getService(ConsoleLoggerSettings.class);
@@ -46,11 +47,15 @@ public class ConsoleLoggerSettings implements PersistentStateComponent<ConsoleLo
     }
 
     @Override
-    public void loadState(ConsoleLoggerSettings state) {
+    public void loadState(@NotNull ConsoleLoggerSettings state) {
         XmlSerializerUtil.copyBean(state, this);
     }
 
     public static String getPattern(int index) {
-        return patterns[index];
+        if (index >= 0 && index < patterns.length) {
+            return patterns[index];
+        } else {
+            return patterns[index-1];
+        }
     }
 }

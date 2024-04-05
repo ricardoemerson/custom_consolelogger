@@ -192,7 +192,7 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
       isPromptOnReplace = false
     }
 
-    val removeError: String = ".*" + ConsoleLoggerSettings.getPattern(7).run {
+    val removeLog7: String = ".*" + ConsoleLoggerSettings.getPattern(7).run {
       replace("\\", "\\\\")
         .replace("(", "\\(")
         .replace(")", "\\)")
@@ -212,8 +212,8 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
         .replace("}", "\\}")
         .replace("$", "\\$")
     } + "\n"
-    val findError = FindModel().apply {
-      stringToFind = removeError
+    val findLog7 = FindModel().apply {
+      stringToFind = removeLog7
       stringToReplace = ""
       isPromptOnReplace = false
       isRegularExpressions = true
@@ -221,7 +221,7 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
       isPromptOnReplace = false
     }
 
-    val removeGroup: String = ".*" + ConsoleLoggerSettings.getPattern(8).run {
+    val removeLog8: String = ".*" + ConsoleLoggerSettings.getPattern(8).run {
       replace("\\", "\\\\")
         .replace("(", "\\(")
         .replace(")", "\\)")
@@ -241,8 +241,8 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
         .replace("}", "\\}")
         .replace("$", "\\$")
     } + "\n"
-    val findGroup = FindModel().apply {
-      stringToFind = removeGroup
+    val findLog8 = FindModel().apply {
+      stringToFind = removeLog8
       stringToReplace = ""
       isPromptOnReplace = false
       isRegularExpressions = true
@@ -250,7 +250,7 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
       isPromptOnReplace = false
     }
 
-    val removeTable: String = ".*" + ConsoleLoggerSettings.getPattern(9).run {
+    val removeLog9: String = ".*" + ConsoleLoggerSettings.getPattern(9).run {
       replace("\\", "\\\\")
         .replace("(", "\\(")
         .replace(")", "\\)")
@@ -270,8 +270,8 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
         .replace("}", "\\}")
         .replace("$", "\\$")
     } + "\n"
-    val findTable = FindModel().apply {
-      stringToFind = removeTable
+    val findLog9 = FindModel().apply {
+      stringToFind = removeLog9
       stringToReplace = ""
       isPromptOnReplace = false
       isRegularExpressions = true
@@ -287,9 +287,9 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
                 FindUtil.replace(project, editor, 0, findLog4) &&
                 FindUtil.replace(project, editor, 0, findLog5) &&
                 FindUtil.replace(project, editor, 0, findLog6) &&
-                FindUtil.replace(project, editor, 0, findError) &&
-                FindUtil.replace(project, editor, 0, findTable) &&
-                FindUtil.replace(project, editor, 0, findGroup)
+                FindUtil.replace(project, editor, 0, findLog7) &&
+                FindUtil.replace(project, editor, 0, findLog8) &&
+                FindUtil.replace(project, editor, 0, findLog9)
       Scope.PROJECT -> {
                 ReplaceInProjectManager(project).replaceInPath(findLog1);
                 ReplaceInProjectManager(project).replaceInPath(findLog2);
@@ -297,9 +297,9 @@ class ConsoleLoggerRemove : AnAction("Remove ConsoleLogger's Logs") {
                 ReplaceInProjectManager(project).replaceInPath(findLog4);
                 ReplaceInProjectManager(project).replaceInPath(findLog5);
                 ReplaceInProjectManager(project).replaceInPath(findLog6);
-                ReplaceInProjectManager(project).replaceInPath(findError);
-                ReplaceInProjectManager(project).replaceInPath(findTable);
-                ReplaceInProjectManager(project).replaceInPath(findGroup);
+                ReplaceInProjectManager(project).replaceInPath(findLog7);
+                ReplaceInProjectManager(project).replaceInPath(findLog8);
+                ReplaceInProjectManager(project).replaceInPath(findLog9);
       }
     }
   }

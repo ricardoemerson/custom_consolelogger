@@ -14,8 +14,12 @@ import com.intellij.psi.PsiFileFactory
 import com.github.bgomar.bgconsolelogger.tools.ConsoleLoggerSettings
 
 
-class ConsoleLoggerAction(private val patternIndex: Int) : AnAction("INSERT_LOG$patternIndex") {
+class ConsoleLoggerAction(patternIndex: Int = 1) : AnAction("INSERT_LOG$patternIndex") {
+  private var patternIndex: Int = patternIndex
+
   override fun actionPerformed(e: AnActionEvent) {
+    val presentation = e.presentation
+    val patternIndex = presentation.getClientProperty("patternIndex") as? Int ?: 1
     // Check if the editor is available
     val editor = e.getData(CommonDataKeys.EDITOR)
     if (editor == null) {

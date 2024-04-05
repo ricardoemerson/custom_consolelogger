@@ -13,7 +13,6 @@ import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import static com.intellij.openapi.application.ModalityState.*;
 
 public class CronToolSetup extends AbstractToolSetup {
 
@@ -118,7 +117,7 @@ public class CronToolSetup extends AbstractToolSetup {
                     }
 
                 };
-                application.invokeAndWait(() -> application.runReadAction(runnable), ModalityState.NON_MODAL);
+                application.invokeAndWait(() -> application.runReadAction(runnable), ModalityState.defaultModalityState());
             }
         );
     }

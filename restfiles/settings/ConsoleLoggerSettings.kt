@@ -8,20 +8,17 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 import org.jetbrains.annotations.Nullable
 
 
-internal const val DEFAULT_PATTERN_1 =  """console.log("%c ---> $$: ","color:#F0F;", $$);"""
-internal const val DEFAULT_PATTERN_2 =  """console.log("%c ---> $$: ","color:#0F0;", $$);"""
-internal const val DEFAULT_PATTERN_3 =  """console.warn("%c ---> $$: ","color:#F00;", $$);"""
+internal const val DEFAULT_PATTERN_1 = "log('$$: \${$$}');"
+internal const val DEFAULT_PATTERN_2 = "log('Exception: \${$$}', error: err, stackTrace: s);"
+internal const val DEFAULT_PATTERN_3 = "=>"
 
-internal const val DEFAULT_PATTERN_4 =  """Serial.println($$);"""
-internal const val DEFAULT_PATTERN_5 =  """cout << "      ---> $$: " << $$ << endl;"""
-internal const val DEFAULT_PATTERN_6 =  """print("{:>30}".format(" ---> $$: " + $$))"""
+internal const val DEFAULT_PATTERN_4 = "Colors."
+internal const val DEFAULT_PATTERN_5 = "Icon(Icons.)"
+internal const val DEFAULT_PATTERN_6 = "FaIcon(FontAwesomeIcons.)"
 
-internal const val DEFAULT_PATTERN_7 =  """console.error("%c ({FP}:{LN}) $$: ", "color:#FF0;", $$);"""
-internal const val DEFAULT_PATTERN_8 =  """${'\n'}console.groupCollapsed("group $$");""" +
-                                        """${'\n'}console.groupEnd("end of group $$");"""
-internal const val DEFAULT_PATTERN_9 =  """console.table($$);"""
-
-
+internal const val DEFAULT_PATTERN_7 = "controller."
+internal const val DEFAULT_PATTERN_8 = "System.out.println(\"$$ = \" + $$);"
+internal const val DEFAULT_PATTERN_9 = "System.out.println($$);"
 
 
 @State(name = "ConsoleLoggerSettings", storages = [(Storage("consolelogger.xml"))])

@@ -32,7 +32,7 @@ class ConsoleLoggerAdd7 : AnAction("INSERT_LOG7") {
     val variableName = moveCursorToInsertionPoint(editor)
     val logVar = variableName?.trim()
 
-    val pattern = ConsoleLoggerSettings.getPattern(7).run {
+    val pattern = ConsoleLoggerSettings.getPattern(6).run {
       replace("{FN}", vFile?.name ?: "filename").replace("{FP}", vFile?.path ?: "file_path")
         .replace("{LN}", (editor.caretModel.currentCaret.logicalPosition.line + 2).toString())
     }
@@ -41,10 +41,7 @@ class ConsoleLoggerAdd7 : AnAction("INSERT_LOG7") {
       .map { it.range.first }
       .toList()
 
-    val lineToInsert = if (logVar == "\n") {
-      "\n${pattern.replace("$$", "")}"
-    } else
-      pattern.replace("$$", "$logVar")
+    val lineToInsert = pattern.replace("$$", "$logVar")
 
     variableName?.let {
       val line2insert = lineToInsert.replace("<CR>", "")

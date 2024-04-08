@@ -11,16 +11,17 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "ConsoleLoggerSettings", storages = {@Storage("consolelogger.xml")})
 public class ConsoleLoggerSettings implements PersistentStateComponent<ConsoleLoggerSettings> {
 
-    public static final String DEFAULT_PATTERN_1 = "console.log(\"%c ---> $$: \",\"color:#F0F;\", $$);";
-    public static final String DEFAULT_PATTERN_2 = "console.log(\"%c ---> $$: \",\"color:#0F0;\", $$);";
-    public static final String DEFAULT_PATTERN_3 = "console.warn(\"%c ---> $$: \",\"color:#F00;\", $$);";
-    public static final String DEFAULT_PATTERN_4 = "Serial.println($$);";
-    public static final String DEFAULT_PATTERN_5 = "cout << \"      ---> $$: \" << $$ << endl;";
-    public static final String DEFAULT_PATTERN_6 = "print(\"{:>30}\".format(\" ---> $$: \" + $$));";
-    public static final String DEFAULT_PATTERN_7 = "console.error(\"%c ({FP}:{LN}) $$: \", \"color:#FF0;\", $$);";
-    public static final String DEFAULT_PATTERN_8 = "${'\n'}console.groupCollapsed(\"group $$\");" +
-            "${'\n'}console.groupEnd(\"end of group $$\");";
-    public static final String DEFAULT_PATTERN_9 = "console.table($$);";
+    public static final String DEFAULT_PATTERN_1 =  "log('$$: ${$$}');";
+    public static final String DEFAULT_PATTERN_2 =  "log('Exception: ${$$}', error: err, stackTrace: s);";
+    public static final String DEFAULT_PATTERN_3 =  "=>";
+
+    public static final String DEFAULT_PATTERN_4 =  "Colors.";
+    public static final String DEFAULT_PATTERN_5 =  "Icon(Icons.)";
+    public static final String DEFAULT_PATTERN_6 =  "FaIcon(FontAwesomeIcons.)";
+
+    public static final String DEFAULT_PATTERN_7 =  "controller.";
+    public static final String DEFAULT_PATTERN_8 =  "System.out.println(\"$$ = \" + $$);";
+    public static final String DEFAULT_PATTERN_9 =  "System.out.println($$);";
 
     private static final String[] patterns = {
             DEFAULT_PATTERN_1,
